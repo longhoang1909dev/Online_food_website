@@ -98,7 +98,7 @@ if(isset($_POST['submit']))
 	
 	if(!empty($_POST["submit"]))   
      {
-	$loginquery ="SELECT * FROM users WHERE username='$username' && password='".md5($password)."'"; //selecting matching records
+	$loginquery ="SELECT * FROM users WHERE username='$username' && password='$password'"; //selecting matching records
 	$result=mysqli_query($db, $loginquery); //executing
 	$row=mysqli_fetch_array($result);
 	
