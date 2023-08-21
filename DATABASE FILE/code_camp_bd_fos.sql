@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 22, 2023 at 08:03 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Host: 127.0.0.1
+-- Generation Time: Aug 21, 2023 at 06:40 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `onlinefoodphp`
+-- Database: `code_camp_bd_fos`
 --
 
 -- --------------------------------------------------------
@@ -28,20 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `adm_id` int NOT NULL,
+  `adm_id` int(11) NOT NULL,
   `username` varchar(222) NOT NULL,
   `password` varchar(222) NOT NULL,
   `email` varchar(222) NOT NULL,
   `code` varchar(222) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`adm_id`, `username`, `password`, `email`, `code`, `date`) VALUES
-(1, 'ccbd', '0d89ec971a7bcfe26d68c177a9d53334', 'admin@gmail.com', '', '2023-02-22 07:18:13');
+(1, 'ccbd', '0d89ec971a7bcfe26d68c177a9d53334', 'admin@gmail.com', '', '2023-02-22 07:18:13'),
+(3, 'longhoang', '123456', '', '', '2023-08-20 03:30:54');
 
 -- --------------------------------------------------------
 
@@ -50,13 +51,13 @@ INSERT INTO `admin` (`adm_id`, `username`, `password`, `email`, `code`, `date`) 
 --
 
 CREATE TABLE `dishes` (
-  `d_id` int NOT NULL,
-  `rs_id` int NOT NULL,
+  `d_id` int(11) NOT NULL,
+  `rs_id` int(11) NOT NULL,
   `title` varchar(222) NOT NULL,
   `slogan` varchar(222) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `img` varchar(222) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `dishes`
@@ -87,12 +88,19 @@ INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
 --
 
 CREATE TABLE `remark` (
-  `id` int NOT NULL,
-  `frm_id` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `frm_id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
   `remark` mediumtext NOT NULL,
-  `remarkDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `remarkDate` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `remark`
+--
+
+INSERT INTO `remark` (`id`, `frm_id`, `status`, `remark`, `remarkDate`) VALUES
+(16, 24, 'closed', '??n hàng s? ??n trong 15p', '2023-08-20 03:52:39');
 
 -- --------------------------------------------------------
 
@@ -101,8 +109,8 @@ CREATE TABLE `remark` (
 --
 
 CREATE TABLE `restaurant` (
-  `rs_id` int NOT NULL,
-  `c_id` int NOT NULL,
+  `rs_id` int(11) NOT NULL,
+  `c_id` int(11) NOT NULL,
   `title` varchar(222) NOT NULL,
   `email` varchar(222) NOT NULL,
   `phone` varchar(222) NOT NULL,
@@ -112,8 +120,8 @@ CREATE TABLE `restaurant` (
   `o_days` varchar(222) NOT NULL,
   `address` text NOT NULL,
   `image` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `restaurant`
@@ -132,10 +140,10 @@ INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_
 --
 
 CREATE TABLE `res_category` (
-  `c_id` int NOT NULL,
+  `c_id` int(11) NOT NULL,
   `c_name` varchar(222) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `res_category`
@@ -154,7 +162,7 @@ INSERT INTO `res_category` (`c_id`, `c_name`, `date`) VALUES
 --
 
 CREATE TABLE `users` (
-  `u_id` int NOT NULL,
+  `u_id` int(11) NOT NULL,
   `username` varchar(222) NOT NULL,
   `f_name` varchar(222) NOT NULL,
   `l_name` varchar(222) NOT NULL,
@@ -162,9 +170,21 @@ CREATE TABLE `users` (
   `phone` varchar(222) NOT NULL,
   `password` varchar(222) NOT NULL,
   `address` text NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `status` int(11) NOT NULL DEFAULT 1,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`u_id`, `username`, `f_name`, `l_name`, `email`, `phone`, `password`, `address`, `status`, `date`) VALUES
+(9, 'longhoang', 'Hoàng', 'Long', 'long19092k2@gmail.com', '0967846423', '954d16a46bfd21e0b4981f96506a8600', 'ph??ng tr?ch', 1, '2023-08-20 03:26:55'),
+(10, 'aaaaa', 'long', 'aaaa', 'huy@gmail.com', '1234546345234', 'e10adc3949ba59abbe56e057f20f883e', 'aaaa', 1, '2023-08-20 03:50:15'),
+(11, 'longhoang12', '', '', '', '', '1', '', 1, '2023-08-21 04:01:35'),
+(12, 'tuannguyen', '', '', '', '', '123456', '', 1, '2023-08-21 04:04:46'),
+(13, 'huyxinh2k2@gmail.com', 'EDSON ARANTES', 'NASCIMENTO', 'long19092k3@gmail.com', '61338123123', 'e10adc3949ba59abbe56e057f20f883e', 'Jeff Street\r\n18', 1, '2023-08-21 04:06:12'),
+(14, 'manh', 'manh', 'manh', 'manh@gmail.com', '66464661332', '123456', 'aaa', 1, '2023-08-21 04:19:28');
 
 -- --------------------------------------------------------
 
@@ -173,14 +193,22 @@ CREATE TABLE `users` (
 --
 
 CREATE TABLE `users_orders` (
-  `o_id` int NOT NULL,
-  `u_id` int NOT NULL,
+  `o_id` int(11) NOT NULL,
+  `u_id` int(11) NOT NULL,
   `title` varchar(222) NOT NULL,
-  `quantity` int NOT NULL,
+  `quantity` int(11) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `status` varchar(222) DEFAULT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `users_orders`
+--
+
+INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `status`, `date`) VALUES
+(24, 10, 'Stuffed Jacket Potatoes', 1, '8.00', 'closed', '2023-08-20 03:52:39'),
+(25, 10, 'Yorkshire Lamb Patties', 222, '14.00', NULL, '2023-08-20 03:51:44');
 
 --
 -- Indexes for dumped tables
@@ -236,43 +264,43 @@ ALTER TABLE `users_orders`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `adm_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `adm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `dishes`
 --
 ALTER TABLE `dishes`
-  MODIFY `d_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `remark`
 --
 ALTER TABLE `remark`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `rs_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `rs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `res_category`
 --
 ALTER TABLE `res_category`
-  MODIFY `c_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users_orders`
 --
 ALTER TABLE `users_orders`
-  MODIFY `o_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `o_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
