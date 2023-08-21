@@ -1,9 +1,3 @@
-<!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -51,19 +45,12 @@ else
 
     .panel-body {
         background: #e5e5e5;
-        /* Old browsers */
         background: -moz-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-        /* FF3.6+ */
         background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
-        /* Chrome,Safari4+ */
         background: -webkit-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-        /* Chrome10+,Safari5.1+ */
         background: -o-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-        /* Opera 12+ */
         background: -ms-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-        /* IE10+ */
         background: radial-gradient(ellipse at center, #e5e5e5 0%, #ffffff 100%);
-        /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#ffffff', GradientType=1);
         font: 600 15px "Open Sans", Arial, sans-serif;
     }
@@ -73,77 +60,9 @@ else
         color: #777;
     }
 
-    /* 
-table { 
-	width: 750px; 
-	border-collapse: collapse; 
-	margin: auto;
-	
-	}
-
-/* Zebra striping */
-    /* tr:nth-of-type(odd) { 
-	background: #eee; 
-	}
-
-th { 
-	background: #404040; 
-	color: white; 
-	font-weight: bold; 
-	
-	}
-
-td, th { 
-	padding: 10px; 
-	border: 1px solid #ccc; 
-	text-align: left; 
-	font-size: 14px;
-	
-	} */
     @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
 
-        /* table { 
-	  	width: 100%; 
-	}
-
-	
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	} */
-
-
-        /* thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; } */
-
-        /* td { 
-		
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-
-	td:before { 
-		
-		position: absolute;
-	
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-		
-		content: attr(data-column);
-
-		color: #000;
-		font-weight: bold;
-	} */
 
     }
     </style>
