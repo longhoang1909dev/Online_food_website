@@ -1,9 +1,4 @@
-/*     <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->* */
+
 @import "bourbon";
 
 // Main Colors
@@ -123,7 +118,7 @@ body {
     margin: 0 0 20px;
     padding: 10px 15px;
     box-sizing: border-box;
-    font-wieght: 400;
+    font-weight: 400;
     @include transition(0.3s ease);
     &:focus {
       border: 1px solid $accent;
