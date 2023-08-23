@@ -15,40 +15,34 @@ error_reporting(0);
 session_start();
 
 
-if(isset($_POST['submit'] ))
-{
-    if(empty($_POST['c_name']))
-		{
-			$error = '<div class="alert alert-danger alert-dismissible fade show">
+if (isset($_POST['submit'])) {
+    if (empty($_POST['c_name'])) {
+        $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>field Required!</strong>
 															</div>';
-		}
-	else
-	{
-		
-	$check_cat= mysqli_query($db, "SELECT c_name FROM res_category where c_name = '".$_POST['c_name']."' ");
+    } else {
 
-	
-	
-	if(mysqli_num_rows($check_cat) > 0)
-     {
-    	$error = '<div class="alert alert-danger alert-dismissible fade show">
+        $check_cat = mysqli_query($db, "SELECT c_name FROM res_category where c_name = '" . $_POST['c_name'] . "' ");
+
+
+
+        if (mysqli_num_rows($check_cat) > 0) {
+            $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Category already exist!</strong>
 															</div>';
-     }
-	else{
-       
-	
-	$mql = "INSERT INTO res_category(c_name) VALUES('".$_POST['c_name']."')";
-	mysqli_query($db, $mql);
-			$success = 	'<div class="alert alert-success alert-dismissible fade show">
+        } else {
+
+
+            $mql = "INSERT INTO res_category(c_name) VALUES('" . $_POST['c_name'] . "')";
+            mysqli_query($db, $mql);
+            $success = '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																New Category Added Successfully.</br></div>';
-	
+
+        }
     }
-	}
 
 }
 
@@ -120,7 +114,9 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 */ -->
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
+                                    alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -150,8 +146,11 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
                         <li class="nav-label">Home</li>
                         <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
                         <li class="nav-label">Log</li>
-                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
+                        <li> <a href="all_users.php"> <span><i
+                                        class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
+                                    class="fa fa-archive f-s-20 color-warning"></i><span
+                                    class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">All Restaurants</a></li>
                                 <li><a href="add_category.php">Add Category</a></li>
@@ -159,7 +158,8 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
+                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_menu.php">All Menues</a></li>
                                 <li><a href="add_menu.php">Add Menu</a></li>
@@ -167,7 +167,8 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 
                             </ul>
                         </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
+                                    aria-hidden="true"></i><span>Orders</span></a></li>
                         <!-- /*!
 * Author Name: MH RONY.
 * GigHub Link: https://github.com/dev-mhrony
@@ -186,7 +187,14 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>. For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH RONY</a> on facebook. Thanks for staying with <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee>
+                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a
+                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this
+                    script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being
+                    provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.
+                    For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code
+                        Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH
+                        RONY</a> on facebook. Thanks for staying with <a
+                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee>
             </div>
 
             <div class="container-fluid">
@@ -210,9 +218,9 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 
 
 
-                        <?php  
-									        echo $error;
-									        echo $success; ?>
+                        <?php
+                        echo $error;
+                        echo $success; ?>
 
 
 
@@ -295,35 +303,31 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 */ -->
 
                                         <?php
-												$sql="SELECT * FROM res_category order by c_id desc";
-												$query=mysqli_query($db,$sql);
-												
-													if(!mysqli_num_rows($query) > 0 )
-														{
-															echo '<td colspan="7"><center>No Categories-Data!</center></td>';
-														}
-													else
-														{				
-																	while($rows=mysqli_fetch_array($query))
-																		{
-																					
-																				
-																				
-																					echo ' <tr><td>'.$rows['c_id'].'</td>
-																								<td>'.$rows['c_name'].'</td>
-																								<td>'.$rows['date'].'</td>
+                                        $sql = "SELECT * FROM res_category order by c_id desc";
+                                        $query = mysqli_query($db, $sql);
+
+                                        if (!mysqli_num_rows($query) > 0) {
+                                            echo '<td colspan="7"><center>No Categories-Data!</center></td>';
+                                        } else {
+                                            while ($rows = mysqli_fetch_array($query)) {
+
+
+
+                                                echo ' <tr><td>' . $rows['c_id'] . '</td>
+																								<td>' . $rows['c_name'] . '</td>
+																								<td>' . $rows['date'] . '</td>
 																								
-																									 <td><a href="delete_category.php?cat_del='.$rows['c_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_category.php?cat_upd='.$rows['c_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
+																									 <td><a href="delete_category.php?cat_del=' . $rows['c_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																									 <a href="update_category.php?cat_upd=' . $rows['c_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td></tr>';
-																					 
-																						
-																						
-																		}	
-														}
-												
-											
-											?>
+
+
+
+                                            }
+                                        }
+
+
+                                        ?>
 
 
                                         <!-- /*!

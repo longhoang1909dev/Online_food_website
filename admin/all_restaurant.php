@@ -7,8 +7,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 * Visit My Website : developerrony.com
 
 */ -->
-                <!DOCTYPE html>
-                <html lang="en">
+                doc
                 <?php
 include("../connection/connect.php");
 error_reporting(0);
