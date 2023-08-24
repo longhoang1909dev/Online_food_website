@@ -1,10 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
-
-
 session_start();
 error_reporting(0);
 include("../connection/connect.php");
@@ -22,8 +18,8 @@ if (isset($_POST['submit'])) {
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>All fields Required!</strong>
 															</div>';
-    } else {
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
+    } else
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>invalid email!</strong>
@@ -39,14 +35,11 @@ if (isset($_POST['submit'])) {
 																<strong>invalid phone!</strong>
 															</div>';
         } else {
-
-
             $mql = "update users set username='$_POST[uname]', f_name='$_POST[fname]', l_name='$_POST[lname]',email='$_POST[email]',phone='$_POST[phone]',password='" . md5($_POST['password']) . "' where u_id='$_GET[user_upd]' ";
             mysqli_query($db, $mql);
             $success = '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>User Updated!</strong></div>';
-
         }
     }
 ?>
