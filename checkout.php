@@ -5,45 +5,29 @@ include("connection/connect.php");
 include_once 'product-action.php';
 error_reporting(0);
 session_start();
-
-
 function function_alert()
 {
     echo "<script>alert('Cảm ơn. Đơn hàng của bạn đã được tiến hành');</script>";
     echo "<script>window.location.replace('your_orders.php');</script>";
 }
-
 if (empty($_SESSION["user_id"])) {
     echo "<script>alert('Bạn cần phải đăng nhập để thực hiện chức năng này');</script>";
     header('location:login.php');
 } else {
-
-
     foreach ($_SESSION["cart_item"] as $item) {
-
         $item_total += ($item["price"] * $item["quantity"]);
-
         if ($_POST['submit']) {
-
             $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item["price"] . "')";
-
             mysqli_query($db, $SQL);
-
-
             unset($_SESSION["cart_item"]);
             unset($item["title"]);
             unset($item["quantity"]);
             unset($item["price"]);
             $success = "Thank you. Your order has been placed!";
-
             function_alert();
-
-
-
         }
     }
     ?>
-
 
     <head>
         <meta charset="utf-8">
@@ -61,12 +45,6 @@ if (empty($_SESSION["user_id"])) {
     </head>
 
     <body>
-        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
         <div class="site-wrapper">
             <header id="header" class="header-scroll top-header headrom">
                 <nav class="navbar navbar-dark">
@@ -87,19 +65,10 @@ if (empty($_SESSION["user_id"])) {
                                     echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
                                 } else {
-
-
                                     echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
                                     echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
                                 }
-
                                 ?>
-                                <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
                             </ul>
                         </div>
                     </div>
@@ -109,7 +78,6 @@ if (empty($_SESSION["user_id"])) {
                 <div class="top-links">
                     <div class="container">
                         <ul class="row links">
-
                             <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose
                                     Restaurant</a></li>
                             <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Pick Your favorite food</a>
@@ -119,23 +87,12 @@ if (empty($_SESSION["user_id"])) {
                         </ul>
                     </div>
                 </div>
-
                 <div class="container">
 
                     <span style="color:green;">
                         <?php echo $success; ?>
                     </span>
-
                 </div>
-
-
-                <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
                 <div class="container m-t-30">
                     <form action="" method="post">
                         <div class="widget clearfix">
@@ -153,14 +110,6 @@ if (empty($_SESSION["user_id"])) {
 
                                                     <table class="table">
                                                         <tbody>
-
-                                                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
                                                             <tr>
                                                                 <td>Cart Subtotal</td>
                                                                 <td>
@@ -178,15 +127,6 @@ if (empty($_SESSION["user_id"])) {
                                                                     </strong></td>
                                                             </tr>
                                                         </tbody>
-
-                                                        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
-
                                                     </table>
                                                 </div>
                                             </div>
@@ -223,16 +163,9 @@ if (empty($_SESSION["user_id"])) {
             </div>
             </form>
         </div>
-        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
         <?php include "include/footer.php" ?>
         </div>
         </div>
-
         <script src="js/jquery.min.js"></script>
         <script src="js/tether.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -244,18 +177,7 @@ if (empty($_SESSION["user_id"])) {
     </body>
 
     </html>
-    <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+
     <?php
 }
 ?>
-<!--  Author Name: MH RONY.
-GigHub Link: https://github.com/dev-mhrony
-Facebook Link:https://www.facebook.com/dev.mhrony
-Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-Visit My Website : developerrony.com -->

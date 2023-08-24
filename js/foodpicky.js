@@ -1,23 +1,3 @@
-/*!
- *  Author Name: MH RONY.
- *  GigHub Link: https://github.com/dev-mhrony
- *  Facebook Link:https://www.facebook.com/dev.mhrony
- *  Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-    for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
- *  Visit My Website : developerrony.com -->* 
-    
-*/
-/*
- *  Table of content
- *************************************
- *   Loading animation seetings
- *   Adding images via data atr
- *   Range slider.Pricing slider
- *   Headroom (hide - show menu on scrool)
- *   Isotope
- *
- **/
-
 $(document).ready(function () {
   "use strict";
 
@@ -26,16 +6,15 @@ $(document).ready(function () {
     outClass: "fade-out",
     inDuration: 300,
     outDuration: 300,
-    linkElement: ".animsition-link", // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    linkElement: ".animsition-link", 
     loading: true,
-    loadingParentElement: "body", //animsition wrapper element
+    loadingParentElement: "body", 
     loadingClass: "animsition-loading",
     unSupportCss: [
       "animation-duration",
       "-webkit-animation-duration",
       "-o-animation-duration",
-    ], //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    ], 
     overlay: false,
     overlayClass: "animsition-overlay-slide",
     overlayParentElement: "body",
@@ -46,31 +25,24 @@ $(document).ready(function () {
     return a;
   }),
     $(".bg-image").css("background-size", "cover"),
-    /// Range slider
     $("#ex2").slider({});
   $("#ex2").on("slide", function (slideEvt) {
     $("#ex2SliderVal").text(slideEvt.value);
   });
 
-  // grab an element
   var myElement = document.querySelector("#header");
-  // construct an instance of Headroom, passing the element
   var headroom = new Headroom(myElement, {
-    // vertical offset in px before element is first unpinned
-    offset: 80, // scroll tolerance in px before state changes
-    tolerance: 40, // if you need other CSS classes, to apply these options.
+    offset: 80, 
+    tolerance: 40, 
     classes: {
       initial: "animated",
       pinned: "fadeInDown",
       unpinned: "fadeOutUp",
     },
   });
-  // initialise
   headroom.init();
 
-  // initialise
   headroom.init();
-  ////////Packages filter
   var $container = $(".restaurant-listing");
   $container.isotope({
     filter: "*",
@@ -81,7 +53,6 @@ $(document).ready(function () {
     },
   });
 
-  /////// Isotope
   $("nav.primary ul a").click(function () {
     var selector = $(this).attr("data-filter");
     $container.isotope({
@@ -97,9 +68,7 @@ $(document).ready(function () {
   var $optionSets = $("nav.primary ul"),
     $optionLinks = $optionSets.find("a");
   $optionLinks.click(function () {
-    //alert( $optionLinks);
     var $this = $(this);
-    // don"t proceed if already selected
     if ($this.hasClass("selected")) {
       return false;
     }
@@ -108,14 +77,12 @@ $(document).ready(function () {
     $this.addClass("selected");
   });
 
-  //// Range slider seetings
   $("#slider-range").slider({
     range: true,
     min: 0,
     max: 500,
     values: [75, 300],
     slide: function (event, ui) {
-      //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
       $(".minvalue").html("$" + ui.values[0]);
       $(".maxvalue").html("$" + ui.values[1]);
     },
@@ -127,7 +94,6 @@ $(document).ready(function () {
       $("#slider-range").slider("values", 1)
   );
 
-  ////// Increment and decrement select box
   $(".up").on("click", function () {
     var thisObj = $(this);
     var thisInput = thisObj.parent().find("input");

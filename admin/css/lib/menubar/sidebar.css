@@ -219,8 +219,6 @@ body {
     transition: left 300ms ease-in-out, width 300ms ease-in-out;
 }
 
-/* Hide to Small bar */
-
 .sidebar-hide .sidebar.sidebar-hide-to-small {
     position: absolute;
     width: 60px;
@@ -297,8 +295,6 @@ body {
     margin-left: 60px;
 }
 
-/* Show with Push content */
-
 .sidebar.sidebar-push~.content-wrap {
     -webkit-transform: translateX(250px) translateZ(0);
     transform: translateX(250px) translateZ(0);
@@ -313,8 +309,6 @@ body {
     -webkit-transform: translateX(0) translateZ(0);
     transform: translateX(0) translateZ(0);
 }
-
-/* Show with Shrink content */
 
 .sidebar.sidebar-shrink~.content-wrap {
     margin-left: 240px;
@@ -333,8 +327,6 @@ body {
 .sidebar-hide .sidebar.sidebar-shrink.sidebar-hide-to-small~.header {
     margin-left: 60px;
 }
-
-/* Hide on Content Click */
 
 .sidebar.sidebar-overlap-content~.content-wrap:after {
     content: '';
@@ -357,8 +349,6 @@ body {
     visibility: hidden;
     opacity: 0;
 }
-
-/* Nano Scroller */
 
 .sidebar .nano {
     position: relative;
