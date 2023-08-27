@@ -16,7 +16,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>All Users</title>
+    <title>Tất cả người dùng</title>
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -59,12 +59,11 @@ session_start();
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
                                 <ul>
                                     <li>
-                                        <div class="drop-title">Notifications</div>
+                                        <div class="drop-title">Thông báo</div>
                                     </li>
 
                                     <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all
-                                                notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Kiểm tra tất cả thông báo</strong> <i class="fa fa-angle-right"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -78,7 +77,7 @@ session_start();
                                     alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -91,38 +90,39 @@ session_start();
 
         <div class="left-sidebar">
 
+
             <div class="scroll-sidebar">
 
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
+                        <li class="nav-label">Trang chủ</li>
+                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
+                        <li class="nav-label">Danh mục</li>
                         <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
+                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
                                     class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Restaurant</span></a>
+                                    class="hide-menu">Nhà hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_restaurant.php">All Restaurants</a></li>
-                                <li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restaurant.php">Add Restaurant</a></li>
+                                <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
+                                <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
+                                <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
 
                             </ul>
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
                                     aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_menu.php">All Menues</a></li>
-                                <li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="all_menu.php">Tất cả Menues</a></li>
+                                <li><a href="add_menu.php">Thêm Menu</a></li>
 
 
 
                             </ul>
                         </li>
                         <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Orders</span></a></li>
+                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
 
                     </ul>
                 </nav>
@@ -131,19 +131,12 @@ session_start();
 
         </div>
 
-
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a
-                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this
-                    script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being
-                    provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.
-                    For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code
-                        Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH
-                        RONY</a> on facebook. Thanks for staying with <a
-                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee>
+            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                    một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
+                </marquee>
             </div>
-
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -151,21 +144,21 @@ session_start();
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
-                                    <h4 class="m-b-0 text-white">All Users</h4>
+                                    <h4 class="m-b-0 text-white">Tất cả người dùng</h4>
                                 </div>
 
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped table-hover">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>Username</th>
-                                                <th>FirstName</th>
-                                                <th>LastName</th>
+                                                <th>Tài khoản</th>
+                                                <th>Họ</th>
+                                                <th>Tên</th>
                                                 <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Address</th>
-                                                <th>Reg-Date</th>
-                                                <th>Action</th>
+                                                <th>SĐT</th>
+                                                <th>Địa chỉ</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Hành động</th>
                                             </tr>
                                         </thead>
                                         <tbody>

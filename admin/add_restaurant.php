@@ -5,21 +5,11 @@ include("../connection/connect.php");
 error_reporting(0);
 session_start();
 
-
-
-
 if (isset($_POST['submit'])) {
-
-
-
-
-
-
-
     if (empty($_POST['c_name']) || empty($_POST['res_name']) || $_POST['email'] == '' || $_POST['phone'] == '' || $_POST['url'] == '' || $_POST['o_hr'] == '' || $_POST['c_hr'] == '' || $_POST['o_days'] == '' || $_POST['address'] == '') {
         $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>All fields Must be Fillup!</strong>
+																<strong>Vui lòng nhập đầy đủ thông tin vào các ô trống!</strong>
 															</div>';
 
 
@@ -41,7 +31,7 @@ if (isset($_POST['submit'])) {
 
                 $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Max Image Size is 1024kb!</strong> Try different Image.
+																<strong>Vượt quá kích cỡ cho phép!</strong> Vui lòng thử ảnh khác.
 															</div>';
 
             } else {
@@ -55,7 +45,7 @@ if (isset($_POST['submit'])) {
 
                 $success = '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																 New Restaurant Added Successfully.
+																 Thêm nhà hàng thành công.
 															</div>';
 
 
@@ -63,7 +53,7 @@ if (isset($_POST['submit'])) {
         } elseif ($extension == '') {
             $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>select image</strong>
+																<strong>Vui lòng lựa chọn ảnh</strong>
 															</div>';
         } else {
 
@@ -72,25 +62,9 @@ if (isset($_POST['submit'])) {
 																<strong>invalid extension!</strong>png, jpg, Gif are accepted.
 															</div>';
 
-
         }
-
-
     }
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
 
 
 ?>
@@ -103,7 +77,7 @@ if (isset($_POST['submit'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>Add Restaurant</title>
+    <title>Thêm nhà hàng</title>
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -130,11 +104,6 @@ if (isset($_POST['submit'])) {
                 <div class="navbar-collapse">
 
                     <ul class="navbar-nav mr-auto mt-md-0">
-
-
-
-
-
                     </ul>
 
                     <ul class="navbar-nav my-lg-0">
@@ -146,12 +115,11 @@ if (isset($_POST['submit'])) {
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
                                 <ul>
                                     <li>
-                                        <div class="drop-title">Notifications</div>
+                                        <div class="drop-title">Thông báo</div>
                                     </li>
 
                                     <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all
-                                                notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Kiểm tra tất cả thông báo</strong> <i class="fa fa-angle-right"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -166,7 +134,7 @@ if (isset($_POST['submit'])) {
                                     alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -183,18 +151,18 @@ if (isset($_POST['submit'])) {
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
+                        <li class="nav-label">Trang chủ</li>
+                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
+                        <li class="nav-label">Danh mục</li>
                         <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
+                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
                                     class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Restaurant</span></a>
+                                    class="hide-menu">Nhà hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_restaurant.php">All Restaurants</a></li>
-                                <li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restaurant.php">Add Restaurant</a></li>
+                                <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
+                                <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
+                                <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
 
 
                             </ul>
@@ -202,14 +170,14 @@ if (isset($_POST['submit'])) {
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
                                     aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_menu.php">All Menues</a></li>
-                                <li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="all_menu.php">Tất cả Menues</a></li>
+                                <li><a href="add_menu.php">Thêm Menu</a></li>
 
 
                             </ul>
                         </li>
                         <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Orders</span></a></li>
+                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
 
                     </ul>
                 </nav>
@@ -221,14 +189,9 @@ if (isset($_POST['submit'])) {
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a
-                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this
-                    script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being
-                    provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.
-                    For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code
-                        Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH
-                        RONY</a> on facebook. Thanks for staying with <a
-                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee>
+            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                    một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
+                </marquee>
             </div>
 
 
@@ -248,7 +211,7 @@ if (isset($_POST['submit'])) {
                 <div class="col-lg-12">
                     <div class="card card-outline-primary">
                         <div class="card-header">
-                            <h4 class="m-b-0 text-white">Add Restaurant</h4>
+                            <h4 class="m-b-0 text-white">Thêm nhà hàng</h4>
                         </div>
                         <div class="card-body">
                             <form action='' method='post' enctype="multipart/form-data">
@@ -258,14 +221,14 @@ if (isset($_POST['submit'])) {
                                     <div class="row p-t-20">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Restaurant Name</label>
+                                                <label class="control-label">Tên nhà hàng</label>
                                                 <input type="text" name="res_name" class="form-control">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
-                                                <label class="control-label">Bussiness E-mail</label>
+                                                <label class="control-label">Email liên hệ</label>
                                                 <input type="text" name="email"
                                                     class="form-control form-control-danger">
                                             </div>
@@ -277,14 +240,14 @@ if (isset($_POST['submit'])) {
                                     <div class="row p-t-20">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Phone </label>
+                                                <label class="control-label">Số điện thoại </label>
                                                 <input type="text" name="phone" class="form-control">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
-                                                <label class="control-label">Website URL</label>
+                                                <label class="control-label">Website nhà hàng</label>
                                                 <input type="text" name="url" class="form-control form-control-danger">
                                             </div>
                                         </div>
@@ -295,17 +258,34 @@ if (isset($_POST['submit'])) {
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Open Hours</label>
+                                                <label class="control-label">Giờ mở cửa</label>
                                                 <select name="o_hr" class="form-control custom-select"
                                                     data-placeholder="Choose a Category">
-                                                    <option>--Select your Hours--</option>
-                                                    <option value="6am">6am</option>
-                                                    <option value="7am">7am</option>
-                                                    <option value="8am">8am</option>
-                                                    <option value="9am">9am</option>
-                                                    <option value="10am">10am</option>
-                                                    <option value="11am">11am</option>
-                                                    <option value="12pm">12pm</option>
+                                                    <option>--Lựa chọn giờ mở cửa--</option>
+                                                    <option value="1am">1:00</option>
+                                                    <option value="2am">2:00</option>
+                                                    <option value="3am">3:00</option>
+                                                    <option value="4am">4:00</option>
+                                                    <option value="5am">5:00</option>
+                                                    <option value="6am">6:00</option>
+                                                    <option value="7am">7:00</option>
+                                                    <option value="8am">8:00</option>
+                                                    <option value="9am">9:00</option>
+                                                    <option value="10am">10:00</option>
+                                                    <option value="11am">11:00</option>
+                                                    <option value="12am">12:00</option>
+                                                    <option value="1pm">13:00</option>
+                                                    <option value="2pm">14:00</option>
+                                                    <option value="3pm">15:00</option>
+                                                    <option value="4pm">16:00</option>
+                                                    <option value="5pm">17:00</option>
+                                                    <option value="6pm">18:00</option>
+                                                    <option value="7pm">19:00</option>
+                                                    <option value="8pm">20:00</option>
+                                                    <option value="9pm">21:00</option>
+                                                    <option value="10pm">22:00</option>
+                                                    <option value="11pm">23:00</option>
+                                                    <option value="12pm">24:00</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -313,23 +293,34 @@ if (isset($_POST['submit'])) {
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Close Hours</label>
+                                                <label class="control-label">Giờ đóng cửa</label>
                                                 <select name="c_hr" class="form-control custom-select"
                                                     data-placeholder="Choose a Category">
-                                                    <option>--Select your Hours--</option>
-                                                    <option value="3pm">3pm</option>
-                                                    <option value="4pm">4pm</option>
-                                                    <option value="5pm">5pm</option>
-                                                    <option value="6pm">6pm</option>
-                                                    <option value="7pm">7pm</option>
-                                                    <option value="8pm">8pm</option>
-                                                    <option value="9pm">9pm</option>
-                                                    <option value="10pm">10pm</option>
-                                                    <option value="11pm">11pm</option>
-                                                    <option value="12am">12am</option>
-                                                    <option value="1am">1am</option>
-                                                    <option value="2am">2am</option>
-                                                    <option value="3am">3am</option>
+                                                    <option>--Lựa chọn giờ đóng cửa--</option>
+                                                    <option value="1am">1:00</option>
+                                                    <option value="2am">2:00</option>
+                                                    <option value="3am">3:00</option>
+                                                    <option value="4am">4:00</option>
+                                                    <option value="5am">5:00</option>
+                                                    <option value="6am">6:00</option>
+                                                    <option value="7am">7:00</option>
+                                                    <option value="8am">8:00</option>
+                                                    <option value="9am">9:00</option>
+                                                    <option value="10am">10:00</option>
+                                                    <option value="11am">11:00</option>
+                                                    <option value="12am">12:00</option>
+                                                    <option value="1pm">13:00</option>
+                                                    <option value="2pm">14:00</option>
+                                                    <option value="3pm">15:00</option>
+                                                    <option value="4pm">16:00</option>
+                                                    <option value="5pm">17:00</option>
+                                                    <option value="6pm">18:00</option>
+                                                    <option value="7pm">19:00</option>
+                                                    <option value="8pm">20:00</option>
+                                                    <option value="9pm">21:00</option>
+                                                    <option value="10pm">22:00</option>
+                                                    <option value="11pm">23:00</option>
+                                                    <option value="12pm">24:00</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -337,16 +328,16 @@ if (isset($_POST['submit'])) {
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Open Days</label>
+                                                <label class="control-label">Ngày mở cửa</label>
                                                 <select name="o_days" class="form-control custom-select"
                                                     data-placeholder="Choose a Category" tabindex="1">
-                                                    <option>--Select your Days--</option>
-                                                    <option value="Mon-Tue">Mon-Tue</option>
-                                                    <option value="Mon-Wed">Mon-Wed</option>
-                                                    <option value="Mon-Thu">Mon-Thu</option>
-                                                    <option value="Mon-Fri">Mon-Fri</option>
-                                                    <option value="Mon-Sat">Mon-Sat</option>
-                                                    <option value="24hr-x7">24hr-x7</option>
+                                                    <option>--Lựa chọn ngày mở cửa--</option>
+                                                    <option value="Mon-Tue">T2-T3</option>
+                                                    <option value="Mon-Wed">T2-T4</option>
+                                                    <option value="Mon-Thu">T2-T5</option>
+                                                    <option value="Mon-Fri">T2-T6</option>
+                                                    <option value="Mon-Sat">T2-T7</option>
+                                                    <option value="24hr-x7">Cả tuần</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -354,7 +345,7 @@ if (isset($_POST['submit'])) {
 
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
-                                                <label class="control-label">Image</label>
+                                                <label class="control-label">Hình ảnh</label>
                                                 <input type="file" name="file" id="lastName"
                                                     class="form-control form-control-danger" placeholder="12n">
                                             </div>
@@ -366,10 +357,10 @@ if (isset($_POST['submit'])) {
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">Select Category</label>
+                                                <label class="control-label">Lựa chọn thể loại</label>
                                                 <select name="c_name" class="form-control custom-select"
                                                     data-placeholder="Choose a Category" tabindex="1">
-                                                    <option>--Select Category--</option>
+                                                    <option>--Lựa chọn thể loại--</option>
                                                     <?php $ssql = "select * from res_category";
                                                     $res = mysqli_query($db, $ssql);
                                                     while ($row = mysqli_fetch_array($res)) {
@@ -386,7 +377,7 @@ if (isset($_POST['submit'])) {
 
                                     </div>
 
-                                    <h3 class="box-title m-t-40">Restaurant Address</h3>
+                                    <h3 class="box-title m-t-40">Địa chỉ nhà hàng</h3>
                                     <hr>
                                     <div class="row">
                                         <div class="col-md-12 ">
@@ -402,8 +393,8 @@ if (isset($_POST['submit'])) {
                                 </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" name="submit" class="btn btn-primary" value="Save">
-                            <a href="add_restaurant.php" class="btn btn-inverse">Cancel</a>
+                            <input type="submit" name="submit" class="btn btn-primary" value="Lưu">
+                            <a href="add_restaurant.php" class="btn btn-inverse">Hủy bỏ</a>
                         </div>
                         </form>
                     </div>

@@ -13,7 +13,7 @@ if (strlen($_SESSION['user_id']) == 0) {
         $query = mysqli_query($db, "insert into remark(frm_id,status,remark) values('$form_id','$status','$remark')");
         $sql = mysqli_query($db, "update users_orders set status='$status' where o_id='$form_id'");
 
-        echo "<script>alert('Form Details Updated Successfully');</script>";
+        echo "<script>alert('Cập nhật thành công');</script>";
 
     }
 
@@ -39,7 +39,7 @@ if (strlen($_SESSION['user_id']) == 0) {
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-        <title>Order Update</title>
+        <title>Cập nhật đơn đặt </title>
         <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
         <link href="css/helper.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
@@ -112,7 +112,7 @@ if (strlen($_SESSION['user_id']) == 0) {
             <form name="updateticket" id="updatecomplaint" method="post">
                 <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td><b>Form Number</b></td>
+                        <td><b>STT</b></td>
                         <td>
                             <?php echo htmlentities($_GET['form_id']); ?>
                         </td>
@@ -123,24 +123,24 @@ if (strlen($_SESSION['user_id']) == 0) {
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td><b>Status</b></td>
+                        <td><b>Trạng thái</b></td>
                         <td><select name="status" required="required">
-                                <option value="">Select Status</option>
-                                <option value="in process">On the way</option>
-                                <option value="closed">Delivered</option>
-                                <option value="rejected">Cancelled</option>
+                                <option value="">--Lựa chọn trạng thái--</option>
+                                <option value="in process">Đang vận chuyển</option>
+                                <option value="closed">Đã giao hàng</option>
+                                <option value="rejected">Hủy bỏ</option>
 
                             </select></td>
                     </tr>
                     <tr>
-                        <td><b>Message</b></td>
+                        <td><b>Lời nhắn</b></td>
                         <td><textarea name="remark" cols="50" rows="10" required="required"></textarea></td>
                     </tr>
                     <tr>
-                        <td><b>Action</b></td>
-                        <td><input type="submit" name="update" class="btn btn-primary" value="Submit">
+                        <td><b>Hành động</b></td>
+                        <td><input type="submit" name="update" class="btn btn-primary" value="Cập nhật">
 
-                            <input name="Submit2" type="submit" class="btn btn-danger" value="Close this window "
+                            <input name="Submit2" type="submit" class="btn btn-danger" value="Đóng cửa sổ "
                                 onClick="return f2();" style="cursor: pointer;" />
                         </td>
                     </tr>

@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
             $_SESSION["adm_id"] = $row['adm_id'];
             header("refresh:1;url=dashboard.php");
         } else {
-            echo "<script>alert('Invalid Username or Password!');</script>";
+            echo "<script>alert('Sai tài khoản hoặc mật khẩu');</script>";
         }
     }
 
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
 
     <div class="container">
         <div class="info">
-            <h1>Admin Panel </h1>
+            <h1>TRANG QUẢN LÍ </h1>
         </div>
     </div>
     <div class="form">
@@ -60,9 +60,9 @@ if (isset($_POST['submit'])) {
             <?php echo $success; ?>
         </span>
         <form class="login-form" action="index.php" method="post">
-            <input type="text" placeholder="Username" name="username" />
-            <input type="password" placeholder="Password" name="password" />
-            <input type="submit" name="submit" value="Login" />
+            <input type="text" placeholder="Tài khoản" name="username" />
+            <input type="password" placeholder="Mật khẩu" name="password" />
+            <input type="submit" name="submit" value="Đăng nhập" />
 
         </form>
 

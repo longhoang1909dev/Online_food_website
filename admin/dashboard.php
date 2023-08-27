@@ -17,7 +17,7 @@ if (empty($_SESSION["adm_id"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Admin Panel</title>
+        <title>Trang chủ ADMIN</title>
         <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
         <link href="css/helper.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
@@ -58,7 +58,7 @@ if (empty($_SESSION["adm_id"])) {
                                     alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -69,67 +69,59 @@ if (empty($_SESSION["adm_id"])) {
 
             <div class="left-sidebar">
 
-                <div class="scroll-sidebar">
+
+            <div class="scroll-sidebar">
+
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label">Trang chủ</li>
+                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
+                        <li class="nav-label">Danh mục</li>
+                        <li> <a href="all_users.php"> <span><i
+                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
+                                    class="fa fa-archive f-s-20 color-warning"></i><span
+                                    class="hide-menu">Nhà hàng</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
+                                <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
+                                <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
+
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
+                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="all_menu.php">Tất cả Menues</a></li>
+                                <li><a href="add_menu.php">Thêm Menu</a></li>
 
 
-                    <nav class="sidebar-nav">
-                        <ul id="sidebarnav">
-                            <li class="nav-devider"></li>
-                            <li class="nav-label">Home</li>
-                            <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a>
-                            </li>
-                            <li class="nav-label">Log</li>
-                            <li> <a href="all_users.php"> <span><i
-                                            class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
-                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                        class="fa fa-archive f-s-20 color-warning"></i><span
-                                        class="hide-menu">Restaurant</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="all_restaurant.php">All Restaurant</a></li>
-                                    <li><a href="add_category.php">Add Category</a></li>
-                                    <li><a href="add_restaurant.php">Add Restaurant</a></li>
 
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                        aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="all_menu.php">All Menues</a></li>
-                                    <li><a href="add_menu.php">Add Menu</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
+                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
 
-
-
-                                </ul>
-                            </li>
-                            <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                        aria-hidden="true"></i><span>Orders</span></a></li>
-
-                        </ul>
-                    </nav>
-
-                </div>
+                    </ul>
+                </nav>
 
             </div>
 
-            <div class="page-wrapper">
+        </div>
 
-
-                <div style="padding-top: 10px;">
-                    <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a
-                            href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this
-                        script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being
-                        provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.
-                        For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code
-                            Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH
-                            RONY</a> on facebook. Thanks for staying with <a
-                            href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee>
-                </div>
+        <div class="page-wrapper">
+            <div style="padding-top: 10px;">
+            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                    một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
+                </marquee>
+            </div>
 
                 <div class="container-fluid">
                     <div class="col-lg-12">
                         <div class="card card-outline-primary">
                             <div class="card-header">
-                                <h4 class="m-b-0 text-white">Admin Dashboard</h4>
+                                <h4 class="m-b-0 text-white">Bảng tổng quan</h4>
                             </div>
                             <div class="row">
 
@@ -147,7 +139,7 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Restaurants</p>
+                                                <p class="m-b-0">Tổng số nhà hàng</p>
                                             </div>
                                         </div>
                                     </div>
@@ -167,7 +159,7 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Dishes</p>
+                                                <p class="m-b-0">Tổng món ăn</p>
                                             </div>
                                         </div>
                                     </div>
@@ -188,7 +180,7 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Users</p>
+                                                <p class="m-b-0">Tổng người dùng</p>
                                             </div>
                                         </div>
                                     </div>
@@ -209,7 +201,7 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Total Orders</p>
+                                                <p class="m-b-0">Tổng các đơn đặt</p>
                                             </div>
                                         </div>
                                     </div>
@@ -231,7 +223,7 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Restro Categories</p>
+                                                <p class="m-b-0">Tổng thể loại</p>
                                             </div>
                                         </div>
                                     </div>
@@ -252,7 +244,7 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Processing Orders</p>
+                                                <p class="m-b-0">Đơn hàng đang xử lí</p>
                                             </div>
                                         </div>
                                     </div>
@@ -272,7 +264,7 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Delivered Orders</p>
+                                                <p class="m-b-0">Đơn hàng đã giao</p>
                                             </div>
                                         </div>
                                     </div>
@@ -294,7 +286,7 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Cancelled Orders</p>
+                                                <p class="m-b-0">Đơn hàng bị hủy</p>
                                             </div>
                                         </div>
                                     </div>
@@ -315,7 +307,7 @@ if (empty($_SESSION["adm_id"])) {
                                                     echo $sum;
                                                     ?>
                                                 </h2>
-                                                <p class="m-b-0">Total Earnings</p>
+                                                <p class="m-b-0">Tổng thu nhập</p>
                                             </div>
                                         </div>
                                     </div>
