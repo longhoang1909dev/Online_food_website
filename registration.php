@@ -5,45 +5,6 @@
 session_start();
 error_reporting(0);
 include("connection/connect.php");
-if (isset($_POST['submit'])) {
-    if (
-        empty($_POST['firstname']) ||
-        empty($_POST['lastname']) ||
-        empty($_POST['email']) ||
-        empty($_POST['phone']) ||
-        empty($_POST['password']) ||
-        empty($_POST['cpassword']) ||
-        empty($_POST['cpassword'])
-    ) {
-        $message = "All fields must be Required!";
-    } else {
-
-        $check_username = mysqli_query($db, "SELECT username FROM users where username = '" . $_POST['username'] . "' ");
-        $check_email = mysqli_query($db, "SELECT email FROM users where email = '" . $_POST['email'] . "' ");
-
-
-        if ($_POST['password'] != $_POST['cpassword']) {
-
-            echo "<script>alert('Password not match');</script>";
-        } elseif (strlen($_POST['password']) < 6) {
-            echo "<script>alert('Password Must be >=6');</script>";
-        } elseif (strlen($_POST['phone']) < 10) {
-            echo "<script>alert('Invalid phone number!');</script>";
-        } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            echo "<script>alert('Invalid email address please type a valid email!');</script>";
-        } elseif (mysqli_num_rows($check_username) > 0) {
-            echo "<script>alert('Username Already exists!');</script>";
-        } elseif (mysqli_num_rows($check_email) > 0) {
-            echo "<script>alert('Email Already exists!');</script>";
-        } else {
-
-            $mql = "INSERT INTO users(username,f_name,l_name,email,phone,password,address) VALUES('" . $_POST['username'] . "','" . $_POST['firstname'] . "','" . $_POST['lastname'] . "','" . $_POST['email'] . "','" . $_POST['phone'] . "','" . $_POST['password'] . "','" . $_POST['address'] . "')";
-            mysqli_query($db, $mql);
-
-            header("refresh:0.1;url=login.php");
-        }
-    }
-}
 ?>
 
 <head>
@@ -53,7 +14,7 @@ if (isset($_POST['submit'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Registration</title>
+    <title>Đăng kí</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
@@ -73,18 +34,18 @@ if (isset($_POST['submit'])) {
                             width="18%"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span
+                            <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
                                         class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span
-                                        class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng
+                                    <span class="sr-only"></span></a> </li>
 
                             <?php
                             if (empty($_SESSION["user_id"])) {
-                                echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
+                                echo '<li class="nav-item"><a href="login.php" class="nav-link active">Đăng nhập</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Đăng kí</a> </li>';
                             } else {
-                                echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
-                                echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+                                echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Món ăn đã đặt</a> </li>';
+                                echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Đăng xuất</a> </li>';
                             }
                             ?>
                         </ul>
@@ -105,53 +66,100 @@ if (isset($_POST['submit'])) {
                                 <div class="widget-body">
                                     <form action="" method="post">
                                         <div class="row">
-                                            <div class="form-group col-sm-12">
-                                                <label for="exampleInputEmail1">User-Name</label>
-                                                <input class="form-control" type="text" name="username"
-                                                    id="example-text-input">
-                                            </div>
-                                            <div class="form-group col-sm-6">
-                                                <label for="exampleInputEmail1">First Name</label>
-                                                <input class="form-control" type="text" name="firstname"
-                                                    id="example-text-input">
-                                            </div>
-                                            <div class="form-group col-sm-6">
-                                                <label for="exampleInputEmail1">Last Name</label>
-                                                <input class="form-control" type="text" name="lastname"
-                                                    id="example-text-input-2">
-                                            </div>
-                                            <div class="form-group col-sm-6">
-                                                <label for="exampleInputEmail1">Email Address</label>
-                                                <input type="text" class="form-control" name="email"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp">
-                                            </div>
-                                            <div class="form-group col-sm-6">
-                                                <label for="exampleInputEmail1">Phone number</label>
-                                                <input class="form-control" type="text" name="phone"
-                                                    id="example-tel-input-3">
-                                            </div>
-                                            <div class="form-group col-sm-6">
-                                                <label for="exampleInputPassword1">Password</label>
-                                                <input type="password" class="form-control" name="password"
-                                                    id="exampleInputPassword1">
-                                            </div>
-                                            <div class="form-group col-sm-6">
-                                                <label for="exampleInputPassword1">Confirm password</label>
-                                                <input type="password" class="form-control" name="cpassword"
-                                                    id="exampleInputPassword2">
-                                            </div>
-                                            <div class="form-group col-sm-12">
-                                                <label for="exampleTextarea">Delivery Address</label>
-                                                <textarea class="form-control" id="exampleTextarea" name="address"
-                                                    rows="3"></textarea>
-                                            </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <p> <input type="submit" value="Register" name="submit"
-                                                        class="btn theme-btn"> </p>
-                                            </div>
+                                        <div style="color:red; text-align:right; font-size:20px">
+
+                                            <?php
+
+                                            if (isset($_POST['submit'])) {
+                                                if (
+                                                    empty($_POST['firstname']) ||
+                                                    empty($_POST['lastname']) ||
+                                                    empty($_POST['email']) ||
+                                                    empty($_POST['phone']) ||
+                                                    empty($_POST['password']) ||
+                                                    empty($_POST['cpassword']) ||
+                                                    empty($_POST['cpassword'])
+                                                ) {
+                                                    $message = "Bạn cần phải điền đầy đủ thông tin!";
+                                                    echo "$message";
+
+                                                } else {
+
+                                                    $check_username = mysqli_query($db, "SELECT username FROM users where username = '" . $_POST['username'] . "' ");
+                                                    $check_email = mysqli_query($db, "SELECT email FROM users where email = '" . $_POST['email'] . "' ");
+
+
+                                                    if ($_POST['password'] != $_POST['cpassword']) {
+
+                                                        echo "Mật khẩu không trùng khớp";
+                                                    } elseif (strlen($_POST['password']) < 6) {
+                                                        echo "Độ dài mật khẩu phải >=6";
+                                                    } elseif (strlen($_POST['phone']) < 10) {
+                                                        echo "Số điện thoại không đúng định dạng";
+                                                    } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                                                        echo "Định email không chính xác vui lòng nhập đúng định dạng(@ gmail,yahoo,..com) !";
+                                                    } elseif (mysqli_num_rows($check_username) > 0) {
+                                                        echo "Tài khoản đã tồn tại!";
+                                                    } elseif (mysqli_num_rows($check_email) > 0) {
+                                                        echo "Email đã tồn tại";
+                                                    } else {
+
+                                                        $mql = "INSERT INTO users(username,f_name,l_name,email,phone,password,address) VALUES('" . $_POST['username'] . "','" . $_POST['firstname'] . "','" . $_POST['lastname'] . "','" . $_POST['email'] . "','" . $_POST['phone'] . "','" . $_POST['password'] . "','" . $_POST['address'] . "')";
+                                                        mysqli_query($db, $mql);
+
+                                                        header("refresh:0.1;url=login.php");
+                                                    }
+                                                }
+                                            }
+                                            ?>
                                         </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="exampleInputEmail1">Tài khoản</label>
+                                            <input class="form-control" type="text" name="username"
+                                                id="example-text-input">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="exampleInputEmail1">Họ </label>
+                                            <input class="form-control" type="text" name="firstname"
+                                                id="example-text-input">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="exampleInputEmail1">Tên</label>
+                                            <input class="form-control" type="text" name="lastname"
+                                                id="example-text-input-2">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="exampleInputEmail1">Địa chỉ email</label>
+                                            <input type="text" class="form-control" name="email" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="exampleInputEmail1">Số điện thoại</label>
+                                            <input class="form-control" type="text" name="phone"
+                                                id="example-tel-input-3">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="exampleInputPassword1">Mật khẩu</label>
+                                            <input type="password" class="form-control" name="password"
+                                                id="exampleInputPassword1">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="exampleInputPassword1">Nhập lại mật khẩu</label>
+                                            <input type="password" class="form-control" name="cpassword"
+                                                id="exampleInputPassword2">
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="exampleTextarea">Địa chỉ</label>
+                                            <textarea class="form-control" id="exampleTextarea" name="address"
+                                                rows="3"></textarea>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p style="margin-left:38px"> <input type="submit" value="Đăng kí" name="submit"
+                                                class="btn theme-btn"> </p>
+                                    </div>
                                     </form>
                                 </div>
                             </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login || Code Camp BD</title>
+    <title>Đăng nhập</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
@@ -37,17 +37,17 @@
                         width="18%"> </a>
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span
+                        <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
                                     class="sr-only">(current)</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span
+                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span
                                     class="sr-only"></span></a> </li>
 
                         <?php
                         if (empty($_SESSION["user_id"])) {
-                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
+                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Đăng nhập</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Đăng kí</a> </li>';
                         } else {
-                            echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
+                            echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Đơn hàng của tôi</a> </li>';
                             echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
                         }
                         ?>
@@ -75,7 +75,7 @@
                     $_SESSION["user_id"] = $row['u_id'];
                     header("refresh:1;url=index.php");
                 } else {
-                    $message = "Invalid Username or Password!";
+                    $message = "Tài khoản hoặc mật khẩu không chính xác";
                 }
             }
         }
@@ -87,7 +87,7 @@
                     <div class="toggle">
                     </div>
                     <div class="form">
-                        <h2>Login to your account</h2>
+                        <h2>Đăng nhập vào tài khoản của bạn</h2>
                         <span style="color:red;">
                             <?php echo $message; ?>
                         </span>
@@ -95,14 +95,13 @@
                             <?php echo $success; ?>
                         </span>
                         <form action="" method="post">
-                            <input type="text" placeholder="Username" name="username" />
-                            <input type="password" placeholder="Password" name="password" />
+                            <input type="text" placeholder="Tài khoản" name="username" />
+                            <input type="password" placeholder="Mật khẩu" name="password" />
                             <input type="submit" id="buttn" name="submit" value="Login" />
                         </form>
                     </div>
 
-                    <div class="cta">Not registered?<a href="registration.php" style="color:#5c4ac7;"> Create an
-                            account</a></div>
+                    <div class="cta">Chưa đăng kí?<a href="registration.php" style="color:#5c4ac7;"> Tạo tài khoản</a></div>
                 </div>
                 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 

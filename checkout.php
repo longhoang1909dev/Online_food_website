@@ -12,7 +12,8 @@ function function_alert()
 }
 if (empty($_SESSION["user_id"])) {
     echo "<script>alert('Bạn cần phải đăng nhập để thực hiện chức năng này');</script>";
-    header('location:login.php');
+    echo "<script>window.location.replace('login.php');</script>";
+    
 } else {
     foreach ($_SESSION["cart_item"] as $item) {
         $item_total += ($item["price"] * $item["quantity"]);
@@ -23,7 +24,7 @@ if (empty($_SESSION["user_id"])) {
             unset($item["title"]);
             unset($item["quantity"]);
             unset($item["price"]);
-            $success = "Thank you. Your order has been placed!";
+            $success = "Cảm ơn. Đơn hàng của bạn đã được đặt thành công";
             function_alert();
         }
     }
@@ -36,7 +37,7 @@ if (empty($_SESSION["user_id"])) {
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="#">
-        <title>Checkout || Online Food Ordering System - Code Camp BD</title>
+        <title>Xác nhận đơn hàng</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/animsition.min.css" rel="stylesheet">
@@ -55,18 +56,18 @@ if (empty($_SESSION["user_id"])) {
                                 width="18%"> </a>
                         <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                             <ul class="nav navbar-nav">
-                                <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span
+                                <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
                                             class="sr-only">(current)</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span
+                                <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span
                                             class="sr-only"></span></a> </li>
 
                                 <?php
                                 if (empty($_SESSION["user_id"])) {
-                                    echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
+                                    echo '<li class="nav-item"><a href="login.php" class="nav-link active">Đăng nhập</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Đăng kí</a> </li>';
                                 } else {
-                                    echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
-                                    echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+                                    echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Món ăn đã đặt</a> </li>';
+                                    echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Đăng xuất</a> </li>';
                                 }
                                 ?>
                             </ul>
@@ -78,12 +79,10 @@ if (empty($_SESSION["user_id"])) {
                 <div class="top-links">
                     <div class="container">
                         <ul class="row links">
-                            <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose
-                                    Restaurant</a></li>
-                            <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Pick Your favorite food</a>
+                            <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn nhà hàng</a></li>
+                            <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Chọn món ăn mà bạn thích</a>
                             </li>
-                            <li class="col-xs-12 col-sm-4 link-item active"><span>3</span><a href="checkout.php">Order and
-                                    Pay</a></li>
+                            <li class="col-xs-12 col-sm-4 link-item active"><span>3</span><a href="checkout.php">Đặt món và thanh toán</a></li>
                         </ul>
                     </div>
                 </div>
@@ -104,26 +103,26 @@ if (empty($_SESSION["user_id"])) {
                                         <div class="col-sm-12">
                                             <div class="cart-totals margin-b-20">
                                                 <div class="cart-totals-title">
-                                                    <h4>Cart Summary</h4>
+                                                    <h4>Đơn của bạn</h4>
                                                 </div>
                                                 <div class="cart-totals-fields">
 
                                                     <table class="table">
                                                         <tbody>
                                                             <tr>
-                                                                <td>Cart Subtotal</td>
+                                                                <td>Chi phí món ăn</td>
                                                                 <td>
-                                                                    <?php echo "$" . $item_total; ?>
+                                                                    <?php echo $item_total . " VNĐ"; ?>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Delivery Charges</td>
-                                                                <td>Free</td>
+                                                                <td>Chi phí vận chuyển</td>
+                                                                <td>Miễn phí</td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="text-color"><strong>Total</strong></td>
+                                                                <td class="text-color"><strong>Tổng cộng</strong></td>
                                                                 <td class="text-color"><strong>
-                                                                        <?php echo "$" . $item_total; ?>
+                                                                        <?php echo $item_total." VNĐ"; ?>
                                                                     </strong></td>
                                                             </tr>
                                                         </tbody>
@@ -137,7 +136,7 @@ if (empty($_SESSION["user_id"])) {
                                                             <input name="mod" id="radioStacked1" checked value="COD"
                                                                 type="radio" class="custom-control-input"> <span
                                                                 class="custom-control-indicator"></span> <span
-                                                                class="custom-control-description">Cash on Delivery</span>
+                                                                class="custom-control-description">Thanh toán khi nhận hàng</span>
                                                         </label>
                                                     </li>
                                                     <li>
@@ -145,14 +144,14 @@ if (empty($_SESSION["user_id"])) {
                                                             <input name="mod" type="radio" value="paypal" disabled
                                                                 class="custom-control-input"> <span
                                                                 class="custom-control-indicator"></span> <span
-                                                                class="custom-control-description">Paypal <img
+                                                                class="custom-control-description">Thanh toán online <img
                                                                     src="images/paypal.jpg" alt="" width="90"></span>
                                                         </label>
                                                     </li>
                                                 </ul>
                                                 <p class="text-xs-center"> <input type="submit"
-                                                        onclick="return confirm('Do you want to confirm the order?');"
-                                                        name="submit" class="btn btn-success btn-block" value="Order Now">
+                                                        onclick="return confirm('Bạn có muốn đặt món ăn này');"
+                                                        name="submit" class="btn btn-success btn-block" value="Đặt hàng">
                                                 </p>
                                             </div>
                                 </form>

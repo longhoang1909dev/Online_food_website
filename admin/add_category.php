@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     if (empty($_POST['c_name'])) {
         $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>field Required!</strong>
+																<strong>Các ô không được bỏ trống!</strong>
 															</div>';
     } else {
 
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
         if (mysqli_num_rows($check_cat) > 0) {
             $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Category already exist!</strong>
+																<strong>Danh mục đã tồn tại!</strong>
 															</div>';
         } else {
 
@@ -30,20 +30,24 @@ if (isset($_POST['submit'])) {
             mysqli_query($db, $mql);
             $success = '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																New Category Added Successfully.</br></div>';
+																Danh mục mới đã được thêm vào.</br></div>';
 
         }
     }
 
 }
+
+
 ?>
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Add Category</title>
+    <title>Thêm danh mục</title>
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -70,19 +74,15 @@ if (isset($_POST['submit'])) {
                 <div class="navbar-collapse">
 
                     <ul class="navbar-nav mr-auto mt-md-0">
-
                     </ul>
-
                     <ul class="navbar-nav my-lg-0">
-
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
                                     alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -98,32 +98,32 @@ if (isset($_POST['submit'])) {
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
+                        <li class="nav-label">Trang chủ</li>
+                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
+                        <li class="nav-label">Danh mục</li>
+                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
+                                    dùng</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Restaurant</span></a>
+                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                                    hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_restaurant.php">All Restaurants</a></li>
-                                <li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restaurant.php">Add Restaurant</a></li>
+                                <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
+                                <li><a href="add_category.php">Thêm thể thể loại món ăn</a></li>
+                                <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
 
                             </ul>
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
                                     aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_menu.php">All Menues</a></li>
-                                <li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="all_menu.php">Tất cả Menues</a></li>
+                                <li><a href="add_menu.php">Thêm Menu</a></li>
 
 
                             </ul>
                         </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Orders</span></a></li>
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn
+                                    đặt</span></a></li>
 
                     </ul>
                 </nav>
@@ -134,35 +134,31 @@ if (isset($_POST['submit'])) {
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a
-                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this
-                    script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being
-                    provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.
-                    For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code
-                        Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH
-                        RONY</a> on facebook. Thanks for staying with <a
-                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee>
+                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                    một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
+                </marquee>
             </div>
 
             <div class="container-fluid">
                 <div class="row">
                     <div class="container-fluid">
+
                         <?php
                         echo $error;
-                        echo $success; ?>
+                        echo $success;
+                        ?>
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
-                                    <h4 class="m-b-0 text-white">Add Restaurant Category</h4>
+                                    <h4 class="m-b-0 text-white">Thêm thể loại món ăn</h4>
                                 </div>
                                 <form action='' method='post'>
                                     <div class="form-body">
-
                                         <hr>
                                         <div class="row p-t-20">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="control-label">Category</label>
+                                                    <label class="control-label">Thể loại</label>
                                                     <input type="text" name="c_name" class="form-control">
                                                 </div>
                                             </div>
@@ -170,8 +166,8 @@ if (isset($_POST['submit'])) {
 
                                         </div>
                                         <div class="form-actions">
-                                            <input type="submit" name="submit" class="btn btn-primary" value="Save">
-                                            <a href="add_category.php" class="btn btn-inverse">Cancel</a>
+                                            <input type="submit" name="submit" class="btn btn-primary" value="Lưu">
+                                            <a href="add_category.php" class="btn btn-inverse">Hủy bỏ</a>
                                         </div>
                                 </form>
                             </div>
@@ -183,23 +179,20 @@ if (isset($_POST['submit'])) {
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Listed Categories</h4>
+                            <h4 class="card-title">Danh sách thể loại</h4>
 
                             <div class="table-responsive m-t-40">
                                 <table id="myTable" class="table table-bordered table-hover table-striped">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Category Name</th>
-                                            <th>Date</th>
-
-                                            <th>Action</th>
+                                            <th>STT</th>
+                                            <th>Tên thể loại</th>
+                                            <th>Ngày tạo</th>
+                                            <th>Hành động</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
-
-
                                         <?php
                                         $sql = "SELECT * FROM res_category order by c_id desc";
                                         $query = mysqli_query($db, $sql);
@@ -226,9 +219,6 @@ if (isset($_POST['submit'])) {
 
 
                                         ?>
-
-
-
                                     </tbody>
                                 </table>
                             </div>
@@ -237,7 +227,6 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
-
         <?php include "include/footer.php" ?>
 
     </div>

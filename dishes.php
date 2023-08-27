@@ -14,7 +14,7 @@ include_once 'product-action.php';
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Dishes || Online Food Ordering System - Code Camp BD</title>
+    <title>Món ăn</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
@@ -32,18 +32,18 @@ include_once 'product-action.php';
                         width="18%"> </a>
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span
+                        <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
                                     class="sr-only">(current)</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span
+                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span
                                     class="sr-only"></span></a> </li>
 
                         <?php
                         if (empty($_SESSION["user_id"])) {
-                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
+                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Đăng nhập</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Đăng kí</a> </li>';
                         } else {
-                            echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
-                            echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+                            echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Món ăn đã đặt</a> </li>';
+                            echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Đăng xuất</a> </li>';
                         }
                         ?>
                     </ul>
@@ -56,11 +56,10 @@ include_once 'product-action.php';
             <div class="container">
                 <ul class="row links">
 
-                    <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose
-                            Restaurant</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn nhà hàng</a></li>
                     <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a
-                            href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Pick Your favorite food</a></li>
-                    <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay</a></li>
+                            href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Chọn món ăn mà bạn thích</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Đặt món và thanh toán</a></li>
                 </ul>
             </div>
         </div>
@@ -103,7 +102,7 @@ include_once 'product-action.php';
                     <div class="widget widget-cart">
                         <div class="widget-heading">
                             <h3 class="widget-title text-dark">
-                                Your Cart
+                                Món ăn bạn chọn
                             </h3>
                             <div class="clearfix"></div>
                         </div>
@@ -121,7 +120,7 @@ include_once 'product-action.php';
 
                                     <div class="form-group row no-gutter">
                                         <div class="col-xs-8">
-                                            <input type="text" class="form-control b-r-0" value=<?php echo "$" . $item["price"]; ?> readonly id="exampleSelect1">
+                                            <input type="text" class="form-control b-r-0" value=<?php echo $item["price"]. " VNĐ"; ?> readonly id="exampleSelect1">
 
                                         </div>
                                         <div class="col-xs-4">
@@ -138,21 +137,21 @@ include_once 'product-action.php';
                         </div>
                         <div class="widget-body">
                             <div class="price-wrap text-xs-center">
-                                <p>TOTAL</p>
+                                <p>Tổng cộng</p>
                                 <h3 class="value"><strong>
-                                        <?php echo "$" . $item_total; ?>
+                                        <?php echo $item_total . " VNĐ"; ?>
                                     </strong></h3>
-                                <p>Free Delivery!</p>
+                                <p>Miễn phí vận chuyển</p>
                                 <?php
                                 if ($item_total == 0) {
                                     ?>
                                     <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
-                                        class="btn btn-danger btn-lg disabled">Checkout</a>
+                                        class="btn btn-danger btn-lg disabled">Xác nhận đơn</a>
                                     <?php
                                 } else {
                                     ?>
                                     <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
-                                        class="btn btn-success btn-lg active">Checkout</a>
+                                        class="btn btn-success btn-lg active">Xác nhận đơn</a>
                                     <?php
                                 }
                                 ?>
@@ -203,13 +202,13 @@ include_once 'product-action.php';
                                             </div>
 
                                             <div class="col-xs-12 col-sm-12 col-lg-3 pull-right item-cart-info">
-                                                <span class="price pull-left">$
-                                                    <?php echo $product['price']; ?>
+                                                <span class="price pull-left">
+                                                    <?php echo $product['price'] ." VNĐ"; ?>
                                                 </span>
                                                 <input class="b-r-0" type="text" name="quantity" style="margin-left:30px;"
                                                     value="1" size="2" />
                                                 <input type="submit" class="btn theme-btn" style="margin-left:40px;"
-                                                    value="Add To Cart" />
+                                                    value="Thêm" />
                                             </div>
                                             </form>
                                         </div>

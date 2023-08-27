@@ -13,7 +13,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Restaurants</title>
+    <title>Danh sách nhà hàng</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
@@ -31,17 +31,17 @@ session_start();
                         width="18%"> </a>
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span
+                        <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
                                     class="sr-only">(current)</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span
+                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span
                                     class="sr-only"></span></a> </li>
                         <?php
                         if (empty($_SESSION["user_id"])) {
-                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
+                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Đăng nhập</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Đăng kí</a> </li>';
                         } else {
-                            echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
-                            echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+                            echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Món ăn đã đặt</a> </li>';
+                            echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Đăng xuất</a> </li>';
                         }
                         ?>
                     </ul>
@@ -53,9 +53,9 @@ session_start();
         <div class="top-links">
             <div class="container">
                 <ul class="row links">
-                    <li class="col-xs-12 col-sm-4 link-item active"><span>1</span><a href="#">Choose Restaurant</a></li>
-                    <li class="col-xs-12 col-sm-4 link-item"><span>2</span><a href="#">Pick Your favorite food</a></li>
-                    <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item active"><span>1</span><a href="#">Chọn nhà hàng</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item"><span>2</span><a href="#">Chọn món ăn mà bạn thích</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Đặt món và thanh toán</a></li>
                 </ul>
             </div>
         </div>
@@ -95,7 +95,7 @@ session_start();
 																<div class="right-content bg-white">
 																	<div class="right-review">
 																		
-																		<a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn btn-purple">View Menu</a> </div>
+																		<a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn btn-purple">Xem Menu</a> </div>
 																</div>
 																<!-- end:right info -->
 															</div>';
