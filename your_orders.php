@@ -143,7 +143,7 @@ else
                                         <tr>
                                             <td data-column="Item"> <?php echo $row['title']; ?></td>
                                             <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
-                                            <td data-column="price"><?php echo $row['price']; ?> VNĐ</td>
+                                            <td data-column="price"><?php echo number_format($row['price'], 0, ',', '.'); ?> VNĐ</td>
                                             <td data-column="status">
                                                 <?php 
 																			$status=$row['status'];
