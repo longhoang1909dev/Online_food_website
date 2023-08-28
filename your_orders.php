@@ -132,7 +132,7 @@ else
 						$query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."'");
 												if(!mysqli_num_rows($query_res) > 0 )
 														{
-															echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
+															echo '<td colspan="6"><center>Bạn không có đơn đặt nào. </center></td>';
 														}
 													else
 														{			      
@@ -143,7 +143,8 @@ else
                                         <tr>
                                             <td data-column="Item"> <?php echo $row['title']; ?></td>
                                             <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
-                                            <td data-column="price"><?php echo number_format($row['price'], 0, ',', '.'); ?> VNĐ</td>
+                                            <td data-column="price"><?php  $total = $row['quantity']* $row['price'];
+                                            echo $total; ?> VNĐ</td>
                                             <td data-column="status">
                                                 <?php 
 																			$status=$row['status'];

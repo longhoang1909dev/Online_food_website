@@ -1,1 +1,1 @@
- <footer class="footer" style="text-align: center;">Code Camp BD © 2023 - Online Food Ordering System Developer - <a href="https://www.facebook.com/dev.mhrony">MH RONY</a> </footer>
+ <footer class="footer" style="text-align: center;">Longhoangfood đồ ăn không ngon không uy tín thì cút <a href="https://www.facebook.com/dev.mhrony"></a> </footer>

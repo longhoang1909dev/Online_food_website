@@ -301,10 +301,10 @@ if (empty($_SESSION["adm_id"])) {
                                             <div class="media-body media-text-right">
                                                 <h2>
                                                     <?php
-                                                    $result = mysqli_query($db, 'SELECT SUM(price) AS value_sum FROM users_orders WHERE status = "closed"');
+                                                    $result = mysqli_query($db, 'SELECT  * FROM users_orders WHERE status = "closed"');
                                                     $row = mysqli_fetch_assoc($result);
-                                                    $sum = $row['value_sum'];
-                                                    echo $sum;
+                                                    $sum = $row['price'] * $row['quantity'];
+                                                    echo "<span style='font-size:23px; color:#455a64' >$sum VNĐ</span>";
                                                     ?>
                                                 </h2>
                                                 <p class="m-b-0">Tổng thu nhập</p>

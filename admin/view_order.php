@@ -16,7 +16,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>View Order</title>
+    <title>Thông tin đơn đặt</title>
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -75,7 +75,7 @@ session_start();
                                     alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -86,50 +86,52 @@ session_start();
 
         <div class="left-sidebar">
 
+
             <div class="scroll-sidebar">
 
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
+                        <li class="nav-label">Trang chủ</li>
+                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
+                        <li class="nav-label">Danh mục</li>
+                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
+                                    dùng</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Restaurant</span></a>
+                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                                    hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_restaurant.php">All Restaurants</a></li>
-                                <li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restaurant.php">Add Restaurant</a></li>
+                                <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
+                                <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
+                                <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
+
                             </ul>
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
                                     aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_menu.php">All Menues</a></li>
-                                <li><a href="add_menu.php">Add Menu</a></li>
+                                <li><a href="all_menu.php">Tất cả Menues</a></li>
+                                <li><a href="add_menu.php">Thêm Menu</a></li>
+
+
+
                             </ul>
                         </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Orders</span></a></li>
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn
+                                    đặt</span></a></li>
+
                     </ul>
                 </nav>
+
             </div>
+
         </div>
 
         <div class="page-wrapper">
-
             <div style="padding-top: 10px;">
-                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a
-                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this
-                    script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being
-                    provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.
-                    For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code
-                        Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH
-                        RONY</a> on facebook. Thanks for staying with <a
-                        href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee>
+                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                    một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
+                </marquee>
             </div>
             <div class="container-fluid">
                 <div class="row">
@@ -137,7 +139,7 @@ session_start();
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
-                                    <h4 class="m-b-0 text-white">View Order</h4>
+                                    <h4 class="m-b-0 text-white">Thông tin đơn đặt</h4>
                                 </div>
 
                                 <div class="table-responsive m-t-20">
@@ -150,7 +152,7 @@ session_start();
                                             $rows = mysqli_fetch_array($query);
                                             ?>
                                             <tr>
-                                                <td><strong>Username:</strong></td>
+                                                <td><strong>Tài khoản:</strong></td>
                                                 <td>
                                                     <center>
                                                         <?php echo $rows['username']; ?>
@@ -161,15 +163,14 @@ session_start();
                                                         <a href="javascript:void(0);"
                                                             onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']); ?>');"
                                                             title="Update order">
-                                                            <button type="button" class="btn btn-primary">Update Order
-                                                                Status</button></a>
+                                                            <button type="button" class="btn btn-primary">Cập nhật đơn đặt</button></a>
                                                     </center>
                                                 </td>
 
 
                                             </tr>
                                             <tr>
-                                                <td><strong>Title:</strong></td>
+                                                <td><strong>Tên món ăn:</strong></td>
                                                 <td>
                                                     <center>
                                                         <?php echo $rows['title']; ?>
@@ -180,14 +181,13 @@ session_start();
                                                         <a href="javascript:void(0);"
                                                             onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']); ?>');"
                                                             title="Update order">
-                                                            <button type="button" class="btn btn-primary">View User
-                                                                Detials</button></a>
+                                                            <button type="button" class="btn btn-primary">Xem thông tin người đặt</button></a>
 
                                                     </center>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Quantity:</strong></td>
+                                                <td><strong>Số lượng:</strong></td>
                                                 <td>
                                                     <center>
                                                         <?php echo $rows['quantity']; ?>
@@ -195,15 +195,15 @@ session_start();
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Price:</strong></td>
+                                                <td><strong>Giá:</strong></td>
                                                 <td>
-                                                    <center>$
-                                                        <?php echo $rows['price']; ?>
+                                                    <center>
+                                                        <?php echo $rows['price']; ?> VNĐ
                                                     </center>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Address:</strong></td>
+                                                <td><strong>Địa chỉ:</strong></td>
                                                 <td>
                                                     <center>
                                                         <?php echo $rows['address']; ?>
@@ -211,7 +211,7 @@ session_start();
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Date:</strong></td>
+                                                <td><strong>Ngày đặt:</strong></td>
                                                 <td>
                                                     <center>
                                                         <?php echo $rows['date']; ?>
@@ -219,7 +219,7 @@ session_start();
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Status:</strong></td>
+                                                <td><strong>Trạng thái:</strong></td>
                                                 <?php
                                                 $status = $rows['status'];
                                                 if ($status == "" or $status == "NULL") {
@@ -227,15 +227,14 @@ session_start();
                                                     <td>
                                                         <center><button type="button" class="btn btn-info"><span
                                                                     class="fa fa-bars" aria-hidden="true"></span>
-                                                                Dispatch</button></center>
+                                                                Đang chế biến</button></center>
                                                     </td>
-                                                <?php
+                                                    <?php
                                                 }
                                                 if ($status == "in process") { ?>
                                                     <td>
                                                         <center><button type="button" class="btn btn-warning"><span
-                                                                    class="fa fa-cog fa-spin" aria-hidden="true"></span>On a
-                                                                Way!</button></center>
+                                                                    class="fa fa-cog fa-spin" aria-hidden="true"></span>Đang vận chuyển</button></center>
                                                     </td>
                                                     <?php
                                                 }
@@ -244,9 +243,9 @@ session_start();
                                                     <td>
                                                         <center><button type="button" class="btn btn-primary"><span
                                                                     class="fa fa-check-circle" aria-hidden="true"></span>
-                                                                Delivered</button></center>
+                                                                Đã giao hàng</button></center>
                                                     </td>
-                                                <?php
+                                                    <?php
                                                 }
                                                 ?>
                                                 <?php
@@ -254,9 +253,9 @@ session_start();
                                                     ?>
                                                     <td>
                                                         <center><button type="button" class="btn btn-danger"> <i
-                                                                    class="fa fa-close"></i> Cancelled</button> </center>
+                                                                    class="fa fa-close"></i> Hủy bỏ</button> </center>
                                                     </td>
-                                                <?php
+                                                    <?php
                                                 }
                                                 ?>
                                             </tr>
@@ -274,7 +273,7 @@ session_start();
 
     </div>
 
-    <footer class="footer"> © 2022 - Online Food Ordering System </footer>
+    <footer class="footer"> Longhoangfood đồ ăn không uy tín thì cút </footer>
 
     </div>
 
