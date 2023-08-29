@@ -119,7 +119,8 @@ if (isset($_POST['submit'])) {
                                     </li>
 
                                     <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Kiểm tra tất cả thông báo</strong> <i class="fa fa-angle-right"></i> </a>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Kiểm tra tất
+                                                cả thông báo</strong> <i class="fa fa-angle-right"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -154,11 +155,11 @@ if (isset($_POST['submit'])) {
                         <li class="nav-label">Trang chủ</li>
                         <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
                         <li class="nav-label">Danh mục</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
+                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
+                                    dùng</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Nhà hàng</span></a>
+                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                                    hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
                                 <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
@@ -176,8 +177,8 @@ if (isset($_POST['submit'])) {
 
                             </ul>
                         </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn
+                                    đặt</span></a></li>
 
                     </ul>
                 </nav>
@@ -189,7 +190,7 @@ if (isset($_POST['submit'])) {
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
                     một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
                 </marquee>
             </div>
@@ -262,30 +263,30 @@ if (isset($_POST['submit'])) {
                                                 <select name="o_hr" class="form-control custom-select"
                                                     data-placeholder="Choose a Category">
                                                     <option>--Lựa chọn giờ mở cửa--</option>
-                                                    <option value="1am">1:00</option>
-                                                    <option value="2am">2:00</option>
-                                                    <option value="3am">3:00</option>
-                                                    <option value="4am">4:00</option>
-                                                    <option value="5am">5:00</option>
-                                                    <option value="6am">6:00</option>
-                                                    <option value="7am">7:00</option>
-                                                    <option value="8am">8:00</option>
-                                                    <option value="9am">9:00</option>
-                                                    <option value="10am">10:00</option>
-                                                    <option value="11am">11:00</option>
-                                                    <option value="12am">12:00</option>
-                                                    <option value="1pm">13:00</option>
-                                                    <option value="2pm">14:00</option>
-                                                    <option value="3pm">15:00</option>
-                                                    <option value="4pm">16:00</option>
-                                                    <option value="5pm">17:00</option>
-                                                    <option value="6pm">18:00</option>
-                                                    <option value="7pm">19:00</option>
-                                                    <option value="8pm">20:00</option>
-                                                    <option value="9pm">21:00</option>
-                                                    <option value="10pm">22:00</option>
-                                                    <option value="11pm">23:00</option>
-                                                    <option value="12pm">24:00</option>
+                                                    <option value="1:00">1:00</option>
+                                                    <option value="2:00">2:00</option>
+                                                    <option value="3:00">3:00</option>
+                                                    <option value="4:00">4:00</option>
+                                                    <option value="5:00">5:00</option>
+                                                    <option value="6:00">6:00</option>
+                                                    <option value="7:00">7:00</option>
+                                                    <option value="8:00">8:00</option>
+                                                    <option value="9:00">9:00</option>
+                                                    <option value="10:00">10:00</option>
+                                                    <option value="11:00">11:00</option>
+                                                    <option value="12:00">12:00</option>
+                                                    <option value="13:00">13:00</option>
+                                                    <option value="14:00">14:00</option>
+                                                    <option value="15:00">15:00</option>
+                                                    <option value="16:00">16:00</option>
+                                                    <option value="17:00">17:00</option>
+                                                    <option value="18:00">18:00</option>
+                                                    <option value="19:00">19:00</option>
+                                                    <option value="20:00">20:00</option>
+                                                    <option value="21:00">21:00</option>
+                                                    <option value="22:00">22:00</option>
+                                                    <option value="23:00">23:00</option>
+                                                    <option value="24:00">24:00</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -297,30 +298,30 @@ if (isset($_POST['submit'])) {
                                                 <select name="c_hr" class="form-control custom-select"
                                                     data-placeholder="Choose a Category">
                                                     <option>--Lựa chọn giờ đóng cửa--</option>
-                                                    <option value="1am">1:00</option>
-                                                    <option value="2am">2:00</option>
-                                                    <option value="3am">3:00</option>
-                                                    <option value="4am">4:00</option>
-                                                    <option value="5am">5:00</option>
-                                                    <option value="6am">6:00</option>
-                                                    <option value="7am">7:00</option>
-                                                    <option value="8am">8:00</option>
-                                                    <option value="9am">9:00</option>
-                                                    <option value="10am">10:00</option>
-                                                    <option value="11am">11:00</option>
-                                                    <option value="12am">12:00</option>
-                                                    <option value="1pm">13:00</option>
-                                                    <option value="2pm">14:00</option>
-                                                    <option value="3pm">15:00</option>
-                                                    <option value="4pm">16:00</option>
-                                                    <option value="5pm">17:00</option>
-                                                    <option value="6pm">18:00</option>
-                                                    <option value="7pm">19:00</option>
-                                                    <option value="8pm">20:00</option>
-                                                    <option value="9pm">21:00</option>
-                                                    <option value="10pm">22:00</option>
-                                                    <option value="11pm">23:00</option>
-                                                    <option value="12pm">24:00</option>
+                                                    <option value="1:00">1:00</option>
+                                                    <option value="2:00">2:00</option>
+                                                    <option value="3:00">3:00</option>
+                                                    <option value="4:00">4:00</option>
+                                                    <option value="5:00">5:00</option>
+                                                    <option value="6:00">6:00</option>
+                                                    <option value="7:00">7:00</option>
+                                                    <option value="8:00">8:00</option>
+                                                    <option value="9:00">9:00</option>
+                                                    <option value="10:00">10:00</option>
+                                                    <option value="11:00">11:00</option>
+                                                    <option value="12:00">12:00</option>
+                                                    <option value="13:00">13:00</option>
+                                                    <option value="14:00">14:00</option>
+                                                    <option value="15:00">15:00</option>
+                                                    <option value="16:00">16:00</option>
+                                                    <option value="17:00">17:00</option>
+                                                    <option value="18:00">18:00</option>
+                                                    <option value="19:00">19:00</option>
+                                                    <option value="20:00">20:00</option>
+                                                    <option value="21:00">21:00</option>
+                                                    <option value="22:00">22:00</option>
+                                                    <option value="23:00">23:00</option>
+                                                    <option value="24:00">24:00</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -332,12 +333,12 @@ if (isset($_POST['submit'])) {
                                                 <select name="o_days" class="form-control custom-select"
                                                     data-placeholder="Choose a Category" tabindex="1">
                                                     <option>--Lựa chọn ngày mở cửa--</option>
-                                                    <option value="Mon-Tue">T2-T3</option>
-                                                    <option value="Mon-Wed">T2-T4</option>
-                                                    <option value="Mon-Thu">T2-T5</option>
-                                                    <option value="Mon-Fri">T2-T6</option>
-                                                    <option value="Mon-Sat">T2-T7</option>
-                                                    <option value="24hr-x7">Cả tuần</option>
+                                                    <option value="T2-T3">T2-T3</option>
+                                                    <option value="T2-T4">T2-T4</option>
+                                                    <option value="T2-T5">T2-T5</option>
+                                                    <option value="T2-T6">T2-T6</option>
+                                                    <option value="T2-T7">T2-T7</option>
+                                                    <option value="T2-T7">Cả tuần</option>
                                                 </select>
                                             </div>
                                         </div>

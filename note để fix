@@ -1,4 +1,9 @@
-những lỗi cần fix
+NHỮNG LỖI CẦN FIX
+
+
+
+
+
 -thiếu tìm kiếm món ăn
 -thiếu message phía người dùng lúc thay đổi status( xem chi tiết đơn hàng)
 -lỗi font chữ
@@ -6,9 +11,11 @@ những lỗi cần fix
 -thông báo lúc đăng kí đăng nhập thành công
 - your-order lúc status thành đã giao hoặc hủy bỏ vẫn còn action delet
 -lỗi icon
-- update thể loại bị lỗi font(  tiếng việt lỗi )-----done
+; - update thể loại bị lỗi font(  tiếng việt lỗi )-----done
 -- hệ thống vote star/ feedback cửa hàng
--- tiền tệ // đã biết cách fix your_od  echo number_format($row['price'], 0, ',', '.');
--- bug khi xóa đơn đặt thì tổng thu nhập mất 
+; -- tiền tệ // đã biết cách fix your_od  echo number_format($row['price'], 0, ',', '.');--done
 -- xem user lúc đặt đơn phía admin lỗi phải đăng nhập
 - lỗi hiển thị giá đơn đặt( đã fix dashboard admin và yourorder)
+-- lỗi reload trang thì auto tăng dishes.phph
+--chuyển sang dạng mvc
+-- update_menu bug kh hiển thị thông báo khi không điền đầy đủ

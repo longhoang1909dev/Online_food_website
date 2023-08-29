@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     if (empty($_POST['d_name']) || empty($_POST['about']) || $_POST['price'] == '' || $_POST['res_name'] == '') {
         $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>All fields Must be Fillup!</strong>
+																<strong>Vui lòng điền đầy đủ thông tin!</strong>
 															</div>';
     } else {
 
@@ -185,8 +185,8 @@ if (isset($_POST['submit'])) {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Giá </label>
-                                                <input type="text" name="price" value="<?php echo $roww['price']; ?>"
-                                                    class="form-control" placeholder="$">
+                                                <input type="text" name="price" value="<?php echo number_format($roww['price'], 0, ',', '.'); ?>"
+                                                    class="form-control" placeholder="VNĐ">
                                             </div>
                                         </div>
 

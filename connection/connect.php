@@ -4,7 +4,7 @@
 $servername = "localhost"; 
 $username = "root"; 
 $password = ""; 
-$dbname = "code_camp_bd_fos";
+$dbname = "online_food";
 
 $db = mysqli_connect($servername, $username, $password, $dbname); 
 mysqli_set_charset($db, "utf8");

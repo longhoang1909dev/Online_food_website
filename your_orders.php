@@ -144,7 +144,7 @@ else
                                             <td data-column="Item"> <?php echo $row['title']; ?></td>
                                             <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
                                             <td data-column="price"><?php  $total = $row['quantity']* $row['price'];
-                                            echo $total; ?> VNĐ</td>
+                                            echo number_format($total, 0, ',', '.') ; ?> VNĐ</td>
                                             <td data-column="status">
                                                 <?php 
 																			$status=$row['status'];

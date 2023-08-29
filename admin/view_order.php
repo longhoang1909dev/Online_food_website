@@ -198,7 +198,7 @@ session_start();
                                                 <td><strong>Giá:</strong></td>
                                                 <td>
                                                     <center>
-                                                        <?php echo $rows['price']; ?> VNĐ
+                                                        <?php echo number_format($rows['price'], 0, ',', '.'); ?> VNĐ
                                                     </center>
                                                 </td>
                                             </tr>

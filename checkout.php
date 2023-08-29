@@ -112,7 +112,7 @@ if (empty($_SESSION["user_id"])) {
                                                             <tr>
                                                                 <td>Chi phí món ăn</td>
                                                                 <td>
-                                                                    <?php echo $item_total . " VNĐ"; ?>
+                                                                    <?php echo number_format($item_total, 0, ',', '.')  . " VNĐ"; ?>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -122,7 +122,7 @@ if (empty($_SESSION["user_id"])) {
                                                             <tr>
                                                                 <td class="text-color"><strong>Tổng cộng</strong></td>
                                                                 <td class="text-color"><strong>
-                                                                        <?php echo $item_total." VNĐ"; ?>
+                                                                        <?php echo number_format($item_total, 0, ',', '.')  . " VNĐ"; ?>
                                                                     </strong></td>
                                                             </tr>
                                                         </tbody>

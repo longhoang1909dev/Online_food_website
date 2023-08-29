@@ -120,7 +120,7 @@ include_once 'product-action.php';
 
                                     <div class="form-group row no-gutter">
                                         <div class="col-xs-8">
-                                            <input type="text" class="form-control b-r-0" value=<?php echo $item["price"]. " VNĐ"; ?> readonly id="exampleSelect1">
+                                            <input type="text" class="form-control b-r-0" value=<?php echo  number_format($item["price"], 0, ',', '.'). " VNĐ"; ?> readonly id="exampleSelect1">
 
                                         </div>
                                         <div class="col-xs-4">
@@ -139,7 +139,7 @@ include_once 'product-action.php';
                             <div class="price-wrap text-xs-center">
                                 <p>Tổng cộng</p>
                                 <h3 class="value"><strong>
-                                        <?php echo $item_total . " VNĐ"; ?>
+                                        <?php echo number_format($item_total, 0, ',', '.') . " VNĐ"; ?>
                                     </strong></h3>
                                 <p>Miễn phí vận chuyển</p>
                                 <?php
@@ -203,7 +203,7 @@ include_once 'product-action.php';
 
                                             <div class="col-xs-12 col-sm-12 col-lg-3 pull-right item-cart-info">
                                                 <span class="price pull-left">
-                                                    <?php echo $product['price'] ." VNĐ"; ?>
+                                                    <?php echo number_format($product['price'], 0, ',', '.')." VNĐ"; ?>
                                                 </span>
                                                 <input class="b-r-0" type="text" name="quantity" style="margin-left:30px;"
                                                     value="1" size="2" />

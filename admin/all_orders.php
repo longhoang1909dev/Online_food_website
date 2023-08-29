@@ -183,7 +183,7 @@ session_start();
                                                     <td>' . $rows['username'] . '</td>
                                                     <td>' . $rows['title'] . '</td>
                                                     <td>' . $rows['quantity'] . '</td>
-													<td>' . $total . ' VNĐ</td>
+													<td>' .  number_format($total, 0, ',', '.') . ' VNĐ</td>
 													<td>' . $rows['address'] . '</td>';
                                                     ?>
                                                     <?php
