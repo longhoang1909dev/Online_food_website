@@ -107,7 +107,8 @@ include("connection/connect.php");
 
                                                         $mql = "INSERT INTO users(username,f_name,l_name,email,phone,password,address) VALUES('" . $_POST['username'] . "','" . $_POST['firstname'] . "','" . $_POST['lastname'] . "','" . $_POST['email'] . "','" . $_POST['phone'] . "','" . $_POST['password'] . "','" . $_POST['address'] . "')";
                                                         mysqli_query($db, $mql);
-
+                                                        
+                                                       echo" <script>alert('Đăng kí thành công')</script>";
                                                         header("refresh:0.1;url=login.php");
                                                     }
                                                 }

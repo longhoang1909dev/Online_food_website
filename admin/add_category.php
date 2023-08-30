@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+<script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
 <html lang="en">
+
 <?php
 include("../connection/connect.php");
 error_reporting(0);

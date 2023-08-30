@@ -1,4 +1,5 @@
-doc
+
+</html>
 <?php
 include("../connection/connect.php");
 error_reporting(0);
@@ -18,6 +19,7 @@ session_start();
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
 </head>
 
 

@@ -21,6 +21,7 @@ session_start();
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
     <script language="javascript" type="text/javascript">
         var popUpWin = 0;
 

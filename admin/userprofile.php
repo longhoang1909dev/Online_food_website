@@ -42,6 +42,7 @@ if (strlen($_SESSION['user_id']) == 0) {
         <link href="css/helper.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
 
         <style type="text/css" rel="stylesheet">
             .indent-small {
