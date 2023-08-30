@@ -26,6 +26,8 @@ if (empty($_SESSION["user_id"])) {
             unset($item["price"]);
             $success = "Cảm ơn. Đơn hàng của bạn đã được đặt thành công";
             function_alert();
+            $roww = mysqli_fetch_array(mysqli_query($db, "select MAX(o_id) from users_orders where o_id > 0"));  
+            mysqli_query($db, "insert into remark(frm_id,remark) values('" . $roww['MAX(o_id)'] . "',' không có lời nhắn')");
         }
     }
     ?>

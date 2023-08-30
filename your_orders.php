@@ -123,12 +123,14 @@ else
                                             <th>Số lượng</th>
                                             <th>Giá</th>
                                             <th>Trạng thái</th>
+                                            <th>Lời nhắn</th>
                                             <th>Ngày</th>
                                             <th>Hành động</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php 
+                                        
 						$query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."'");
 												if(!mysqli_num_rows($query_res) > 0 )
 														{
@@ -140,6 +142,8 @@ else
 										  while($row=mysqli_fetch_array($query_res))
 										  {
 							?>
+
+                            
                                         <tr>
                                             <td data-column="Item"> <?php echo $row['title']; ?></td>
                                             <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
@@ -175,6 +179,16 @@ else
 																			} 
 																			?>
                                             </td>
+                                            <td data-column="message"> <?php 
+                                            $query_remark = mysqli_query($db, "select * from remark where '".$row['o_id']."'= frm_id");
+
+                                            while($roww = mysqli_fetch_array($query_remark))
+                                            {
+                                                echo $roww['remark'];
+                                            }
+                                            ?>
+                                            
+                                        </td>
                                             <td data-column="Date"> <?php echo $row['date']; ?></td>
                                             <td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id'];?>" onclick="return confirm('Bạn chắc chắn muốn hủy đơn hàng này chứ?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
                                             </td>

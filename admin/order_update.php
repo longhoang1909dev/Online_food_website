@@ -10,7 +10,7 @@ if (strlen($_SESSION['user_id']) == 0) {
         $form_id = $_GET['form_id'];
         $status = $_POST['status'];
         $remark = $_POST['remark'];
-        $query = mysqli_query($db, "insert into remark(frm_id,status,remark) values('$form_id','$status','$remark')");
+        $query = mysqli_query($db, " update remark set status ='$status', remark = '$remark' where frm_id = '$form_id'");
         $sql = mysqli_query($db, "update users_orders set status='$status' where o_id='$form_id'");
 
         echo "<script>alert('Cập nhật thành công');</script>";
