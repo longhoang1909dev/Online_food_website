@@ -18,7 +18,7 @@ if (empty($_SESSION["user_id"])) {
     foreach ($_SESSION["cart_item"] as $item) {
         $item_total += ($item["price"] * $item["quantity"]);
         if ($_POST['submit']) {
-            $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item["price"] . "')";
+            $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item_total . "')";
             mysqli_query($db, $SQL);
             unset($_SESSION["cart_item"]);
             unset($item["title"]);

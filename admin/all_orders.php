@@ -179,12 +179,12 @@ session_start();
 
                                                     ?>
                                                     <?php
-                                                    $total = $rows['quantity'] * $rows['price'];
+                                                    $total = $rows['quantity'] * $rows['price'];// đang lỗi đang checkout full dòng
                                                     echo ' <tr>
                                                     <td>' . $rows['username'] . '</td>
                                                     <td>' . $rows['title'] . '</td>
                                                     <td>' . $rows['quantity'] . '</td>
-													<td>' .  number_format($total, 0, ',', '.') . ' VNĐ</td>
+													<td>' .  number_format($rows['price'], 0, ',', '.') . ' VNĐ</td>   
 													<td>' . $rows['address'] . '</td>';
                                                     ?>
                                                     <?php
@@ -222,7 +222,7 @@ session_start();
                                                     ?>
                                                     <td>
                                                         <a href="delete_orders.php?order_del=<?php echo $rows['o_id']; ?>"
-                                                            onclick="return confirm('Are you sure?');"
+                                                            onclick="return confirm('Bạn chắc chắn muốn xóa?');"
                                                             class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i
                                                                 class="fa fa-trash-o" style="font-size:16px"></i></a>
                                                         <?php

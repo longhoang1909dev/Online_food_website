@@ -5,7 +5,7 @@ NHỮNG LỖI CẦN FIX
 
 
 -thiếu tìm kiếm món ăn
--thiếu message phía người dùng lúc thay đổi status( xem chi tiết đơn hàng)
+; -thiếu message phía người dùng lúc thay đổi status( xem chi tiết đơn hàng)--done
 ; -lỗi font chữ --- done
 -thiếu thêm địa chỉ lúc đặt hàng
 ; -thông báo lúc đăng kí đăng nhập thành công ---done
@@ -22,3 +22,5 @@ NHỮNG LỖI CẦN FIX
 --vieworder lỗi giá 
 --hiển thị lỗi giá ở dashboard
 ; -- xóa nhà hàng nnguowif dùng đồ ăn không có thông báo --- done
+
+-- file all_oder đang lỗi display giá khi đặt nhiều món
