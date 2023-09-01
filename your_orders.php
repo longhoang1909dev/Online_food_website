@@ -131,7 +131,7 @@ else
                                     <tbody>
                                         <?php 
                                         
-						$query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."'");
+						$query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."' order by o_id DESC");
 												if(!mysqli_num_rows($query_res) > 0 )
 														{
 															echo '<td colspan="6"><center>Bạn không có đơn đặt nào. </center></td>';
@@ -147,8 +147,8 @@ else
                                         <tr>
                                             <td data-column="Item"> <?php echo $row['title']; ?></td>
                                             <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
-                                            <td data-column="price"><?php  $total = $row['quantity']* $row['price'];
-                                            echo number_format($total, 0, ',', '.') ; ?> VNĐ</td>
+                                            <td data-column="price"><?php 
+                                            echo number_format($row['price'], 0, ',', '.') ; ?> VNĐ</td>
                                             <td data-column="status">
                                                 <?php 
 																			$status=$row['status'];
@@ -190,7 +190,16 @@ else
                                             
                                         </td>
                                             <td data-column="Date"> <?php echo $row['date']; ?></td>
+                                            <?php
+                                                if($status !='closed' ){
+
+                                                    ?>
                                             <td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id'];?>" onclick="return confirm('Bạn chắc chắn muốn hủy đơn hàng này chứ?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
+
+                                                <?php
+                                                }
+                                            ?>
+
                                             </td>
                                         </tr>
                                         <?php }} ?>

@@ -18,9 +18,10 @@ NHỮNG LỖI CẦN FIX
 ; -- lỗi reload trang thì auto tăng dishes.phph chịu
 --chuyển sang dạng mvc
 -- update_menu bug kh hiển thị thông báo khi không điền đầy đủ
--- update order lỗi 
---vieworder lỗi giá 
---hiển thị lỗi giá ở dashboard
+; -- update order lỗi  done
+; --vieworder lỗi giá  done
+--giá đặt bị sai khi đặt nhiều đơn hàng cùng 1 lúc
+; --hiển thị lỗi giá ở dashboard -- done
 ; -- xóa nhà hàng nnguowif dùng đồ ăn không có thông báo --- done
 
--- file all_oder đang lỗi display giá khi đặt nhiều món
+; -- file all_oder đang lỗi display giá khi đặt nhiều món--done

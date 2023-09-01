@@ -180,12 +180,12 @@ session_start();
 
                                                     ?>
                                                     <?php
-                                                    $total = $rows['quantity'] * $rows['price'];// đang lỗi đang checkout full dòng
+                                                  
                                                     echo ' <tr>
                                                     <td>' . $rows['username'] . '</td>
                                                     <td>' . $rows['title'] . '</td>
                                                     <td>' . $rows['quantity'] . '</td>
-													<td>' .  number_format($rs['price'] * $rows['quantity'], 0, ',', '.') . ' VNĐ</td>   
+													<td>' .  number_format($rows['price'], 0, ',', '.') . ' VNĐ</td>   
 													<td>' . $rows['address'] . '</td>';
                                                     ?>
                                                     <?php
