@@ -20,58 +20,6 @@ session_start();
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-    <style>
-        .popular .container .search {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-bottom: 18px;
-
-        }
-
-        .popular .container .search .search__input {
-            font-family: inherit;
-            font-size: inherit;
-            box-shadow: 0 0 1em #00000013;
-            border: none;
-            color: #646464;
-            padding: 0.7rem 1rem;
-            border-radius: 3px;
-            width: 35em;
-            transition: all ease-in-out .5s;
-            margin-right: -2rem;
-        }
-
-        .popular .container .search .search__input:hover,
-        .search__input:focus {
-            box-shadow: 0 0 1em #00000013;
-        }
-
-        .popular .container .search .search__input:focus {
-            outline: none;
-            /* background-color: #f0eeee; */
-        }
-
-        .popular .container .search .search__input:focus+.search__button {
-            /* background-color: #f0eeee; */
-        }
-
-        .popular .container .search .search__button {
-            transition: all ease-in-out .5s;
-            border: none;
-            outline: none;
-            background-color: white;
-        }
-
-        .popular .container .search .search__button:hover {
-            cursor: pointer;
-        }
-
-        .popular .container .search .search__button .search__icon {
-            font-size: 22px;
-        }
-    </style>
 
 </head>
 

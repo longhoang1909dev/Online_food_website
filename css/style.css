@@ -588,58 +588,55 @@ hr {
   .popular .container .search {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
-  }
-  
-  .popular .container .search .search__input {
+    margin-bottom: 18px;
+
+}
+
+.popular .container .search .search__input {
     font-family: inherit;
     font-size: inherit;
-    background-color: #f4f2f2;
+    box-shadow: 0 0 1em #00000013;
     border: none;
     color: #646464;
     padding: 0.7rem 1rem;
-    border-radius: 30px;
-    width: 12em;
+    border-radius: 3px;
+    width: 35em;
     transition: all ease-in-out .5s;
     margin-right: -2rem;
-  }
-  
-  .popular .container .search .search__input:hover, .search__input:focus {
-    box-shadow: 0 0 1em #00000013;
-  }
-  
-  .popular .container .search .search__input:focus {
-    outline: none;
-    background-color: #f0eeee;
-  }
-  
-  .popular .container .search .search__input::-webkit-input-placeholder {
-    font-weight: 100;
-    color: #ccc;
-  }
-  
-  .popular .container .search .search__input:focus + .search__button {
-    background-color: #f0eeee;
-  }
-  
-  .popular .container .search .search__button {
-    border: none;
-    background-color: #f4f2f2;
-    margin-top: .1em;
-  }
-  
-  .popular .container .search .search__button:hover {
-    cursor: pointer;
-  }
-  
-  .popular .container .search .search__button .search__icon {
-    height: 1.3em;
-    width: 1.3em;
-    fill: #b4b4b4;
-  }
+}
 
-/* end input popular */
+.popular .container .search .search__input:hover,
+.search__input:focus {
+    box-shadow: 0 0 1em #00000013;
+}
+
+.popular .container .search .search__input:focus {
+    outline: none;
+    /* background-color: #f0eeee; */
+}
+
+.popular .container .search .search__input:focus+.search__button {
+    outline: none;
+    /* background-color: #f0eeee; */
+}
+
+.popular .container .search .search__button {
+    transition: all ease-in-out .5s;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.popular .container .search .search__button:hover {
+    cursor: pointer;
+}
+
+.popular .container .search .search__button .search__icon {
+    font-size: 22px;
+}
+  /*end input popular */
 
   .food-item-wrap {
     border: 1px solid #eaebeb;
