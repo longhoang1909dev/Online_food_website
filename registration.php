@@ -24,7 +24,7 @@ include("connection/connect.php");
 
 
 <body>
-    <div style=" background-image: url('images/img/pimg.jpg');">
+    <div style=" background: url('images/img/pimg.jpg') ;">
         <header id="header" class="header-scroll top-header headrom">
             <nav class="navbar navbar-dark">
                 <div class="container">
@@ -107,13 +107,16 @@ include("connection/connect.php");
 
                                                         $mql = "INSERT INTO users(username,f_name,l_name,email,phone,password,address) VALUES('" . $_POST['username'] . "','" . $_POST['firstname'] . "','" . $_POST['lastname'] . "','" . $_POST['email'] . "','" . $_POST['phone'] . "','" . $_POST['password'] . "','" . $_POST['address'] . "')";
                                                         mysqli_query($db, $mql);
-                                                        
-                                                       echo" <script>alert('Đăng kí thành công')</script>";
+
+                                                        echo " <script>alert('Đăng kí thành công')</script>";
                                                         header("refresh:0.1;url=login.php");
                                                     }
                                                 }
                                             }
                                             ?>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <h3 style="line-height: 1.2; text-transform: uppercase; color:white">Đăng ký</h3>
                                         </div>
                                         <div class="form-group col-sm-12">
                                             <label for="exampleInputEmail1">Tài khoản</label>

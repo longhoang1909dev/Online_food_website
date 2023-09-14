@@ -104,12 +104,14 @@ session_start();
 
     <section class="popular">
         <div class="container">
-            <div class="search">
-                <input type="text" class="search__input" placeholder="Tìm kiếm">
-                <button class="search__button">
+            <form action="">
+                <div class="search">
+                    <input type="text" class="search__input" placeholder="Tìm kiếm">
+                    <button class="search__button">
                         <i class="fa fa-search search-submit search__icon" aria-hidden="true"></i>
-                </button>
-            </div>
+                    </button>
+                </div>
+            </form>
 
             <div class="title text-xs-center m-b-30">
                 <h2>Món ăn phổ biến của tháng</h2>
