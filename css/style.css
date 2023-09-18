@@ -185,15 +185,17 @@ hr {
 }
 
 .btn-purple {
-  color: #eaebeb;
-  background-color: #5c4ac7;
+  color: #ffffff;
+  background-color: #F94C10;
   border-color: #eaebeb;
+  opacity: 1;
 }
 
 .btn-purple:hover {
   color: #eaebeb;
-  background-color: #4e3fa7;
+  background-color: #F94C10;
   border-color: #eaebeb;
+  opacity: 0.9;
 }
 
 .theme-btn {
@@ -225,7 +227,7 @@ hr {
 }
 
 .bg-white {
-  background-color: #fff;
+  background: rgba(252, 251, 249, 0.68);
 }
 
 .primary-color {
@@ -2021,10 +2023,9 @@ a[aria-expanded="false"] .fa-angle-down {
 
 .restaurant-entry .entry-logo {
   float: left;
-  width: 110px;
-  height: auto;
+  width: 145px;
   border: 1px solid #eaebeb;
-  border-radius: 2px;
+  border-radius: 6px;
   margin-top: 15px;
   margin-left: 15px;
   overflow: hidden;
@@ -2036,6 +2037,7 @@ a[aria-expanded="false"] .fa-angle-down {
 }
 
 .restaurant-entry .entry-dscr {
+  margin-left: 35px;
   padding-left: 145px;
   margin-top: 15px;
 }
@@ -2054,8 +2056,8 @@ a[aria-expanded="false"] .fa-angle-down {
 
 .restaurant-entry .right-review {
   padding: 15px 10px;
-  border-left: 1px solid #eaebeb;
   min-height: 145px;
+  transform: translateY(23%);
 }
 
 .restaurant-entry .right-review p {
@@ -2221,8 +2223,11 @@ a[aria-expanded="false"] .fa-angle-down {
 }
 
 .pricing-box .btn:hover {
-  opacity: 0.9;
   color: #fff;
+}
+
+.btn:hover{
+  opacity: 0.9;
 }
 
 .pricing-faq div {

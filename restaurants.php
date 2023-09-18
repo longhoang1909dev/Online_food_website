@@ -19,6 +19,26 @@ session_start();
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .restaurants-page .container .row .img {
+            background-image: url(https://2sao.vietnamnetjsc.vn/images/2017/06/21/10/01/cham-ngon-nguoi-nang-can-15.jpg);
+            margin-bottom: 20px;
+            border-radius: 6px;
+            background-position: center;
+        }
+
+        .food{
+            border-bottom: 1px solid black;
+            padding-bottom: 20px;
+            height: 150px;
+        }
+
+        .show-restaurant{
+            border-bottom: 1px solid black;
+            height: 150px;
+        }
+    </style>
 </head>
 
 <body>
@@ -70,16 +90,16 @@ session_start();
         </div>
         <section class="restaurants-page">
             <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
+                <div class="row" style="display:flex; ">
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3 img">
                     </div>
                     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
-                        <div class="bg-gray restaurant-entry">
-                            <div class="row">
+                        <div class="bg-gray restaurant-entry" style="border-radius: 6px">
+                            <div class="row" style="margin: 0;">
                                 <?php $ress = mysqli_query($db, "select * from restaurant");
                                 while ($rows = mysqli_fetch_array($ress)) {
 
-                                    echo ' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
+                                    echo ' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left food">
 															<div class="entry-logo">
 																<a class="img-fluid" href="dishes.php?res_id=' . $rows['rs_id'] . '" > <img src="admin/Res_img/' . $rows['image'] . '" alt="Food logo"></a>
 															</div>
@@ -91,7 +111,7 @@ session_start();
 															<!-- end:Entry description -->
 														</div>
 														
-														 <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
+														 <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center show-restaurant">
 																<div class="right-content bg-white">
 																	<div class="right-review">
 																		
