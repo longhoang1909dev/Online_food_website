@@ -156,9 +156,8 @@ hr {
 }
 
 .form-control:focus {
-  background: rgba(10, 10, 10, 0.5);
+  background: rgba(0, 0, 0, 0.0);
   color: white;
-
 }
 
 .custom-select {
@@ -176,6 +175,7 @@ hr {
 
 .btn {
   transition: all 0.4s;
+  opacity: 1;
 }
 
 .btn-secondary {
@@ -360,7 +360,7 @@ hr {
 }
 
 .navbar-nav .nav-item .nav-link {
-  transition: 0.5s ease-in;
+  transition: 0.5s;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
@@ -2221,6 +2221,7 @@ a[aria-expanded="false"] .fa-angle-down {
 }
 
 .pricing-box .btn:hover {
+  opacity: 0.9;
   color: #fff;
 }
 

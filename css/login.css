@@ -39,9 +39,8 @@ body {
   background: #ffffff;
   max-width: 320px;
   width: 100%;
-  border-top: 5px solid #5c4ac7;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+  border-radius: 20px;
 }
 
 .form-module .toggle {
