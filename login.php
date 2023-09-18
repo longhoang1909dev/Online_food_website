@@ -15,7 +15,8 @@
     <style type="text/css">
         #buttn {
             color: #fff;
-            background-color: #5c4ac7;
+            background-color: #F94C10;
+            cursor: pointer;
         }
     </style>
 
@@ -88,7 +89,7 @@
                     <div class="toggle">
                     </div>
                     <div class="form">
-                        <h2>Đăng nhập vào tài khoản của bạn</h2>
+                        <h3>ĐĂNG NHẬP</h3>
                         <span style="color:red;">
                             <?php echo $message; ?>
                         </span>
@@ -98,11 +99,11 @@
                         <form action="" method="post">
                             <input type="text" placeholder="Tài khoản" name="username" />
                             <input type="password" placeholder="Mật khẩu" name="password" />
-                            <input type="submit" id="buttn" name="submit" value="Login" />
+                            <input type="submit" id="buttn" name="submit" value="Đăng nhập" style="border: none;"/>
                         </form>
                     </div>
 
-                    <div class="cta">Chưa đăng kí?<a href="registration.php" style="color:#5c4ac7;"> Tạo tài khoản</a></div>
+                    <div class="cta">Chưa đăng kí?<a href="registration.php"> Tạo tài khoản</a></div>
                 </div>
                 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 

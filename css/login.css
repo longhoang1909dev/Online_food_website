@@ -36,10 +36,10 @@ body {
 
 .form-module {
   position: relative;
-  background: #ffffff;
+  background: rgba(30, 10, 20, 0.6);
   max-width: 320px;
   width: 100%;
-  margin: 0 auto;
+  margin: 12vh auto;
   border-radius: 20px;
 }
 
@@ -83,37 +83,44 @@ body {
 
 .form-module .form {
   display: none;
-  padding: 40px;
+  padding: 40px 40px 20px 40px;
 }
 
 .form-module .form:nth-child(2) {
   display: block;
 }
 
-.form-module h2 {
+.form-module h3 {
   margin: 0 0 20px;
   color: #5c4ac7;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: white;
 }
 
 .form-module input {
+  background: rgba(0, 0, 0, 0);
   outline: none;
   display: block;
   width: 100%;
-  border: 1px solid #ccc;
+  color: #ffffff;
+  border: 1px solid #eaebeb;
   margin: 0 0 20px;
   padding: 10px 15px;
   box-sizing: border-box;
   font-weight: 400;
-  transition: 0.3s ease;
+  transition: 0.3s;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  opacity: 1;
 }
 
-.form-module input:focus {
-  border: 1px solid #5c4ac7;
-  color: #333333;
+.form-module input #buttn:hover{
+  opacity: 0.9;
 }
+
 
 .form-module button {
   cursor: pointer;
@@ -130,16 +137,16 @@ body {
 }
 
 .form-module .cta {
-  background: #f2f2f2;
   width: 100%;
   padding: 15px 40px;
   box-sizing: border-box;
-  color: #666666;
+  color: #fff;
   font-size: 12px;
   text-align: center;
 }
 
 .form-module .cta a {
-  color: #333333;
+  color: #fff;
+  opacity: 0.7;
   text-decoration: none;
 }
