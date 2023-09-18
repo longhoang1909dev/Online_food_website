@@ -2043,10 +2043,14 @@ a[aria-expanded="false"] .fa-angle-down {
 }
 
 .restaurant-entry .entry-dscr h5 a {
-  color: #414551;
+  color: black;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+}
+
+.restaurant-entry .entry-dscr span {
+  color: black;
 }
 
 .restaurant-entry .entry-dscr ul li {
