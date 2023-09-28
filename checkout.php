@@ -13,7 +13,7 @@ function function_alert()
 if (empty($_SESSION["user_id"])) {
     echo "<script>alert('Bạn cần phải đăng nhập để thực hiện chức năng này');</script>";
     echo "<script>window.location.replace('login.php');</script>";
-    
+
 } else {
     foreach ($_SESSION["cart_item"] as $item) {
         $item_total += ($item["price"] * $item["quantity"]);
@@ -26,7 +26,7 @@ if (empty($_SESSION["user_id"])) {
             unset($item["price"]);
             $success = "Cảm ơn. Đơn hàng của bạn đã được đặt thành công";
             function_alert();
-            $roww = mysqli_fetch_array(mysqli_query($db, "select MAX(o_id) from users_orders where o_id > 0"));  
+            $roww = mysqli_fetch_array(mysqli_query($db, "select MAX(o_id) from users_orders where o_id > 0"));
             mysqli_query($db, "insert into remark(frm_id,remark) values('" . $roww['MAX(o_id)'] . "',' không có lời nhắn')");
         }
     }
@@ -60,8 +60,8 @@ if (empty($_SESSION["user_id"])) {
                             <ul class="nav navbar-nav">
                                 <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
                                             class="sr-only">(current)</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span
-                                            class="sr-only"></span></a> </li>
+                                <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng
+                                        <span class="sr-only"></span></a> </li>
 
                                 <?php
                                 if (empty($_SESSION["user_id"])) {
@@ -81,10 +81,12 @@ if (empty($_SESSION["user_id"])) {
                 <div class="top-links">
                     <div class="container">
                         <ul class="row links">
-                            <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn nhà hàng</a></li>
+                            <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn nhà
+                                    hàng</a></li>
                             <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Chọn món ăn mà bạn thích</a>
                             </li>
-                            <li class="col-xs-12 col-sm-4 link-item active"><span>3</span><a href="checkout.php">Đặt món và thanh toán</a></li>
+                            <li class="col-xs-12 col-sm-4 link-item active"><span>3</span><a href="checkout.php">Đặt món và
+                                    thanh toán</a></li>
                         </ul>
                     </div>
                 </div>
@@ -94,9 +96,10 @@ if (empty($_SESSION["user_id"])) {
                         <?php echo $success; ?>
                     </span>
                 </div>
-                <div class="container m-t-30">
+                <div class="container m-t-30" style="margin-bottom: 115px; margin-top: 115px;">
                     <form action="" method="post">
-                        <div class="widget clearfix">
+                        <div class="widget clearfix"
+                            style="border: 1px solid #eaebeb; background: rgba(252, 251, 249, 0.68);">
 
                             <div class="widget-body">
                                 <form method="post" action="#">
@@ -114,7 +117,7 @@ if (empty($_SESSION["user_id"])) {
                                                             <tr>
                                                                 <td>Chi phí món ăn</td>
                                                                 <td>
-                                                                    <?php echo number_format($item_total, 0, ',', '.')  . " VNĐ"; ?>
+                                                                    <?php echo number_format($item_total, 0, ',', '.') . " VNĐ"; ?>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -124,7 +127,7 @@ if (empty($_SESSION["user_id"])) {
                                                             <tr>
                                                                 <td class="text-color"><strong>Tổng cộng</strong></td>
                                                                 <td class="text-color"><strong>
-                                                                        <?php echo number_format($item_total, 0, ',', '.')  . " VNĐ"; ?>
+                                                                        <?php echo number_format($item_total, 0, ',', '.') . " VNĐ"; ?>
                                                                     </strong></td>
                                                             </tr>
                                                         </tbody>
@@ -138,7 +141,8 @@ if (empty($_SESSION["user_id"])) {
                                                             <input name="mod" id="radioStacked1" checked value="COD"
                                                                 type="radio" class="custom-control-input"> <span
                                                                 class="custom-control-indicator"></span> <span
-                                                                class="custom-control-description">Thanh toán khi nhận hàng</span>
+                                                                class="custom-control-description">Thanh toán khi nhận
+                                                                hàng</span>
                                                         </label>
                                                     </li>
                                                     <li>

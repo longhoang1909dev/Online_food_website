@@ -108,7 +108,7 @@ else
             </div>
         </div>
         <section class="restaurants-page">
-            <div class="container">
+            <div class="container" style="margin-bottom: 220px; margin-top: 220px;">
                 <div class="row">
                     <div class="col-xs-12">
                     </div>

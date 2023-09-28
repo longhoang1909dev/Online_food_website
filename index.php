@@ -19,8 +19,21 @@ session_start();
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fa53f0fa43.js" crossorigin="anonymous"></script>
 
+    <style>
+        .product-name {
+            color: #333;
+        }
 
+        .food-item-wrap:hover .content h5 a {
+            color: #333;
+        }
+
+        .food-item-wrap:hover .figure-wrap {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body class="home">
@@ -53,7 +66,6 @@ session_start();
             </div>
         </nav>
     </header>
-
 
     <section class="hero bg-image" data-image-src="images/img/pimg.jpg">
         <div class="hero-inner">
@@ -114,7 +126,7 @@ session_start();
             </form>
 
             <div class="title text-xs-center m-b-30">
-                <h2>Món ăn phổ biến của tháng</h2>
+                <h2 style="font-weight: 800; font-size: 2rem;">Món ăn phổ biến của tháng</h2>
                 <p class="lead">Nếu bạn chưa biết chọn món ăn gì có thể tham khảo 6 món bán chạy nhất tháng dưới đây</p>
             </div>
             <div class="row">
@@ -139,7 +151,7 @@ session_start();
             </div>
         </div>
     </section>
-    <section class="how-it-works">
+    <!-- <section class="how-it-works">
         <div class="container">
             <div class="text-xs-center">
                 <h2>Đặt đồ dễ dàng</h2>
@@ -202,6 +214,73 @@ session_start();
                 </div>
             </div>
         </div>
+    </section> -->
+    <section class="intro">
+        <div class="container">
+            <div class="wrap-img-about">
+                <div class="wide"><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/cuisine/157/icons/eb8ea703d1f84b218b79b0f860e99425_1562559054203677203.webp"
+                        alt=""></div>
+                <div class=""><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/5-CZCDLFEHJKKUTN/hero/927311d142e14c6fbdccd1f558e38da4_1679106929310283027.webp"
+                        alt=""></div>
+                <div class="big"><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/5-C4DAEJAHC3LVPA/hero/a1135764-4363-42ea-9b72-b2db01546177__store_cover__2023__06__07__16__24__19.webp"
+                        alt=""></div>
+                <div class=""><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/cuisine/144/icons/Rice_e191965ccd6848a3862e6a695d05983f_1547819238893335910.webp"
+                        alt=""></div>
+                <div class=""><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/cuisine/62/icons/FastFood_4710e425c3d24db2aa4280aa207a22d3_1547819143037208832.webp"
+                        alt=""></div>
+                <div class="tall"><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/5-C3UTNPNFNBJBJX/hero/f3918ff8faa54d89948577f829a79d9b_1670795705461683240.webp"
+                        alt=""></div>
+                <div class="wide"><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/cuisine/147/icons/Salad_1641af887e2b4092a81f8e27ccdac0dc_1547819244890107512.webp"
+                        alt=""></div>
+                <div class=""><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/cuisine/135/icons/Pizza_32aed38d4c1d4dbcb2fe711f0aeb6e15_1547819221409327403.webp"
+                        alt=""></div>
+                <div class=""><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/VNGFVN0000038c/hero/a66a30bc-462d-4527-9578-aab4d8998b66__store_cover__2023__07__28__07__16__48.webp"
+                        alt=""></div>
+                <div class=""><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/collections/68/icons/upload-photo-icon_3d16a293ac324b7e9aed94d783a57864_1548575050539497623.webp"
+                        alt=""></div>
+                <div class=""><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/5-CYMADBU1JVLGAT/hero/e380e3273fc24aca8ca4fcaf60bde875_1691032151131944651.webp"
+                        alt=""></div>
+                <div class=""><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/5-C4EEJ2ACEN63DE/hero/d5f2a8ad3e3c4158b002732a0812a8be_1688641573480791813.webp"
+                        alt=""></div>
+                <div class="wide"><img
+                        src="https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/5-C33WEABVV4LEHE/hero/697744e4-3fb2-400c-b303-315f3de109d9__store_cover__2023__01__18__16__33__23.webp"
+                        alt=""></div>
+            </div>
+            <div class="content-about-us">
+                <h2 class="title-about-us"
+                    style="font-weight: 800; color: #2C3E50; font-size: 2rem;">
+                    Website
+                    <span style="color: #F94C10; font-size: 2rem;">Đặt
+                        đồ ăn</span>
+                </h2>
+                <p style="line-height: 1.4; color: #4c5d61; margin-top: 24px;">Chào mừng bạn đến với trang web đặt đồ ăn
+                    của chúng tôi!
+                    Chúng tôi cung cấp một trải nghiệm đơn giản và tiện lợi để bạn có thể tìm và đặt hàng các món ăn
+                    ngon từ những nhà hàng và quán ăn hàng đầu trong khu vực của bạn. Đặt hàng ngay hôm nay và thưởng
+                    thức hương vị tuyệt vời tại nhà của bạn!</p>
+                <ul>
+                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>Tiện ích theo dõi đơn hàng </li>
+                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>Đa dạng lựa chọn</li>
+                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>Thuận tiện trong khu vực </li>
+                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>Dịch vụ khách hàng xuất sắc</li>
+                </ul>
+                <a class="btn btn-primary px-5 mt-2" href="#"
+                    style="background: #F94C10; border-color:#F94C10; padding: 16px 40px;">Đọc
+                    thêm</a>
+            </div>
+        </div>
     </section>
 
 
@@ -210,7 +289,7 @@ session_start();
             <div class="row">
                 <div class="col-sm-4">
                     <div class="title-block pull-left">
-                        <h4>Danh sách nhà hàng đặc sắc</h4>
+                        <h4 style="font-weight: 800; font-size: 2rem;">Danh sách nhà hàng đặc sắc</h4>
                     </div>
                 </div>
                 <div class="col-sm-8">

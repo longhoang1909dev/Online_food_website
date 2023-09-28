@@ -20,6 +20,16 @@ include_once 'product-action.php';
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .row div:nth-child(1) {
+            background: unset;
+        }
+
+        .menu-widget {
+            background: unset;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +66,8 @@ include_once 'product-action.php';
             <div class="container">
                 <ul class="row links">
 
-                    <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn nhà hàng</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn nhà hàng</a>
+                    </li>
                     <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a
                             href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Chọn món ăn mà bạn thích</a></li>
                     <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Đặt món và thanh toán</a></li>
@@ -99,7 +110,7 @@ include_once 'product-action.php';
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
 
-                    <div class="widget widget-cart">
+                    <div class="widget widget-cart b-d-ea">
                         <div class="widget-heading">
                             <h3 class="widget-title text-dark">
                                 Món ăn bạn chọn
@@ -120,7 +131,8 @@ include_once 'product-action.php';
 
                                     <div class="form-group row no-gutter">
                                         <div class="col-xs-8">
-                                            <input type="text" class="form-control b-r-0" value=<?php echo  number_format($item["price"], 0, ',', '.'). " VNĐ"; ?> readonly id="exampleSelect1">
+                                            <input style="color: black;" type="text" class="form-control b-r-0" value=<?php echo number_format($item["price"], 0, ',', '.') . " VNĐ"; ?> readonly
+                                                id="exampleSelect1">
 
                                         </div>
                                         <div class="col-xs-4">
@@ -162,7 +174,7 @@ include_once 'product-action.php';
                 </div>
 
                 <div class="col-md-8">
-                    <div class="menu-widget" id="2">
+                    <div class="menu-widget b-d-ea" id="2">
                         <div class="widget-heading">
                             <h3 class="widget-title text-dark">
                                 MENU <a class="btn btn-link pull-right" data-toggle="collapse" href="#popular2"
@@ -181,8 +193,8 @@ include_once 'product-action.php';
                             if (!empty($products)) {
                                 foreach ($products as $product) {
                                     ?>
-                                    <div class="food-item">
-                                        <div class="row">
+                                    <div class="food-item m-b">
+                                        <div class="row ">
                                             <div class="col-xs-12 col-sm-12 col-lg-8">
                                                 <form method="post"
                                                     action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
@@ -203,12 +215,11 @@ include_once 'product-action.php';
 
                                             <div class="col-xs-12 col-sm-12 col-lg-3 pull-right item-cart-info">
                                                 <span class="price pull-left">
-                                                    <?php echo number_format($product['price'], 0, ',', '.')." VNĐ"; ?>
+                                                    <?php echo number_format($product['price'], 0, ',', '.') . " VNĐ"; ?>
                                                 </span>
-                                                <input class="b-r-0" type="text" name="quantity" style="margin-left:30px;"
-                                                    value="1" size="2" />
-                                                <input type="submit" class="btn theme-btn" style="margin-left:40px;"
-                                                    value="Thêm" />
+                                                <input class="b-r-1px" type="text" name="quantity" style=" padding: 4px 11px;" value="1"
+                                                    size="2" />
+                                                <input type="submit" class="btn theme-btn" style="" value="Thêm" />
                                             </div>
                                             </form>
                                         </div>

@@ -21,9 +21,6 @@ session_start();
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        .restaurants-page{
-            background: url(https://thuthuatnhanh.com/wp-content/uploads/2022/09/hinh-nen-powerpoint-chu-de-mon-an-dep-don-gian.jpeg);
-        }
         .restaurants-page .container .row .img {
             background-image: url(https://2sao.vietnamnetjsc.vn/images/2017/06/21/10/01/cham-ngon-nguoi-nang-can-15.jpg);
             margin-bottom: 20px;
