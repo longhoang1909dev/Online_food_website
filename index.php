@@ -15,7 +15,6 @@ session_start();
     <link rel="icon" href="#">
     <title>Trang chủ ||Hệ thống đặt hàng thực phẩm trực tuyến</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -259,8 +258,7 @@ session_start();
                         alt=""></div>
             </div>
             <div class="content-about-us">
-                <h2 class="title-about-us"
-                    style="font-weight: 800; color: #2C3E50; font-size: 2rem;">
+                <h2 class="title-about-us" style="font-weight: 800; color: #2C3E50; font-size: 2rem;">
                     Website
                     <span style="color: #F94C10; font-size: 2rem;">Đặt
                         đồ ăn</span>
@@ -271,10 +269,26 @@ session_start();
                     ngon từ những nhà hàng và quán ăn hàng đầu trong khu vực của bạn. Đặt hàng ngay hôm nay và thưởng
                     thức hương vị tuyệt vời tại nhà của bạn!</p>
                 <ul>
-                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>Tiện ích theo dõi đơn hàng </li>
-                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>Đa dạng lựa chọn</li>
-                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>Thuận tiện trong khu vực </li>
-                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>Dịch vụ khách hàng xuất sắc</li>
+                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+                        </svg>Tiện ích theo dõi đơn hàng </li>
+                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+                        </svg>Đa dạng lựa chọn</li>
+                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+                        </svg>Thuận tiện trong khu vực </li>
+                    <li><svg style="margin-right: 5px; fill: #F94C10;" xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+                        </svg>Dịch vụ khách hàng xuất sắc</li>
                 </ul>
                 <a class="btn btn-primary px-5 mt-2" href="#"
                     style="background: #F94C10; border-color:#F94C10; padding: 16px 40px;">Đọc

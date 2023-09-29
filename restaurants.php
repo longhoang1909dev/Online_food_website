@@ -15,10 +15,11 @@ session_start();
     <link rel="icon" href="#">
     <title>Danh sách nhà hàng</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fa53f0fa43.js" crossorigin="anonymous"></script>
+
 
     <style>
         .restaurants-page .container .row .img {

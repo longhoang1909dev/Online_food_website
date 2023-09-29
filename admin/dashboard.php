@@ -38,7 +38,7 @@ if (empty($_SESSION["adm_id"])) {
                     <div class="navbar-header">
                         <a class="navbar-brand" href="dashboard.php">
 
-                            <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
+                            <span><img style="width: 100px; height: 100px; object-fit: cover;" src="../images/logo_header.png" alt="homepage" class="dark-logo" /></span>
                         </a>
                     </div>
 
@@ -49,8 +49,8 @@ if (empty($_SESSION["adm_id"])) {
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
                                     alt="user" class="profile-pic" /></a>
-                            <div class="dropdown-menu dropdown-menu-right animated zoomIn">
-                                <ul class="dropdown-user">
+                            <div class="dropdown-menu dropdown-menu-right animated zoomIn" style="left: -100px;">
+                                <ul class="dropdown-user" style="min-width: unset;">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
                                 </ul>
                             </div>
@@ -172,7 +172,6 @@ if (empty($_SESSION["adm_id"])) {
                                         </div>
                                     </div>
                                 </div>
-
 
                                 <div class="col-md-3">
                                     <div class="card p-30">
@@ -313,7 +312,6 @@ if (empty($_SESSION["adm_id"])) {
                 <script src="js/sidebarmenu.js"></script>
                 <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
                 <script src="js/custom.min.js"></script>
-
     </body>
 
     </html>

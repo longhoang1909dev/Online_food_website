@@ -62,7 +62,7 @@ include("connection/connect.php");
                 <div class="container ">
                     <div class="row ">
                         <div class="col-md-12">
-                            <div class="widget">
+                            <div class="widget" style="width: 60%; margin: 0 auto; left: unset;">
                                 <div class="widget-body">
                                     <form action="" method="post">
                                         <div class="row">
