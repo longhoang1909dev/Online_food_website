@@ -307,7 +307,7 @@ session_start();
                     </div>
                 </div>
                 <div class="col-sm-8">
-                    <div class="restaurants-filter pull-right">
+                    <div class="restaurants-filter pull-right" style="float: right;">
                         <nav class="primary pull-left">
                             <ul>
                                 <li><a href="#" class="selected" data-filter="*">Tất cả</a> </li>
