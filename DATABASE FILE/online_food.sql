@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 29, 2023 at 03:57 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th9 29, 2023 lúc 08:38 AM
+-- Phiên bản máy phục vụ: 10.4.28-MariaDB
+-- Phiên bản PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `online_food`
+-- Cơ sở dữ liệu: `online_food`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Cấu trúc bảng cho bảng `admin`
 --
 
 CREATE TABLE `admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `admin`
+-- Đang đổ dữ liệu cho bảng `admin`
 --
 
 INSERT INTO `admin` (`adm_id`, `username`, `password`, `email`, `code`, `date`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `admin` (`adm_id`, `username`, `password`, `email`, `code`, `date`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dishes`
+-- Cấu trúc bảng cho bảng `dishes`
 --
 
 CREATE TABLE `dishes` (
@@ -60,16 +60,22 @@ CREATE TABLE `dishes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `dishes`
+-- Đang đổ dữ liệu cho bảng `dishes`
 --
 
 INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
-(18, 11, 'Bún chả que tre chan', '5 miếng chả, bún rau sống đầy đủ', 50000.00, '64edf902e4e8e.jpg');
+(18, 11, 'Bún chả que tre chan', '5 miếng chả, bún rau sống đầy đủ', 50000.00, '64edf902e4e8e.jpg'),
+(19, 9, 'Gà Rán Dokki', 'Ngon Tuỵt =))', 105000.00, '650aa540d9fae.jpg'),
+(20, 11, 'Bún Huế', 'Tuỵt Vời', 50000.00, '650ab7e8d6cc8.jpg'),
+(21, 10, 'Mỳ bay', 'Yummy!!', 80000.00, '650ab80de197b.jpg'),
+(22, 9, 'Cơm cuộn', 'Ngon', 60000.00, '650ab880127aa.jpg'),
+(23, 10, 'Mẹt gà', 'Ngon Lắm', 200000.00, '650ab89c808e5.jpg'),
+(24, 10, 'Cơm Trộn', 'Đầy đủ', 70000.00, '650ab96903d6a.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `remark`
+-- Cấu trúc bảng cho bảng `remark`
 --
 
 CREATE TABLE `remark` (
@@ -81,7 +87,7 @@ CREATE TABLE `remark` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `remark`
+-- Đang đổ dữ liệu cho bảng `remark`
 --
 
 INSERT INTO `remark` (`id`, `frm_id`, `status`, `remark`, `remarkDate`) VALUES
@@ -92,12 +98,14 @@ INSERT INTO `remark` (`id`, `frm_id`, `status`, `remark`, `remarkDate`) VALUES
 (20, 31, 'closed', 'sâ', '2023-08-27 16:20:28'),
 (21, 31, 'closed', 'aaa', '2023-08-27 16:26:08'),
 (22, 33, 'closed', 'f', '2023-08-28 01:11:26'),
-(23, 32, 'closed', 'sss', '2023-08-28 01:27:01');
+(23, 32, 'closed', 'sss', '2023-08-28 01:27:01'),
+(24, 39, '', ' không có lời nhắn', '2023-09-29 06:26:09'),
+(25, 40, '', ' không có lời nhắn', '2023-09-29 06:26:09');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `restaurant`
+-- Cấu trúc bảng cho bảng `restaurant`
 --
 
 CREATE TABLE `restaurant` (
@@ -116,7 +124,7 @@ CREATE TABLE `restaurant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `restaurant`
+-- Đang đổ dữ liệu cho bảng `restaurant`
 --
 
 INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
@@ -128,7 +136,7 @@ INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `res_category`
+-- Cấu trúc bảng cho bảng `res_category`
 --
 
 CREATE TABLE `res_category` (
@@ -138,7 +146,7 @@ CREATE TABLE `res_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `res_category`
+-- Đang đổ dữ liệu cho bảng `res_category`
 --
 
 INSERT INTO `res_category` (`c_id`, `c_name`, `date`) VALUES
@@ -152,7 +160,7 @@ INSERT INTO `res_category` (`c_id`, `c_name`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -168,10 +176,17 @@ CREATE TABLE `users` (
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`u_id`, `username`, `f_name`, `l_name`, `email`, `phone`, `password`, `address`, `status`, `date`) VALUES
+(19, 'tuan', 'Nguyễn Viết', 'Tuấn', 'tuan@gmail.com', '0353516808', '123456', 'Hà Đông', 1, '2023-09-28 17:07:46');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_orders`
+-- Cấu trúc bảng cho bảng `users_orders`
 --
 
 CREATE TABLE `users_orders` (
@@ -185,96 +200,104 @@ CREATE TABLE `users_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Indexes for dumped tables
+-- Đang đổ dữ liệu cho bảng `users_orders`
+--
+
+INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `status`, `date`) VALUES
+(39, 19, 'Gà Rán Dokki', 1, 105000.00, NULL, '2023-09-29 06:26:09'),
+(40, 19, 'Cơm cuộn', 1, 165000.00, NULL, '2023-09-29 06:26:09');
+
+--
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admin`
+-- Chỉ mục cho bảng `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`adm_id`);
 
 --
--- Indexes for table `dishes`
+-- Chỉ mục cho bảng `dishes`
 --
 ALTER TABLE `dishes`
   ADD PRIMARY KEY (`d_id`);
 
 --
--- Indexes for table `remark`
+-- Chỉ mục cho bảng `remark`
 --
 ALTER TABLE `remark`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `restaurant`
+-- Chỉ mục cho bảng `restaurant`
 --
 ALTER TABLE `restaurant`
   ADD PRIMARY KEY (`rs_id`);
 
 --
--- Indexes for table `res_category`
+-- Chỉ mục cho bảng `res_category`
 --
 ALTER TABLE `res_category`
   ADD PRIMARY KEY (`c_id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`u_id`);
 
 --
--- Indexes for table `users_orders`
+-- Chỉ mục cho bảng `users_orders`
 --
 ALTER TABLE `users_orders`
   ADD PRIMARY KEY (`o_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT cho bảng `admin`
 --
 ALTER TABLE `admin`
   MODIFY `adm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `dishes`
+-- AUTO_INCREMENT cho bảng `dishes`
 --
 ALTER TABLE `dishes`
-  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `remark`
+-- AUTO_INCREMENT cho bảng `remark`
 --
 ALTER TABLE `remark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `restaurant`
+-- AUTO_INCREMENT cho bảng `restaurant`
 --
 ALTER TABLE `restaurant`
   MODIFY `rs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `res_category`
+-- AUTO_INCREMENT cho bảng `res_category`
 --
 ALTER TABLE `res_category`
   MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `users_orders`
+-- AUTO_INCREMENT cho bảng `users_orders`
 --
 ALTER TABLE `users_orders`
-  MODIFY `o_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `o_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

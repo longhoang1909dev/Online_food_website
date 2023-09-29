@@ -23,9 +23,7 @@ if (empty($_SESSION["adm_id"])) {
         <link href="css/style.css" rel="stylesheet">
     </head>
 
-
     <body class="fix-header">
-
         <div class="preloader">
             <svg class="circular" viewBox="25 25 50 50">
                 <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
@@ -47,11 +45,6 @@ if (empty($_SESSION["adm_id"])) {
                     <div class="navbar-collapse">
                         <ul class="navbar-nav mr-auto mt-md-0">
                         </ul>
-
-
-
-
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
@@ -66,56 +59,50 @@ if (empty($_SESSION["adm_id"])) {
                     </div>
                 </nav>
             </div>
-
             <div class="left-sidebar">
 
 
-            <div class="scroll-sidebar">
+                <div class="scroll-sidebar">
 
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-devider"></li>
-                        <li class="nav-label">Trang chủ</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
-                        <li class="nav-label">Danh mục</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Nhà hàng</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
-                                <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
-                                <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
+                    <nav class="sidebar-nav">
+                        <ul id="sidebarnav">
+                            <li class="nav-devider"></li>
+                            <li class="nav-label">Trang chủ</li>
+                            <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
+                            <li class="nav-label">Danh mục</li>
+                            <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
+                                        dùng</span></a></li>
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
+                                        class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                                        hàng</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
+                                    <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
+                                    <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
+                                </ul>
+                            </li>
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
+                                        aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="all_menu.php">Tất cả Menues</a></li>
+                                    <li><a href="add_menu.php">Thêm Menu</a></li>
+                                </ul>
+                            </li>
+                            <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn
+                                        đặt</span></a></li>
+                        </ul>
+                    </nav>
 
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_menu.php">Tất cả Menues</a></li>
-                                <li><a href="add_menu.php">Thêm Menu</a></li>
-
-
-
-                            </ul>
-                        </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
-
-                    </ul>
-                </nav>
+                </div>
 
             </div>
 
-        </div>
-
-        <div class="page-wrapper">
-            <div style="padding-top: 10px;">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
-                    một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
-                </marquee>
-            </div>
+            <div class="page-wrapper">
+                <div style="padding-top: 10px;">
+                    <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                        một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
+                    </marquee>
+                </div>
 
                 <div class="container-fluid">
                     <div class="col-lg-12">
@@ -302,9 +289,9 @@ if (empty($_SESSION["adm_id"])) {
                                                 <h2>
                                                     <?php
                                                     $result = mysqli_query($db, 'SELECT SUM(price) FROM users_orders WHERE status = "closed"');
-                                                    $rowww=mysqli_fetch_array($result);
+                                                    $rowww = mysqli_fetch_array($result);
 
-                                                    echo "<span style='font-size:23px; color:#455a64' >". number_format($rowww['SUM(price)'], 0, ',', '.') ." VNĐ</span>";
+                                                    echo "<span style='font-size:23px; color:#455a64' >" . number_format($rowww['SUM(price)'], 0, ',', '.') . " VNĐ</span>";
                                                     ?>
                                                 </h2>
                                                 <p class="m-b-0">Tổng thu nhập</p>
