@@ -150,7 +150,8 @@ session_start();
             </div>
         </div>
     </section>
-    <!-- <section class="how-it-works">
+    
+    <section class="how-it-works" style="margin-bottom: 50px;">
         <div class="container">
             <div class="text-xs-center">
                 <h2>Đặt đồ dễ dàng</h2>
@@ -213,7 +214,8 @@ session_start();
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
+
     <section class="intro">
         <div class="container">
             <div class="wrap-img-about">
@@ -296,7 +298,6 @@ session_start();
             </div>
         </div>
     </section>
-
 
     <section class="featured-restaurants">
         <div class="container">

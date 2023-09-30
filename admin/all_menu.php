@@ -130,22 +130,10 @@ session_start();
                     một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
                 </marquee>
             </div>
-
-
-
-
             <div class="container-fluid">
 
                 <div class="row">
                     <div class="col-12">
-
-
-
-
-
-
-
-
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
@@ -168,9 +156,6 @@ session_start();
                                             </tr>
                                         </thead>
                                         <tbody>
-
-
-
                                             <?php
                                             $sql = "SELECT * FROM dishes order by d_id desc";
                                             $query = mysqli_query($db, $sql);
@@ -199,9 +184,6 @@ session_start();
 																									 <td><a href="delete_menu.php?menu_del=' . $rows['d_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
 																									 <a href="update_menu.php?menu_upd=' . $rows['d_id'] . '" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td></tr>';
-
-
-
                                                 }
                                             }
 

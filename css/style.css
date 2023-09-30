@@ -599,7 +599,7 @@ hr {
   margin-top: 20px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   .container .row .col-md-8 .menu-widget .collapse .food-item .row .item-cart-info .b-r-1px {
     top: -55px;
     right: 10px;
@@ -620,6 +620,20 @@ hr {
     padding-right: 0;
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .intro .container {
+    flex-direction: column;
+  }
+
+  .intro .container .wrap-img-about {
+    width: 100%;
+  }
+
+  .intro .container .content-about-us {
+    width: 100% !important;
+    order: -1;
+    margin-bottom: 30px;
   }
 }
 

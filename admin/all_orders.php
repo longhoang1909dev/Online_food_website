@@ -134,10 +134,6 @@ session_start();
                     một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
                 </marquee>
             </div>
-
-
-
-
             <div class="container-fluid">
 
                 <div class="row">
@@ -230,17 +226,9 @@ session_start();
                                                         echo '<a href="view_order.php?user_upd=' . $rows['o_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td>
 																									</tr>';
-
-
-
                                                 }
                                             }
-
-
                                             ?>
-
-
-
                                         </tbody>
                                     </table>
                                 </div>

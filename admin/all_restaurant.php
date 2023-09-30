@@ -1,4 +1,3 @@
-
 </html>
 <?php
 include("../connection/connect.php");
@@ -42,19 +41,9 @@ session_start();
                     </a>
                 </div>
                 <div class="navbar-collapse">
-
                     <ul class="navbar-nav mr-auto mt-md-0">
-
-
-
-
-
                     </ul>
-
                     <ul class="navbar-nav my-lg-0">
-
-
-
                         <li class="nav-item dropdown">
 
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
@@ -64,12 +53,12 @@ session_start();
                                     </li>
 
                                     <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Kiểm tra tất cả thông báo</strong> <i class="fa fa-angle-right"></i> </a>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Kiểm tra tất
+                                                cả thông báo</strong> <i class="fa fa-angle-right"></i> </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
@@ -99,11 +88,11 @@ session_start();
                         <li class="nav-label">Trang chủ</li>
                         <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
                         <li class="nav-label">Danh mục</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
+                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
+                                    dùng</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Nhà hàng</span></a>
+                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                                    hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
                                 <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
@@ -117,41 +106,24 @@ session_start();
                                 <li><a href="all_menu.php">Tất cả Menues</a></li>
                                 <li><a href="add_menu.php">Thêm Menu</a></li>
 
-
-
                             </ul>
                         </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
-
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn
+                                    đặt</span></a></li>
                     </ul>
                 </nav>
-
             </div>
-
         </div>
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
                     một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
                 </marquee>
             </div>
-
-
-
-
             <div class="container-fluid">
-
                 <div class="row">
                     <div class="col-12">
-
-
-
-
-
-
-
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
@@ -178,11 +150,7 @@ session_start();
                                                 <th>Hành động</th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
-
-
-
                                             <?php
                                             $sql = "SELECT * FROM restaurant order by rs_id desc";
                                             $query = mysqli_query($db, $sql);
@@ -197,66 +165,31 @@ session_start();
                                                     $row = mysqli_fetch_array($res);
 
                                                     echo ' <tr><td>' . $row['c_name'] . '</td>
-																								<td>' . $rows['title'] . '</td>
-																								<td>' . $rows['email'] . '</td>
-																								<td>' . $rows['phone'] . '</td>
-																								<td>' . $rows['url'] . '</td>
+															<td>' . $rows['title'] . '</td>
+															<td>' . $rows['email'] . '</td>
+															<td>' . $rows['phone'] . '</td>
+															<td>' . $rows['url'] . '</td>
+															<td>' . $rows['o_hr'] . '</td>
+															<td>' . $rows['c_hr'] . '</td>
+															<td>' . $rows['o_days'] . '</td>
+															<td>' . $rows['address'] . '</td>
+															<td><div class="col-md-3 col-lg-8 m-b-10">
+															<center><img src="Res_img/' . $rows['image'] . '" class="img-responsive radius"  style="min-width:150px;min-height:100px;"/></center>
+															</div></td>
 																								
-																								
-																								<td>' . $rows['o_hr'] . '</td>
-																								<td>' . $rows['c_hr'] . '</td>
-																								<td>' . $rows['o_days'] . '</td>
-																								
-																								<td>' . $rows['address'] . '</td>
-																								
-																								<td><div class="col-md-3 col-lg-8 m-b-10">
-																								<center><img src="Res_img/' . $rows['image'] . '" class="img-responsive radius"  style="min-width:150px;min-height:100px;"/></center>
-																								</div></td>
-																								
-																								<td>' . $rows['date'] . '</td>
-																									 <td><a href="delete_restaurant.php?res_del=' . $rows['rs_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_restaurant.php?res_upd=' . $rows['rs_id'] . '" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
-																									</td></tr>';
-
-
-
+															<td>' . $rows['date'] . '</td>
+															<td><a href="delete_restaurant.php?res_del=' . $rows['rs_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+															<a href="update_restaurant.php?res_upd=' . $rows['rs_id'] . '" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
+															</td></tr>';
                                                 }
                                             }
-
-
                                             ?>
-
-
-
-
-
-
-
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
-
                 </div>
             </div>
         </div>

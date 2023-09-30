@@ -37,8 +37,7 @@ if (empty($_SESSION["adm_id"])) {
 
                     <div class="navbar-header">
                         <a class="navbar-brand" href="dashboard.php">
-
-                            <span><img style="width: 100px; height: 100px; object-fit: cover;" src="../images/logo_header.png" alt="homepage" class="dark-logo" /></span>
+                            <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
                         </a>
                     </div>
 
