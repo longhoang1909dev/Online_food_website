@@ -136,7 +136,7 @@ include_once 'product-action.php';
 
                                         </div>
                                         <div class="col-xs-4">
-                                            <input class="form-control" type="text" readonly
+                                            <input style="color: #000;" class="form-control" type="text" readonly
                                                 value='<?php echo $item["quantity"]; ?>' id="example-number-input">
                                         </div>
                                     </div>
