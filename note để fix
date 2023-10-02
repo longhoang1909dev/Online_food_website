@@ -4,29 +4,33 @@ NHỮNG LỖI CẦN FIX
 
 
 
--thiếu tìm kiếm món ăn
 ; -thiếu message phía người dùng lúc thay đổi status( xem chi tiết đơn hàng)--done
 ; -lỗi font chữ --- done
--thiếu thêm địa chỉ lúc đặt hàng
 ; -thông báo lúc đăng kí đăng nhập thành công ---done
-- your-order lúc status thành đã giao hoặc hủy bỏ vẫn còn action delet
+; - your-order lúc status thành đã giao hoặc hủy bỏ vẫn còn action delet
 ; -lỗi icon --done
 ; - update thể loại bị lỗi font(  tiếng việt lỗi )-----done
--- hệ thống vote star/ feedback cửa hàng
 ; -- tiền tệ // đã biết cách fix your_od  echo number_format($row['price'], 0, ',', '.');--done
 ; - lỗi hiển thị giá đơn đặt( đã fix dashboard admin và yourorder)done
 ; -- lỗi reload trang thì auto tăng dishes.phph chịu
---chuyển sang dạng mvc
--- update_menu bug kh hiển thị thông báo khi không điền đầy đủ
 ; -- update order lỗi  done
 ; --vieworder lỗi giá  done
---giá đặt bị sai khi đặt nhiều đơn hàng cùng 1 lúc
 ; --hiển thị lỗi giá ở dashboard -- done
 ; -- xóa nhà hàng nnguowif dùng đồ ăn không có thông báo --- done
 
 ; -- file all_oder đang lỗi display giá khi đặt nhiều món--done
+-- update_menu bug kh hiển thị thông báo khi không điền đầy đủ
+--chuyển sang dạng mvc
+-- hệ thống vote star/ feedback cửa hàng
+-thiếu thêm địa chỉ lúc đặt hàng
+-thiếu tìm kiếm món ăn
+--giá đặt bị sai khi đặt nhiều đơn hàng cùng 1 lúc
 -- chưa mã hóa Id và mật khẩu
 
 -- chưa chạy được host riêng vẫn đang chạy local // after code
 
 --your ordẻr thiếu hiển thị địa chỉ được ship về
+
+--bug unset after confirm order
+
+-- logic chưa đúng mỗi nhà hàng có thể có nhiều thể loại chứ kh format vào 1 thể loại nhất định 
