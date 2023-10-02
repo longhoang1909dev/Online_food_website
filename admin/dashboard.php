@@ -195,7 +195,7 @@ if (empty($_SESSION["adm_id"])) {
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="card p-30">
                                         <div class="media">
                                             <div class="media-left meida media-middle">
@@ -215,8 +215,27 @@ if (empty($_SESSION["adm_id"])) {
                                     </div>
                                 </div>
 
+                                <div class="col-md-3">
+                                    <div class="card p-30">
+                                        <div class="media">
+                                            <div class="media-left meida media-middle">
+                                                <span><i class="fa fa-spinner f-s-40" aria-hidden="true"></i></span>
+                                            </div>
+                                            <div class="media-body media-text-right">
+                                                <h2>
+                                                    <?php $sql = "select * from users_orders WHERE status is Null";
+                                                    $result = mysqli_query($db, $sql);
+                                                    $rws = mysqli_num_rows($result);
 
-                                <div class="col-md-4">
+                                                    echo $rws; ?>
+                                                </h2>
+                                                <p class="m-b-0">Đơn hàng đang chế biến</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
                                     <div class="card p-30">
                                         <div class="media">
                                             <div class="media-left meida media-middle">
@@ -230,13 +249,13 @@ if (empty($_SESSION["adm_id"])) {
 
                                                     echo $rws; ?>
                                                 </h2>
-                                                <p class="m-b-0">Đơn hàng đang xử lí</p>
+                                                <p class="m-b-0">Đơn hàng đang vận chuyển</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="card p-30">
                                         <div class="media">
                                             <div class="media-left meida media-middle">
@@ -258,7 +277,7 @@ if (empty($_SESSION["adm_id"])) {
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="card p-30">
                                         <div class="media">
                                             <div class="media-left meida media-middle">
@@ -278,7 +297,7 @@ if (empty($_SESSION["adm_id"])) {
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="card p-30">
                                         <div class="media">
                                             <div class="media-left meida media-middle">
