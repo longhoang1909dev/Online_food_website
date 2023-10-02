@@ -91,7 +91,6 @@ if (empty($_SESSION["user_id"])) {
                     </div>
                 </div>
                 <div class="container">
-
                     <span style="color:green;">
                         <?php echo $success; ?>
                     </span>

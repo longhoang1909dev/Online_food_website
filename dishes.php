@@ -81,7 +81,7 @@ include_once 'product-action.php';
             <div class="profile">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12  col-md-4 col-lg-4 profile-img">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 profile-img">
                             <div class="image-wrap">
                                 <figure>
                                     <?php echo '<img src="admin/Res_img/' . $rows['image'] . '" alt="Restaurant logo">'; ?>
