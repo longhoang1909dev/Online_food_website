@@ -26,3 +26,7 @@ NHỮNG LỖI CẦN FIX
 
 ; -- file all_oder đang lỗi display giá khi đặt nhiều món--done
 -- chưa mã hóa Id và mật khẩu
+
+-- chưa chạy được host riêng vẫn đang chạy local // after code
+
+--your ordẻr thiếu hiển thị địa chỉ được ship về
