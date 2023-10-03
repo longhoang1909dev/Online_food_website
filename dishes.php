@@ -219,7 +219,7 @@ include_once 'product-action.php';
                                                 </span>
                                                 <input class="b-r-1px" type="text" name="quantity" style=" padding: 4px 11px;" value="1"
                                                     size="2" />
-                                                <input type="submit" class="btn theme-btn" style="" value="Thêm" />
+                                                <input type="submit" class="btn theme-btn"  value="Thêm" />
                                             </div>
                                             </form>
                                         </div>
