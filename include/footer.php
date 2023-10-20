@@ -30,10 +30,10 @@
                     <p style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot"></i> Hà Đông, Hà Nội</p>
                     <p style="margin-bottom: 10px;"><i class="fa-solid fa-phone"></i> 03.97.888.888</p>
                     <p style="margin-bottom: 20px;"><i class="fa-solid fa-envelope"></i> info@gmail.com</p>
-                    <span><i class="fa-brands fa-facebook"></i></span>
-                    <span><i class="fa-brands fa-twitter"></i></span>
-                    <span><i class="fa-brands fa-youtube"></i></span>
-                    <span><i class="fa-brands fa-telegram"></i></span>
+                    <span><a href="https://www.facebook.com/03September2002" target="_blank" style="color: #4267B2;"><i class="fa-brands fa-facebook"></i></a></span>
+                    <span><a href=""><i class="fa-brands fa-twitter" target="_blank" style="color: #1DA1F2;"></i></a></span>
+                    <span><a href=""><i class="fa-brands fa-youtube" target="_blank" style="color: #FF0000;"></i></a></span>
+                    <span><a href=""><i class="fa-brands fa-telegram" target="_blank" style="color: #0088CC;"></i></a></span>
                 </div>
                 <div class="col-xs-12 col-sm-3 additional-info color-gray">
                     <h5>Thông tin</h5>
