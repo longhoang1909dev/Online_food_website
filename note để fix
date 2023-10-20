@@ -22,7 +22,7 @@ NHỮNG LỖI CẦN FIX
 -- update_menu bug kh hiển thị thông báo khi không điền đầy đủ
 --chuyển sang dạng mvc
 -- hệ thống vote star/ feedback cửa hàng
--thiếu thêm địa chỉ lúc đặt hàng
+;-thiếu thêm địa chỉ lúc đặt hàng done
 -thiếu tìm kiếm món ăn
 --giá đặt bị sai khi đặt nhiều đơn hàng cùng 1 lúc
 -- chưa mã hóa Id và mật khẩu
