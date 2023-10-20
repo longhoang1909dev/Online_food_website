@@ -297,14 +297,13 @@ session_start();
                                 d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
                         </svg>Dịch vụ khách hàng xuất sắc</li>
                 </ul>
-                <a class="btn btn-primary px-5 mt-2" href="#"
-                    style="background: #F94C10; border-color:#F94C10; padding: 16px 40px;">Đọc
-                    thêm</a>
+                <a class="btn btn-primary px-5 mt-2" href="#list_restaurant"
+                    style="background: #F94C10; border-color:#F94C10; padding: 16px 40px;">Tham khảo các nhà hàng</a>
             </div>
         </div>
     </section>
 
-    <section class="featured-restaurants">
+    <section class="featured-restaurants" id="list_restaurant">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
