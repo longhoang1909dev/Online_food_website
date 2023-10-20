@@ -20,6 +20,7 @@ include_once 'product-action.php';
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fa53f0fa43.js" crossorigin="anonymous"></script>
 
     <style>
         .row div:nth-child(1) {
@@ -133,14 +134,12 @@ include_once 'product-action.php';
                                         <div class="col-xs-8">
                                             <input style="color: black;" type="text" class="form-control b-r-0" value=<?php echo number_format($item["price"], 0, ',', '.') . " VNĐ"; ?> readonly
                                                 id="exampleSelect1">
-
                                         </div>
                                         <div class="col-xs-4">
                                             <input style="color: #000;" class="form-control" type="text" readonly
                                                 value='<?php echo $item["quantity"]; ?>' id="example-number-input">
                                         </div>
                                     </div>
-
                                     <?php
                                     $item_total += ($item["price"] * $item["quantity"]);
                                 }
@@ -167,7 +166,6 @@ include_once 'product-action.php';
                                     <?php
                                 }
                                 ?>
-
                             </div>
                         </div>
                     </div>
@@ -195,9 +193,9 @@ include_once 'product-action.php';
                                     ?>
                                     <div class="food-item m-b">
                                         <div class="row ">
-                                            <div class="col-xs-12 col-sm-12 col-lg-8">
-                                                <form method="post"
-                                                    action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
+                                            <form method="post"
+                                                action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
+                                                <div class="col-xs-12 col-sm-12 col-lg-8">
                                                     <div class="rest-logo pull-left">
                                                         <a class="restaurant-logo pull-left" href="#">
                                                             <?php echo '<img src="admin/Res_img/dishes/' . $product['img'] . '" alt="Food logo">'; ?>
@@ -211,29 +209,29 @@ include_once 'product-action.php';
                                                             <?php echo $product['slogan']; ?>
                                                         </p>
                                                     </div>
-                                            </div>
+                                                </div>
 
-                                            <div class="col-xs-12 col-sm-12 col-lg-3 pull-right item-cart-info">
-                                                <span class="price pull-left">
-                                                    <?php echo number_format($product['price'], 0, ',', '.') . " VNĐ"; ?>
-                                                </span>
-                                                <input class="b-r-1px" type="text" name="quantity" style=" padding: 4px 11px;" value="1"
-                                                    size="2" />
-                                                <input type="submit" class="btn theme-btn"  value="Thêm" />
-                                            </div>
+                                                <div class="col-xs-12 col-sm-12 col-lg-3 pull-right item-cart-info">
+                                                    <span class="price pull-left">
+                                                        <?php echo number_format($product['price'], 0, ',', '.') . " VNĐ"; ?>
+                                                    </span>
+                                                    <input class="b-r-1px" type="text" name="quantity"
+                                                        style=" padding: 4px 11px;" value="1" size="2" />
+                                                    <input type="submit" class="btn theme-btn" value="Thêm" />
                                             </form>
                                         </div>
                                     </div>
-                                    <?php
+                                </div>
+                                <?php
                                 }
                             }
                             ?>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php include "include/footer.php" ?>
+    </div>
+    <?php include "include/footer.php" ?>
     </div>
     </div>
     <div class="modal fade" id="order-modal" tabindex="-1" role="dialog" aria-hidden="true">

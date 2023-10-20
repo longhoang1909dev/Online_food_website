@@ -20,6 +20,7 @@ include("connection/connect.php");
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fa53f0fa43.js" crossorigin="anonymous"></script>
 </head>
 
 

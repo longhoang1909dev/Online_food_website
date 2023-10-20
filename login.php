@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Đăng nhập</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-    <link rel='stylesheet prefetch'
-        href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
-    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
+    <script src="https://kit.fontawesome.com/fa53f0fa43.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/login.css">
 
     <style type="text/css">
@@ -74,7 +71,7 @@
 
                 if (is_array($row)) {
                     $_SESSION["user_id"] = $row['u_id'];
-                    $success= "Đăng nhập thành công";
+                    $success = "Đăng nhập thành công";
                     header("refresh:1;url=index.php");
                 } else {
                     $message = "Tài khoản hoặc mật khẩu không chính xác";
@@ -99,7 +96,7 @@
                         <form action="" method="post">
                             <input type="text" placeholder="Tài khoản" name="username" />
                             <input type="password" placeholder="Mật khẩu" name="password" />
-                            <input type="submit" id="buttn" name="submit" value="Đăng nhập" style="border: none;"/>
+                            <input type="submit" id="buttn" name="submit" value="Đăng nhập" style="border: none;" />
                         </form>
                     </div>
 
@@ -112,4 +109,5 @@
                 </div>
                 <?php include "include/footer.php" ?>
 </body>
+
 </html>
