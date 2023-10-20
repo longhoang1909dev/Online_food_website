@@ -115,13 +115,14 @@ session_start();
 
     <section class="popular">
         <div class="container">
-            <form action="">
+            <form method="get" action="index.php">
                 <div class="search">
-                    <input type="text" class="search__input" placeholder="Tìm kiếm">
-                    <button class="search__button">
+                    <input type="text" name="search" class="search__input" placeholder="Tìm kiếm món ăn">
+                    <button class="search__button" type="submit">
                         <i class="fa fa-search search-submit search__icon" aria-hidden="true"></i>
                     </button>
                 </div>
+            </form>>
             </form>
 
             <div class="title text-xs-center m-b-30">
@@ -129,11 +130,15 @@ session_start();
                 <p class="lead">Nếu bạn chưa biết chọn món ăn gì có thể tham khảo 6 món bán chạy nhất tháng dưới đây</p>
             </div>
             <div class="row">
-
                 <?php
-                $query_res = mysqli_query($db, "select * from dishes LIMIT 6");
-                while ($r = mysqli_fetch_array($query_res)) {
+                if (isset($_GET['search'])) {
+                    $search = $_GET['search'];
+                    $query_res = mysqli_query($db, "SELECT * FROM dishes WHERE title LIKE '%$search%' LIMIT 6");
+                } else {
+                    $query_res = mysqli_query($db, "SELECT * FROM dishes LIMIT 6");
+                }
 
+                while ($r = mysqli_fetch_array($query_res)) {
                     echo '  <div class="col-xs-12 col-sm-6 col-md-4 food-item">
                                             <div class="food-item-wrap">
                                                 <div class="figure-wrap bg-image" data-image-src="admin/Res_img/dishes/' . $r['img'] . '"></div>
@@ -150,7 +155,7 @@ session_start();
             </div>
         </div>
     </section>
-    
+
     <section class="how-it-works" style="margin-bottom: 50px;">
         <div class="container">
             <div class="text-xs-center">
