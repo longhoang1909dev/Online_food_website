@@ -5,6 +5,11 @@ include("connection/connect.php");
 error_reporting(0);
 session_start();
 include_once 'product-action.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $res_id = $_GET['res_id'];
+    header('Location: dishes.php?res_id=' . $res_id);
+    exit;
+}
 ?>
 
 <head>
@@ -218,20 +223,20 @@ include_once 'product-action.php';
                                                     <input class="b-r-1px" type="text" name="quantity"
                                                         style=" padding: 4px 11px;" value="1" size="2" />
                                                     <input type="submit" class="btn theme-btn" value="Thêm" />
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
-                                </div>
-                                <?php
+                                    <?php
                                 }
                             }
                             ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <?php include "include/footer.php" ?>
+        <?php include "include/footer.php" ?>
     </div>
     </div>
     <div class="modal fade" id="order-modal" tabindex="-1" role="dialog" aria-hidden="true">
