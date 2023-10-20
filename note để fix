@@ -29,7 +29,7 @@ NHỮNG LỖI CẦN FIX
 
 -- chưa chạy được host riêng vẫn đang chạy local // after code
 
---your ordẻr thiếu hiển thị địa chỉ được ship về
+;--your ordẻr thiếu hiển thị địa chỉ được ship về done
 
 --bug unset after confirm order
 

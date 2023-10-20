@@ -87,10 +87,10 @@
                     </div>
                     <div class="form">
                         <h3>ĐĂNG NHẬP</h3>
-                        <span style="color:red;">
+                        <span style="color:white;">
                             <?php echo $message; ?>
                         </span>
-                        <span style="color:green;">
+                        <span style="color:white;">
                             <?php echo $success; ?>
                         </span>
                         <form action="" method="post">

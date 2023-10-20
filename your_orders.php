@@ -56,9 +56,6 @@ if (empty($_SESSION['user_id'])) {
                 font-weight: 600;
                 color: #777;
             }
-
-            @media only screen and (max-width: 760px),
-            (min-device-width: 768px) and (max-device-width: 1024px) {}
         </style>
 
     </head>
@@ -119,6 +116,7 @@ if (empty($_SESSION['user_id'])) {
                                                 <th>Tên món ăn</th>
                                                 <th>Số lượng</th>
                                                 <th>Giá</th>
+                                                <th>Địa chỉ</th>
                                                 <th>Trạng thái</th>
                                                 <th>Lời nhắn</th>
                                                 <th>Ngày</th>
@@ -147,6 +145,14 @@ if (empty($_SESSION['user_id'])) {
                                                         <td data-column="price">
                                                             <?php
                                                             echo number_format($row['price'], 0, ',', '.'); ?> VNĐ
+                                                        </td>
+                                                        <td data-column="address">
+                                                            <?php
+                                                            $sql_user_userOrder = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
+                                                            $query = mysqli_query($db, $sql_user_userOrder);
+                                                            $roww = mysqli_fetch_array($query);
+                                                            echo $roww['address'];
+                                                            ?>
                                                         </td>
                                                         <td data-column="status">
                                                             <?php
