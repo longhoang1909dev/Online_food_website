@@ -19,7 +19,7 @@ NHỮNG LỖI CẦN FIX
 ; -- xóa nhà hàng nnguowif dùng đồ ăn không có thông báo --- done
 
 ; -- file all_oder đang lỗi display giá khi đặt nhiều món--done
--- update_menu bug kh hiển thị thông báo khi không điền đầy đủ
+;-- update_menu bug kh hiển thị thông báo khi không điền đầy đủ
 --chuyển sang dạng mvc
 -- hệ thống vote star/ feedback cửa hàng
 ;-thiếu thêm địa chỉ lúc đặt hàng done
