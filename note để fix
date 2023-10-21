@@ -34,3 +34,4 @@ NHỮNG LỖI CẦN FIX
 --bug unset after confirm order
 
 -- logic chưa đúng mỗi nhà hàng có thể có nhiều thể loại chứ kh format vào 1 thể loại nhất định 
+-- khi tắt tab nhập lại vẫn còn phiên đăng nhập cần set Time hết phiên
