@@ -133,8 +133,6 @@ if (empty($_SESSION['user_id'])) {
 
                                                 while ($row = mysqli_fetch_array($query_res)) {
                                                     ?>
-
-
                                                     <tr>
                                                         <td data-column="Item">
                                                             <?php echo $row['title']; ?>
@@ -148,10 +146,18 @@ if (empty($_SESSION['user_id'])) {
                                                         </td>
                                                         <td data-column="address">
                                                             <?php
-                                                            $sql_user_userOrder = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
-                                                            $query = mysqli_query($db, $sql_user_userOrder);
-                                                            $roww = mysqli_fetch_array($query);
-                                                            echo $roww['address'];
+                                                            if (isset($_SESSION["user_id"])) {
+                                                                $user_id = $_SESSION["user_id"];
+                                                                $sql_user_userOrder = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id = users_orders.u_id WHERE users.u_id = $user_id";
+                                                                $query = mysqli_query($db, $sql_user_userOrder);
+                                                                
+                                                                if ($query) {
+                                                                    $roww = mysqli_fetch_array($query); // Lấy một bản ghi
+                                                                    if ($roww) {
+                                                                        echo $roww['address'];
+                                                                    }
+                                                                }
+                                                            }
                                                             ?>
                                                         </td>
                                                         <td data-column="status">
