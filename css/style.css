@@ -175,6 +175,7 @@ hr {
 .btn {
   transition: all 0.4s;
   opacity: 1;
+  box-shadow: 0.1rem 0.2rem 0.5rem darkred;
 }
 
 .btn-secondary {
@@ -208,6 +209,7 @@ hr {
   opacity: 1;
   background-color: #F94C10;
   color: #fff;
+  box-shadow: 0.1rem 0.2rem 0.5rem darkred;
 }
 
 .theme-btn-dash:hover,
@@ -1067,7 +1069,6 @@ button.close {
   cursor: pointer;
   background: 0 0;
   border: 0;
-  -webkit-appearance: none;
   right: -15px;
   position: absolute;
   top: -15px;
@@ -2292,7 +2293,6 @@ a[aria-expanded="false"] .fa-angle-down {
   height: 28px;
   margin: 0 10px 10px 0;
   padding: 0 20px 0 15px;
-  -webkit-transition: all 0.4s;
   border: 1px solid #eaebeb;
   border-radius: 2px;
   background: #ffffff;
@@ -2302,7 +2302,6 @@ a[aria-expanded="false"] .fa-angle-down {
 
 .tag:after,
 .tag:before {
-  -webkit-transition: all 0.4s;
   background: #fff;
 }
 

@@ -45,6 +45,19 @@ if (empty($_SESSION["user_id"])) {
         <link href="css/animsition.min.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/fa53f0fa43.js" crossorigin="anonymous"></script>
+
+        <style>
+            .name_sdt {
+                display: none;
+            }
+
+            .add_js{
+                cursor: pointer;
+            }
+        </style>
+
+
     </head>
 
     <body>
@@ -113,6 +126,23 @@ if (empty($_SESSION["user_id"])) {
 
                                                     <table class="table">
                                                         <tbody>
+                                                            <tr class="row">
+                                                                <td style="width: 50%;">Địa chỉ nhận hàng </td>
+                                                                <td style="width: 50%;">
+                                                                    <a class="add_js">
+                                                                        <i class="fa-solid fa-plus"></i>
+                                                                    </a>
+                                                                    <div class="name_sdt">
+                                                                        <label style="width: 100px;" for="">Tên</label>
+                                                                        <input style="outline: none;" type="text" required> <br>
+                                                                        <label style="width: 100px;" for="">Số điện
+                                                                            thoại</label>
+                                                                        <input style="outline: none;" type="text" required> <br>
+                                                                        <label style="width: 100px;" for="">Địa chỉ</label>
+                                                                        <input style="outline: none;" type="text" required>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
                                                             <tr>
                                                                 <td>Chi phí món ăn</td>
                                                                 <td>
@@ -179,6 +209,16 @@ if (empty($_SESSION["user_id"])) {
         <script src="js/headroom.js"></script>
         <script src="js/foodpicky.min.js"></script>
     </body>
+    <script>
+        var name_sdt = document.querySelector('.name_sdt')
+        var add_name_sdt = document.querySelector('.add_js')
+
+        add_name_sdt.addEventListener('click', function () {
+            name_sdt.style.display == 'none' ? name_sdt.style.display = 'block' : name_sdt.style.display = 'none'
+        })
+
+    </script>
+
 
     </html>
 
