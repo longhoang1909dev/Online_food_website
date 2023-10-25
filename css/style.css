@@ -1615,7 +1615,7 @@ footer .container .bottom-footer .row .address span {
   border: 1px solid #fff;
   padding: 6px;
   border-radius: 50%;
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 footer .container .bottom-footer .row .address span:hover {
