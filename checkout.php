@@ -13,12 +13,21 @@ function function_alert()
 if (empty($_SESSION["user_id"])) {
     echo "<script>alert('Bạn cần phải đăng nhập để thực hiện chức năng này');</script>";
     echo "<script>window.location.replace('login.php');</script>";
-
 } else {
     foreach ($_SESSION["cart_item"] as $item) {
         $item_total += ($item["price"] * $item["quantity"]);
         if ($_POST['submit']) {
-            $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item_total . "')";
+            // if(empty($_POST['name_userorder']) || empty($_POST['phone_userorder']) || empty($_POST['address_userorder'])){
+            //     $profile = mysqli_query($db, "select * from user where '" . $_SESSION['user_id'] . "'= u_id");
+            //     $row_profile = mysqli_fetch_array($query);
+            //     $_POST['name_userorder'] == $row_profile['f_name'];
+            //     $_POST['phone_userorder'] == $row_profile['phone'];
+            //     $_POST['address_userorder'] == $row_profile['address'];
+
+
+            // }
+
+            $SQL = "insert into users_orders(u_id,title,quantity,price,name_userorder,phone_useroder,address_userorder) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item_total . "', '" . $_POST['name_userorder'] . "','" . $_POST['phone_userorder'] . "','" . $_POST['address_userorder'] . "')";
             mysqli_query($db, $SQL);
             unset($_SESSION["cart_item"]);
             unset($item["title"]);
@@ -30,7 +39,7 @@ if (empty($_SESSION["user_id"])) {
             mysqli_query($db, "insert into remark(frm_id,remark) values('" . $roww['MAX(o_id)'] . "',' không có lời nhắn')");
         }
     }
-    ?>
+?>
 
     <head>
         <meta charset="utf-8">
@@ -52,7 +61,7 @@ if (empty($_SESSION["user_id"])) {
                 display: none;
             }
 
-            .add_js{
+            .add_js {
                 cursor: pointer;
             }
         </style>
@@ -65,14 +74,11 @@ if (empty($_SESSION["user_id"])) {
             <header id="header" class="header-scroll top-header headrom">
                 <nav class="navbar navbar-dark">
                     <div class="container">
-                        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
-                            data-target="#mainNavbarCollapse">&#9776;</button>
-                        <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt=""
-                                width="18%"> </a>
+                        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
+                        <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt="" width="18%"> </a>
                         <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                             <ul class="nav navbar-nav">
-                                <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
-                                            class="sr-only">(current)</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span class="sr-only">(current)</span></a> </li>
                                 <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng
                                         <span class="sr-only"></span></a> </li>
 
@@ -110,8 +116,7 @@ if (empty($_SESSION["user_id"])) {
                 </div>
                 <div class="container m-t-30" style="margin-bottom: 115px; margin-top: 115px;">
                     <form action="" method="post">
-                        <div class="widget clearfix"
-                            style="border: 1px solid #eaebeb; background: rgba(252, 251, 249, 0.68);">
+                        <div class="widget clearfix" style="border: 1px solid #eaebeb; background: rgba(252, 251, 249, 0.68);">
 
                             <div class="widget-body">
                                 <form method="post" action="#">
@@ -127,19 +132,27 @@ if (empty($_SESSION["user_id"])) {
                                                     <table class="table">
                                                         <tbody>
                                                             <tr class="row">
-                                                                <td style="width: 50%;">Địa chỉ nhận hàng </td>
+                                                                <td style="width: 25%;">Địa chỉ nhận hàng </td>
+                                                                <td style="width: 25%;" class="address_default">Địa chỉ mặc định:
+                                                                    <?php
+                                                                    $query2  = mysqli_fetch_array(mysqli_query($db, "select * from users where u_id = '" . $_SESSION['user_id'] . "'"));
+                                                                    echo $query2['l_name'] . ", " . $query2['phone'] . ", " . $query2['address'];
+                                                                    ?>
+
+                                                                </td>
+
                                                                 <td style="width: 50%;">
-                                                                    <a class="add_js">
+                                                                    <a class="add_js" style="padding:20px">
                                                                         <i class="fa-solid fa-plus"></i>
                                                                     </a>
-                                                                    <div class="name_sdt">
+                                                                    <div class="name_sdt" style="margin-left:20px">
                                                                         <label style="width: 100px;" for="">Tên</label>
-                                                                        <input style="outline: none;" type="text" required> <br>
+                                                                        <input style="outline: none;" type="text" name="name_userorder"><br>
                                                                         <label style="width: 100px;" for="">Số điện
                                                                             thoại</label>
-                                                                        <input style="outline: none;" type="text" required> <br>
+                                                                        <input style="outline: none;" type="text" name="phone_userorder"> <br>
                                                                         <label style="width: 100px;" for="">Địa chỉ</label>
-                                                                        <input style="outline: none;" type="text" required>
+                                                                        <input style="outline: none;" type="text" name="address_userorder">
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -167,26 +180,17 @@ if (empty($_SESSION["user_id"])) {
                                                 <ul class=" list-unstyled">
                                                     <li>
                                                         <label class="custom-control custom-radio  m-b-20">
-                                                            <input name="mod" id="radioStacked1" checked value="COD"
-                                                                type="radio" class="custom-control-input"> <span
-                                                                class="custom-control-indicator"></span> <span
-                                                                class="custom-control-description">Thanh toán khi nhận
+                                                            <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Thanh toán khi nhận
                                                                 hàng</span>
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <label class="custom-control custom-radio  m-b-10">
-                                                            <input name="mod" type="radio" value="paypal" disabled
-                                                                class="custom-control-input"> <span
-                                                                class="custom-control-indicator"></span> <span
-                                                                class="custom-control-description">Thanh toán online <img
-                                                                    src="images/paypal.jpg" alt="" width="90"></span>
+                                                            <input name="mod" type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Thanh toán online <img src="images/paypal.jpg" alt="" width="90"></span>
                                                         </label>
                                                     </li>
                                                 </ul>
-                                                <p class="text-xs-center"> <input type="submit"
-                                                        onclick="return confirm('Bạn có muốn đặt món ăn này');"
-                                                        name="submit" class="btn btn-success btn-block" value="Đặt hàng">
+                                                <p class="text-xs-center"> <input type="submit" onclick="return confirm('Bạn có muốn đặt món ăn này');" name="submit" class="btn btn-success btn-block" value="Đặt hàng">
                                                 </p>
                                             </div>
                                 </form>
@@ -213,15 +217,16 @@ if (empty($_SESSION["user_id"])) {
         var name_sdt = document.querySelector('.name_sdt')
         var add_name_sdt = document.querySelector('.add_js')
 
-        add_name_sdt.addEventListener('click', function () {
+
+        add_name_sdt.addEventListener('click', function() {
+
             name_sdt.style.display == 'none' ? name_sdt.style.display = 'block' : name_sdt.style.display = 'none'
         })
-
     </script>
 
 
-    </html>
+</html>
 
-    <?php
+<?php
 }
 ?>

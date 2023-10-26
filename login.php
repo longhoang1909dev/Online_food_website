@@ -72,7 +72,7 @@
                 if (is_array($row)) {
                     $_SESSION["user_id"] = $row['u_id'];
                     $success = "Đăng nhập thành công";
-                    header("refresh:1;url=index.php");
+                    header("refresh:2;url=index.php");
                 } else {
                     $message = "Tài khoản hoặc mật khẩu không chính xác";
                 }
