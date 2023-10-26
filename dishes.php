@@ -102,7 +102,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <p>
                                     <?php echo $rows['address']; ?>
                                 </p>
+                                <p>
+                                    <?php echo  "Giờ mở cửa: " . $rows['o_hr'] . "-" . $rows['c_hr']; ?>
+                                </p>
+
+                                <p>
+                                    <?php echo  "Khung ngày: " . $rows['o_days'] ; ?>
+                                </p>
+                                <p>
+                                    Link website chúng tôi: <a href="">
+                                        <?php echo  $rows['url'] ; ?>
+                                    </a>
+                                </p>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

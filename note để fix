@@ -1,9 +1,5 @@
 NHỮNG LỖI CẦN FIX
 
-
-
-
-
 ; -thiếu message phía người dùng lúc thay đổi status( xem chi tiết đơn hàng)--done
 ; -lỗi font chữ --- done
 ; -thông báo lúc đăng kí đăng nhập thành công ---done
@@ -33,17 +29,20 @@ NHỮNG LỖI CẦN FIX
 
 ; --bug unset after confirm order
 
--- logic chưa đúng mỗi nhà hàng có thể có nhiều thể loại chứ kh format vào 1 thể loại nhất định 
--- khi tắt tab nhập lại vẫn còn phiên đăng nhập cần set Time hết phiên
+; -- khi tắt tab nhập lại vẫn còn phiên đăng nhập cần set Time hết phiên
 
 ; -- Thêm boxshadow cho tất cả các button 
 
---Thêm thông tin nhà hàng chi tiết khi bấm vào xem nhà hàng
+; --Thêm thông tin nhà hàng chi tiết khi bấm vào xem nhà hàng
 
--- Thiếu form lúc checkout để xác nhận đơn đặt cho ai gửi về đâu
+; -- Thiếu form lúc checkout để xác nhận đơn đặt cho ai gửi về đâu
 -- Chỉnh lại database 
 
 --thêm thể loại món ăn cho nhà hàng thêm được 1 thể loại cần sửa thành nheiefu thể laoij
 -- thiếu phân trang
 -- Với cả là tìm kiếm bên ádmin
---trang đơn đặt admin bỏ chức năng xóa đơn đặt
+; --trang đơn đặt admin bỏ chức năng xóa đơn đặt
+
+-- chỉnh lại css trong phần đơn đặt của bạn mấy cột ngày giờ trạng thái lời nhắn cho ra giữa
+-- chỉnh lại css trong các đơn đặt ra giữa nút chỉnh sửa đơn đặt ra giữa
+-- tất cả các tiêu đề của bảng chỉnh hết ra giữa 

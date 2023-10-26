@@ -122,7 +122,7 @@ session_start();
                         <i class="fa fa-search search-submit search__icon" aria-hidden="true"></i>
                     </button>
                 </div>
-            </form>>
+            </form>
             </form>
 
             <div class="title text-xs-center m-b-30">
