@@ -12,9 +12,6 @@ if (isset($_POST['submit'])) {
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Vui lòng nhập đầy đủ thông tin vào các ô trống!</strong>
 															</div>';
-
-
-
     } else {
 
         $fname = $_FILES['file']['name'];
@@ -34,7 +31,6 @@ if (isset($_POST['submit'])) {
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Vượt quá kích cỡ cho phép!</strong> Vui lòng thử ảnh khác.
 															</div>';
-
             } else {
 
 
@@ -48,8 +44,6 @@ if (isset($_POST['submit'])) {
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																 Thêm nhà hàng thành công.
 															</div>';
-
-
             }
         } elseif ($extension == '') {
             $error = '<div class="alert alert-danger alert-dismissible fade show">
@@ -62,7 +56,6 @@ if (isset($_POST['submit'])) {
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>invalid extension!</strong>png, jpg, Gif are accepted.
 															</div>';
-
         }
     }
 }
@@ -97,9 +90,8 @@ if (isset($_POST['submit'])) {
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
-
-                        <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
+                    <a class="navbar-brand" href="dashboard.php" style="width: 100px; height: 50px;">
+                        <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
@@ -131,9 +123,7 @@ if (isset($_POST['submit'])) {
 
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
-                                    alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
@@ -158,8 +148,7 @@ if (isset($_POST['submit'])) {
                         <li class="nav-label">Danh mục</li>
                         <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
                                     dùng</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
                                     hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
@@ -169,8 +158,7 @@ if (isset($_POST['submit'])) {
 
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_menu.php">Tất cả Menues</a></li>
                                 <li><a href="add_menu.php">Thêm Menu</a></li>
@@ -231,8 +219,7 @@ if (isset($_POST['submit'])) {
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
                                                 <label class="control-label">Email liên hệ</label>
-                                                <input type="text" name="email"
-                                                    class="form-control form-control-danger">
+                                                <input type="text" name="email" class="form-control form-control-danger">
                                             </div>
                                         </div>
 
@@ -261,8 +248,7 @@ if (isset($_POST['submit'])) {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Giờ mở cửa</label>
-                                                <select name="o_hr" class="form-control custom-select"
-                                                    data-placeholder="Choose a Category">
+                                                <select name="o_hr" class="form-control custom-select" data-placeholder="Choose a Category">
                                                     <option>--Lựa chọn giờ mở cửa--</option>
                                                     <option value="1:00">1:00</option>
                                                     <option value="2:00">2:00</option>
@@ -296,8 +282,7 @@ if (isset($_POST['submit'])) {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Giờ đóng cửa</label>
-                                                <select name="c_hr" class="form-control custom-select"
-                                                    data-placeholder="Choose a Category">
+                                                <select name="c_hr" class="form-control custom-select" data-placeholder="Choose a Category">
                                                     <option>--Lựa chọn giờ đóng cửa--</option>
                                                     <option value="1:00">1:00</option>
                                                     <option value="2:00">2:00</option>
@@ -331,8 +316,7 @@ if (isset($_POST['submit'])) {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Ngày mở cửa</label>
-                                                <select name="o_days" class="form-control custom-select"
-                                                    data-placeholder="Choose a Category" tabindex="1">
+                                                <select name="o_days" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                     <option>--Lựa chọn ngày mở cửa--</option>
                                                     <option value="T2-T3">T2-T3</option>
                                                     <option value="T2-T4">T2-T4</option>
@@ -348,8 +332,7 @@ if (isset($_POST['submit'])) {
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
                                                 <label class="control-label">Hình ảnh</label>
-                                                <input type="file" name="file" id="lastName"
-                                                    class="form-control form-control-danger" placeholder="12n">
+                                                <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
                                             </div>
                                         </div>
 
@@ -360,14 +343,12 @@ if (isset($_POST['submit'])) {
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="control-label">Lựa chọn thể loại</label>
-                                                <select name="c_name" class="form-control custom-select"
-                                                    data-placeholder="Choose a Category" tabindex="1">
+                                                <select name="c_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                     <option>--Lựa chọn thể loại--</option>
                                                     <?php $ssql = "select * from res_category";
                                                     $res = mysqli_query($db, $ssql);
                                                     while ($row = mysqli_fetch_array($res)) {
-                                                        echo ' <option value="' . $row['c_id'] . '">' . $row['c_name'] . '</option>';
-                                                        ;
+                                                        echo ' <option value="' . $row['c_id'] . '">' . $row['c_name'] . '</option>';;
                                                     }
 
                                                     ?>
@@ -385,8 +366,7 @@ if (isset($_POST['submit'])) {
                                         <div class="col-md-12 ">
                                             <div class="form-group">
 
-                                                <textarea name="address" type="text" style="height:100px;"
-                                                    class="form-control"></textarea>
+                                                <textarea name="address" type="text" style="height:100px;" class="form-control"></textarea>
                                             </div>
                                         </div>
                                     </div>

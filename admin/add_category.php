@@ -33,10 +33,8 @@ if (isset($_POST['submit'])) {
             $success = '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																Danh mục mới đã được thêm vào.</br></div>';
-
         }
     }
-
 }
 
 
@@ -55,7 +53,9 @@ if (isset($_POST['submit'])) {
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        tr, th, td{
+        tr,
+        th,
+        td {
             text-align: center !important;
         }
     </style>
@@ -74,9 +74,8 @@ if (isset($_POST['submit'])) {
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
-
-                        <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
+                    <a class="navbar-brand" href="dashboard.php" style="width: 100px; height: 50px;">
+                        <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
@@ -85,9 +84,7 @@ if (isset($_POST['submit'])) {
                     </ul>
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
-                                    alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
@@ -111,8 +108,7 @@ if (isset($_POST['submit'])) {
                         <li class="nav-label">Danh mục</li>
                         <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
                                     dùng</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
                                     hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
@@ -121,8 +117,7 @@ if (isset($_POST['submit'])) {
 
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_menu.php">Tất cả Menues</a></li>
                                 <li><a href="add_menu.php">Thêm Menu</a></li>
@@ -219,9 +214,6 @@ if (isset($_POST['submit'])) {
 																									 <td><a href="delete_category.php?cat_del=' . $rows['c_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
 																									 <a href="update_category.php?cat_upd=' . $rows['c_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td></tr>';
-
-
-
                                             }
                                         }
 

@@ -47,4 +47,3 @@ if (!empty($_GET["action"])) {
 			break;
 	}
 }
-?>

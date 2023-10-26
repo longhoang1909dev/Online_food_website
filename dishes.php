@@ -42,16 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header id="header" class="header-scroll top-header headrom">
         <nav class="navbar navbar-dark">
             <div class="container">
-                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
-                    data-target="#mainNavbarCollapse">&#9776;</button>
-                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt=""
-                        width="18%"> </a>
+                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
+                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt="" width="18%"> </a>
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
-                                    class="sr-only">(current)</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span
-                                    class="sr-only"></span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span class="sr-only">(current)</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span class="sr-only"></span></a> </li>
 
                         <?php
                         if (empty($_SESSION["user_id"])) {
@@ -74,8 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn nhà hàng</a>
                     </li>
-                    <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a
-                            href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Chọn món ăn mà bạn thích</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Chọn món ăn mà bạn thích</a></li>
                     <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Đặt món và thanh toán</a></li>
                 </ul>
             </div>
@@ -107,15 +102,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </p>
 
                                 <p>
-                                    <?php echo  "Khung ngày: " . $rows['o_days'] ; ?>
+                                    <?php echo  "Khung ngày: " . $rows['o_days']; ?>
                                 </p>
                                 <p>
                                     Link website chúng tôi: <a href="">
-                                        <?php echo  $rows['url'] ; ?>
+                                        <?php echo  $rows['url']; ?>
                                     </a>
                                 </p>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -141,24 +136,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <?php
                                 $item_total = 0;
                                 foreach ($_SESSION["cart_item"] as $item) {
-                                    ?>
+                                ?>
                                     <div class="title-row">
-                                        <?php echo $item["title"]; ?><a
-                                            href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>">
+                                        <?php echo $item["title"]; ?><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>">
                                             <i class="fa fa-trash pull-right"></i></a>
                                     </div>
 
                                     <div class="form-group row no-gutter">
                                         <div class="col-xs-8">
-                                            <input style="color: black;" type="text" class="form-control b-r-0" value=<?php echo number_format($item["price"], 0, ',', '.') . " VNĐ"; ?> readonly
-                                                id="exampleSelect1">
+                                            <input style="color: black;" type="text" class="form-control b-r-0" value=<?php echo number_format($item["price"], 0, ',', '.') . " VNĐ"; ?> readonly id="exampleSelect1">
                                         </div>
                                         <div class="col-xs-4">
-                                            <input style="color: #000;" class="form-control" type="text" readonly
-                                                value='<?php echo $item["quantity"]; ?>' id="example-number-input">
+                                            <input style="color: #000;" class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input">
                                         </div>
                                     </div>
-                                    <?php
+                                <?php
                                     $item_total += ($item["price"] * $item["quantity"]);
                                 }
                                 ?>
@@ -173,15 +165,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <p>Miễn phí vận chuyển</p>
                                 <?php
                                 if ($item_total == 0) {
-                                    ?>
-                                    <a  href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
-                                        class="btn btn-danger btn-lg disabled">Xác nhận đơn</a>
-                                    <?php
+                                ?>
+                                    <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check" class="btn btn-danger btn-lg disabled">Xác nhận đơn</a>
+                                <?php
                                 } else {
-                                    ?>
-                                    <a  href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
-                                        class="btn btn-success btn-lg active">Xác nhận đơn</a>
-                                    <?php
+                                ?>
+                                    <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check" class="btn btn-success btn-lg active">Xác nhận đơn</a>
+                                <?php
                                 }
                                 ?>
                             </div>
@@ -193,8 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="menu-widget b-d-ea" id="2">
                         <div class="widget-heading">
                             <h3 class="widget-title text-dark">
-                                MENU <a class="btn btn-link pull-right" data-toggle="collapse" href="#popular2"
-                                    aria-expanded="true">
+                                MENU <a class="btn btn-link pull-right" data-toggle="collapse" href="#popular2" aria-expanded="true">
                                     <i class="fa fa-angle-right pull-right"></i>
                                     <i class="fa fa-angle-down pull-right"></i>
                                 </a>
@@ -208,11 +197,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             $products = $stmt->get_result();
                             if (!empty($products)) {
                                 foreach ($products as $product) {
-                                    ?>
+                            ?>
                                     <div class="food-item m-b">
                                         <div class="row ">
-                                            <form method="post"
-                                                action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
+                                            <form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
                                                 <div class="col-xs-12 col-sm-12 col-lg-8">
                                                     <div class="rest-logo pull-left">
                                                         <a class="restaurant-logo pull-left" href="#">
@@ -233,14 +221,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     <span class="price pull-left">
                                                         <?php echo number_format($product['price'], 0, ',', '.') . " VNĐ"; ?>
                                                     </span>
-                                                    <input class="b-r-1px" type="text" name="quantity"
-                                                        style=" padding: 4px 11px; outline: none;" value="1" size="2" />
+                                                    <input class="b-r-1px" type="text" name="quantity" style=" padding: 4px 11px; outline: none;" value="1" size="2" />
                                                     <input type="submit" class="btn theme-btn" value="Thêm" />
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
-                                    <?php
+                            <?php
                                 }
                             }
                             ?>
@@ -255,15 +242,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="modal fade" id="order-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
-                        aria-hidden="true">&times;</span> </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                 <div class="modal-body cart-addon">
                     <div class="food-item white">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-lg-6">
                                 <div class="item-img pull-left">
-                                    <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/70x70"
-                                            alt="Food logo"></a>
+                                    <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/70x70" alt="Food logo"></a>
                                 </div>
                                 <div class="rest-descr">
                                     <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6>
@@ -291,8 +276,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-lg-6">
                                 <div class="item-img pull-left">
-                                    <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/70x70"
-                                            alt="Food logo"></a>
+                                    <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/70x70" alt="Food logo"></a>
                                 </div>
                                 <div class="rest-descr">
                                     <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6>
@@ -322,8 +306,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-lg-6">
                                 <div class="item-img pull-left">
-                                    <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/70x70"
-                                            alt="Food logo"></a>
+                                    <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/70x70" alt="Food logo"></a>
                                 </div>
                                 <div class="rest-descr">
                                     <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6>
@@ -354,8 +337,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-lg-6">
                                 <div class="item-img pull-left">
-                                    <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/70x70"
-                                            alt="Food logo"></a>
+                                    <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/70x70" alt="Food logo"></a>
                                 </div>
 
                                 <div class="rest-descr">

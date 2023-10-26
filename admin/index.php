@@ -20,8 +20,6 @@ if (isset($_POST['submit'])) {
             echo "<script>alert('Sai tài khoản hoặc mật khẩu');</script>";
         }
     }
-
-
 }
 
 ?>

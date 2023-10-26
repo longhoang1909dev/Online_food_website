@@ -20,29 +20,30 @@ if (isset($_POST['submit'])) {
 															</div>';
     } else
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $error = '<div class="alert alert-danger alert-dismissible fade show">
+        $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Email không đúng định dạng!</strong>
 															</div>';
-        } elseif (strlen($_POST['password']) < 6) {
-            $error = '<div class="alert alert-danger alert-dismissible fade show">
+    } elseif (strlen($_POST['password']) < 6) {
+        $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Mật khẩu phải >=6!</strong>
 															</div>';
-        } elseif (strlen($_POST['phone']) < 10) {
-            $error = '<div class="alert alert-danger alert-dismissible fade show">
+    } elseif (strlen($_POST['phone']) < 10) {
+        $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>SĐT không đúng định dạng!</strong>
 															</div>';
-        } else {
-            $mql = "update users set username='$_POST[uname]', f_name='$_POST[fname]', l_name='$_POST[lname]',email='$_POST[email]',phone='$_POST[phone]',password='$_POST[password]' where u_id='$_GET[user_upd]' ";
-            mysqli_query($db, $mql);
-            $success = '<div class="alert alert-success alert-dismissible fade show">
+    } else {
+        $mql = "update users set username='$_POST[uname]', f_name='$_POST[fname]', l_name='$_POST[lname]',email='$_POST[email]',phone='$_POST[phone]',password='$_POST[password]' where u_id='$_GET[user_upd]' ";
+        mysqli_query($db, $mql);
+        $success = '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Cập nhật thành công!</strong></div>';
-        }
     }
+}
 ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,6 +57,7 @@ if (isset($_POST['submit'])) {
     <link href="css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="fix-header">
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -66,9 +68,8 @@ if (isset($_POST['submit'])) {
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
-
-                        <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
+                    <a class="navbar-brand" href="dashboard.php" style="width: 100px; height: 50px;">
+                        <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
@@ -95,9 +96,7 @@ if (isset($_POST['submit'])) {
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
-                                    alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
@@ -108,7 +107,7 @@ if (isset($_POST['submit'])) {
                 </div>
             </nav>
         </div>
-    
+
         <div class="left-sidebar">
 
 
@@ -120,11 +119,8 @@ if (isset($_POST['submit'])) {
                         <li class="nav-label">Trang chủ</li>
                         <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
                         <li class="nav-label">Danh mục</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Nhà hàng</span></a>
+                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
                                 <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
@@ -132,8 +128,7 @@ if (isset($_POST['submit'])) {
 
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_menu.php">Tất cả Menues</a></li>
                                 <li><a href="add_menu.php">Thêm Menu</a></li>
@@ -142,8 +137,7 @@ if (isset($_POST['submit'])) {
 
                             </ul>
                         </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn đặt</span></a></li>
 
                     </ul>
                 </nav>
@@ -154,7 +148,7 @@ if (isset($_POST['submit'])) {
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
                     một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
                 </marquee>
             </div>
@@ -190,65 +184,50 @@ if (isset($_POST['submit'])) {
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Tài khoản</label>
-                                                        <input type="text" name="uname" class="form-control"
-                                                            value="<?php echo $newrow['username']; ?>"
-                                                            placeholder="username">
+                                                        <input type="text" name="uname" class="form-control" value="<?php echo $newrow['username']; ?>" placeholder="username">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Họ</label>
-                                                        <input type="text" name="fname"
-                                                            class="form-control form-control-danger"
-                                                            value="<?php echo $newrow['f_name']; ?>"
-                                                            placeholder="jon">
+                                                        <input type="text" name="fname" class="form-control form-control-danger" value="<?php echo $newrow['f_name']; ?>" placeholder="jon">
                                                     </div>
                                                 </div>
 
                                             </div>
-                                            
+
 
                                             <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Tên</label>
-                                                        <input type="text" name="lname" class="form-control"
-                                                            placeholder="doe" value="<?php echo $newrow['l_name']; ?>">
+                                                        <input type="text" name="lname" class="form-control" placeholder="doe" value="<?php echo $newrow['l_name']; ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-group has-danger">
                                                         <label class="control-label">Email</label>
-                                                        <input type="text" name="email"
-                                                            class="form-control form-control-danger"
-                                                            value="<?php echo $newrow['email']; ?>"
-                                                            placeholder="example@gmail.com">
+                                                        <input type="text" name="email" class="form-control form-control-danger" value="<?php echo $newrow['email']; ?>" placeholder="example@gmail.com">
                                                     </div>
                                                 </div>
 
                                             </div>
-                                            
+
 
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Mật khẩu</label>
-                                                        <input type="text" name="password"
-                                                            class="form-control form-control-danger"
-                                                            value="<?php echo $newrow['password']; ?>"
-                                                            placeholder="password">
+                                                        <input type="text" name="password" class="form-control form-control-danger" value="<?php echo $newrow['password']; ?>" placeholder="password">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">SĐT</label>
-                                                        <input type="text" name="phone"
-                                                            class="form-control form-control-danger"
-                                                            value="<?php echo $newrow['phone']; ?>"
-                                                            placeholder="phone">
+                                                        <input type="text" name="phone" class="form-control form-control-danger" value="<?php echo $newrow['phone']; ?>" placeholder="phone">
                                                     </div>
                                                 </div>
                                             </div>

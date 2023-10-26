@@ -14,10 +14,9 @@ if (strlen($_SESSION['user_id']) == 0) {
         $sql = mysqli_query($db, "update users_orders set status='$status' where o_id='$form_id'");
 
         echo "<script>alert('Cập nhật thành công');</script>";
-
     }
 
-    ?>
+?>
 
     <script language="javascript" type="text/javascript">
         function f2() {
@@ -141,8 +140,7 @@ if (strlen($_SESSION['user_id']) == 0) {
                         <td><b>Hành động</b></td>
                         <td><input type="submit" name="update" class="btn btn-primary" value="Cập nhật">
 
-                            <input name="Submit2" type="submit" class="btn btn-danger" value="Đóng cửa sổ "
-                                onClick="return f2();" style="cursor: pointer;" />
+                            <input name="Submit2" type="submit" class="btn btn-danger" value="Đóng cửa sổ " onClick="return f2();" style="cursor: pointer;" />
                         </td>
                     </tr>
                 </table>

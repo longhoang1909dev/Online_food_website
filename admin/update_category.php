@@ -24,10 +24,7 @@ if (isset($_POST['submit'])) {
         $success = '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Cập nhật thành công!</strong> Successfully.</br></div>';
-
-
     }
-
 }
 
 ?>
@@ -59,18 +56,15 @@ if (isset($_POST['submit'])) {
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
-
-                        <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
+                    <a class="navbar-brand" href="dashboard.php" style="width: 100px; height: 50px;">
+                        <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
 
                     <ul class="navbar-nav mr-auto mt-md-0">
 
-                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted  "
-                                href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                    class="fa fa-th-large"></i></a>
+                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-th-large"></i></a>
                             <div class="dropdown-menu animated zoomIn">
                                 <ul class="mega-dropdown-menu row">
 
@@ -80,15 +74,13 @@ if (isset($_POST['submit'])) {
 
                                         <form>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputname1"
-                                                    placeholder="Enter Name">
+                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name">
                                             </div>
                                             <div class="form-group">
                                                 <input type="email" class="form-control" placeholder="Enter email">
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" id="exampleTextarea" rows="3"
-                                                    placeholder="Message"></textarea>
+                                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-info">Submit</button>
                                         </form>
@@ -172,8 +164,7 @@ if (isset($_POST['submit'])) {
                                             </a>
 
                                             <a href="#">
-                                                <div class="btn btn-primary btn-circle m-r-10"><i
-                                                        class="ti-calendar"></i></div>
+                                                <div class="btn btn-primary btn-circle m-r-10"><i class="ti-calendar"></i></div>
                                                 <div class="mail-contnet">
                                                     <h5>This is another title</h5> <span class="mail-desc">Just a
                                                         reminder that you have event</span> <span class="time">9:10
@@ -224,9 +215,7 @@ if (isset($_POST['submit'])) {
                                         <div class="message-center">
 
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/bookingSystem/user-icn.png"
-                                                        alt="user" class="img-circle"> <span
-                                                        class="profile-status online pull-right"></span> </div>
+                                                <div class="user-img"> <img src="images/bookingSystem/user-icn.png" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Michael Qin</h5> <span class="mail-desc">Just see the my
                                                         admin!</span> <span class="time">9:30 AM</span>
@@ -234,9 +223,7 @@ if (isset($_POST['submit'])) {
                                             </a>
 
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/2.jpg" alt="user"
-                                                        class="img-circle"> <span
-                                                        class="profile-status busy pull-right"></span> </div>
+                                                <div class="user-img"> <img src="images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you
                                                         at</span> <span class="time">9:10 AM</span>
@@ -244,9 +231,7 @@ if (isset($_POST['submit'])) {
                                             </a>
 
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/3.jpg" alt="user"
-                                                        class="img-circle"> <span
-                                                        class="profile-status away pull-right"></span> </div>
+                                                <div class="user-img"> <img src="images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span>
                                                     <span class="time">9:08 AM</span>
@@ -254,9 +239,7 @@ if (isset($_POST['submit'])) {
                                             </a>
 
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/4.jpg" alt="user"
-                                                        class="img-circle"> <span
-                                                        class="profile-status offline pull-right"></span> </div>
+                                                <div class="user-img"> <img src="images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Michael Qin</h5> <span class="mail-desc">Just see the my
                                                         admin!</span> <span class="time">9:02 AM</span>
@@ -275,9 +258,7 @@ if (isset($_POST['submit'])) {
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
-                                    alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
@@ -301,11 +282,8 @@ if (isset($_POST['submit'])) {
                         <li class="nav-label">Trang chủ</li>
                         <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
                         <li class="nav-label">Danh mục</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Nhà hàng</span></a>
+                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
                                 <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
@@ -313,8 +291,7 @@ if (isset($_POST['submit'])) {
 
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_menu.php">Tất cả Menues</a></li>
                                 <li><a href="add_menu.php">Thêm Menu</a></li>
@@ -323,8 +300,7 @@ if (isset($_POST['submit'])) {
 
                             </ul>
                         </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn đặt</span></a></li>
 
                     </ul>
                 </nav>
@@ -335,7 +311,7 @@ if (isset($_POST['submit'])) {
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
                     một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
                 </marquee>
             </div>
@@ -367,9 +343,7 @@ if (isset($_POST['submit'])) {
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Thể loại món ăn</label>
-                                                        <input type="text" name="c_name"
-                                                            value="<?php echo $row['c_name']; ?>" class="form-control"
-                                                            placeholder="Category Name">
+                                                        <input type="text" name="c_name" value="<?php echo $row['c_name']; ?>" class="form-control" placeholder="Category Name">
                                                     </div>
                                                 </div>
 

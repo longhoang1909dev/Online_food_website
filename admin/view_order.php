@@ -46,8 +46,8 @@ session_start();
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
-                        <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
+                    <a class="navbar-brand" href="dashboard.php" style="width: 100px; height: 50px;">
+                        <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
@@ -71,9 +71,7 @@ session_start();
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
-                                    alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
@@ -98,8 +96,7 @@ session_start();
                         <li class="nav-label">Danh mục</li>
                         <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
                                     dùng</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
                                     hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
@@ -108,8 +105,7 @@ session_start();
 
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_menu.php">Tất cả Menues</a></li>
                                 <li><a href="add_menu.php">Thêm Menu</a></li>
@@ -161,9 +157,7 @@ session_start();
                                                 </td>
                                                 <td>
                                                     <center>
-                                                        <a href="javascript:void(0);"
-                                                            onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']); ?>');"
-                                                            title="Update order">
+                                                        <a href="javascript:void(0);" onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
                                                             <button type="button" class="btn btn-primary">Cập nhật đơn đặt</button></a>
                                                     </center>
                                                 </td>
@@ -179,9 +173,7 @@ session_start();
                                                 </td>
                                                 <td>
                                                     <center>
-                                                        <a href="javascript:void(0);"
-                                                            onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']); ?>');"
-                                                            title="Update order">
+                                                        <a href="javascript:void(0);" onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']); ?>');" title="Update order">
                                                             <button type="button" class="btn btn-primary">Xem thông tin người đặt</button></a>
 
                                                     </center>
@@ -224,39 +216,35 @@ session_start();
                                                 <?php
                                                 $status = $rows['status'];
                                                 if ($status == "" or $status == "NULL") {
-                                                    ?>
+                                                ?>
                                                     <td>
-                                                        <center><button type="button" class="btn btn-info"><span
-                                                                    class="fa fa-bars" aria-hidden="true"></span>
+                                                        <center><button type="button" class="btn btn-info"><span class="fa fa-bars" aria-hidden="true"></span>
                                                                 Đang chế biến</button></center>
                                                     </td>
-                                                    <?php
+                                                <?php
                                                 }
                                                 if ($status == "in process") { ?>
                                                     <td>
-                                                        <center><button type="button" class="btn btn-warning"><span
-                                                                    class="fa fa-cog fa-spin" aria-hidden="true"></span>Đang vận chuyển</button></center>
+                                                        <center><button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span>Đang vận chuyển</button></center>
                                                     </td>
-                                                    <?php
+                                                <?php
                                                 }
                                                 if ($status == "closed") {
-                                                    ?>
+                                                ?>
                                                     <td>
-                                                        <center><button type="button" class="btn btn-primary"><span
-                                                                    class="fa fa-check-circle" aria-hidden="true"></span>
+                                                        <center><button type="button" class="btn btn-primary"><span class="fa fa-check-circle" aria-hidden="true"></span>
                                                                 Đã giao hàng</button></center>
                                                     </td>
-                                                    <?php
+                                                <?php
                                                 }
                                                 ?>
                                                 <?php
                                                 if ($status == "rejected") {
-                                                    ?>
+                                                ?>
                                                     <td>
-                                                        <center><button type="button" class="btn btn-danger"> <i
-                                                                    class="fa fa-close"></i> Hủy bỏ</button> </center>
+                                                        <center><button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Hủy bỏ</button> </center>
                                                     </td>
-                                                    <?php
+                                                <?php
                                                 }
                                                 ?>
                                             </tr>

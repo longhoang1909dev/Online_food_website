@@ -1,79 +1,63 @@
-                
                 <!DOCTYPE html>
                 <html lang="en">
                 <?php
-include("../connection/connect.php");
-error_reporting(0);
-session_start();
-if(isset($_POST['submit']))        
-{
-		if(empty($_POST['c_name'])||empty($_POST['res_name'])||$_POST['email']==''||$_POST['phone']==''||$_POST['url']==''||$_POST['o_hr']==''||$_POST['c_hr']==''||$_POST['o_days']==''||$_POST['address']=='')
-		{	
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+                include("../connection/connect.php");
+                error_reporting(0);
+                session_start();
+                if (isset($_POST['submit'])) {
+                    if (empty($_POST['c_name']) || empty($_POST['res_name']) || $_POST['email'] == '' || $_POST['phone'] == '' || $_POST['url'] == '' || $_POST['o_hr'] == '' || $_POST['c_hr'] == '' || $_POST['o_days'] == '' || $_POST['address'] == '') {
+                        $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>All fields Must be Fillup!</strong>
 															</div>';
-									
-		
-								
-		}
-	else
-		{
-		
-				$fname = $_FILES['file']['name'];
-								$temp = $_FILES['file']['tmp_name'];
-								$fsize = $_FILES['file']['size'];
-								$extension = explode('.',$fname);
-								$extension = strtolower(end($extension));  
-								$fnew = uniqid().'.'.$extension;
-   
-								$store = "Res_img/".basename($fnew);                   
-	
-					if($extension == 'jpg'||$extension == 'png'||$extension == 'gif' )
-					{        
-									if($fsize>=1000000)
-										{
-		
-		
-												$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+                    } else {
+
+                        $fname = $_FILES['file']['name'];
+                        $temp = $_FILES['file']['tmp_name'];
+                        $fsize = $_FILES['file']['size'];
+                        $extension = explode('.', $fname);
+                        $extension = strtolower(end($extension));
+                        $fnew = uniqid() . '.' . $extension;
+
+                        $store = "Res_img/" . basename($fnew);
+
+                        if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif') {
+                            if ($fsize >= 1000000) {
+
+
+                                $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Vượt quá kích cỡ ảnh cho phép!</strong> Vui lòng thử ảnh khác.
 															</div>';
-	   
-										}
-		
-									else
-										{	
-												$res_name=$_POST['res_name'];
-				                                 
-												$sql = "update restaurant set c_id='$_POST[c_name]', title='$res_name',email='$_POST[email]',phone='$_POST[phone]',url='$_POST[url]',o_hr='$_POST[o_hr]',c_hr='$_POST[c_hr]',o_days='$_POST[o_days]',address='$_POST[address]',image='$fnew' where rs_id='$_GET[res_upd]' ";  // store the submited data ino the database :images												mysqli_query($db, $sql); 
-													mysqli_query($db, $sql); 
-												move_uploaded_file($temp, $store);
-			  
-													$success = 	'<div class="alert alert-success alert-dismissible fade show">
+                            } else {
+                                $res_name = $_POST['res_name'];
+
+                                $sql = "update restaurant set c_id='$_POST[c_name]', title='$res_name',email='$_POST[email]',phone='$_POST[phone]',url='$_POST[url]',o_hr='$_POST[o_hr]',c_hr='$_POST[c_hr]',o_days='$_POST[o_days]',address='$_POST[address]',image='$fnew' where rs_id='$_GET[res_upd]' ";  // store the submited data ino the database :images												mysqli_query($db, $sql); 
+                                mysqli_query($db, $sql);
+                                move_uploaded_file($temp, $store);
+
+                                $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Cập nhật thành công!</strong>.
 															</div>';
-										}
-					}
-					elseif($extension == '')
-					{
-						$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+                            }
+                        } elseif ($extension == '') {
+                            $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Vui lòng chọn ảnh</strong>
 															</div>';
-					}
-					else{
-					
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
+                        } else {
+
+                            $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>invalid extension!</strong>png, jpg, Gif are accepted.
 															</div>';
-						}               
-	   }
-}
+                        }
+                    }
+                }
 
-?>
+                ?>
+
                 <head>
                     <meta charset="utf-8">
                     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,7 +71,7 @@ if(isset($_POST['submit']))
                     <link href="css/style.css" rel="stylesheet">
                     <script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
                 </head>
-                
+
                 <body class="fix-header">
                     <div class="preloader">
                         <svg class="circular" viewBox="25 25 50 50">
@@ -99,9 +83,8 @@ if(isset($_POST['submit']))
                         <div class="header">
                             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="dashboard.php">
-
-                                        <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
+                                    <a class="navbar-brand" href="dashboard.php" style="width: 100px; height: 50px;">
+                                        <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage" class="dark-logo" /></span>
                                     </a>
                                 </div>
                                 <div class="navbar-collapse">
@@ -111,7 +94,7 @@ if(isset($_POST['submit']))
                                         <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-th-large"></i></a>
                                             <div class="dropdown-menu animated zoomIn">
                                                 <ul class="mega-dropdown-menu row">
-                                                
+
                                                     <li class="col-lg-3  m-b-30">
                                                         <h4 class="m-b-20">CONTACT US</h4>
 
@@ -166,7 +149,7 @@ if(isset($_POST['submit']))
                                         </li>
 
                                     </ul>
-                                    
+
 
                                     <ul class="navbar-nav my-lg-0">
                                         <li class="nav-item dropdown">
@@ -181,56 +164,51 @@ if(isset($_POST['submit']))
                                 </div>
                             </nav>
                         </div>
-                        
+
                         <div class="left-sidebar">
 
 
-            <div class="scroll-sidebar">
+                            <div class="scroll-sidebar">
 
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-devider"></li>
-                        <li class="nav-label">Trang chủ</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
-                        <li class="nav-label">Danh mục</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Nhà hàng</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
-                                <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
-                                <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
+                                <nav class="sidebar-nav">
+                                    <ul id="sidebarnav">
+                                        <li class="nav-devider"></li>
+                                        <li class="nav-label">Trang chủ</li>
+                                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
+                                        <li class="nav-label">Danh mục</li>
+                                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
+                                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà hàng</span></a>
+                                            <ul aria-expanded="false" class="collapse">
+                                                <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
+                                                <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
+                                                <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
 
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_menu.php">Tất cả Menues</a></li>
-                                <li><a href="add_menu.php">Thêm Menu</a></li>
+                                            </ul>
+                                        </li>
+                                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                                            <ul aria-expanded="false" class="collapse">
+                                                <li><a href="all_menu.php">Tất cả Menues</a></li>
+                                                <li><a href="add_menu.php">Thêm Menu</a></li>
 
 
 
-                            </ul>
-                        </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn đặt</span></a></li>
 
-                    </ul>
-                </nav>
+                                    </ul>
+                                </nav>
 
-            </div>
+                            </div>
 
-        </div>
+                        </div>
 
-        <div class="page-wrapper">
-            <div style="padding-top: 10px;">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
-                    một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
-                </marquee>
-            </div>
+                        <div class="page-wrapper">
+                            <div style="padding-top: 10px;">
+                                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                                    một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
+                                </marquee>
+                            </div>
 
                             <div class="row page-titles">
                                 <div class="col-md-5 align-self-center">
@@ -239,8 +217,8 @@ if(isset($_POST['submit']))
                             </div>
 
                             <div class="container-fluid">
-                                <?php  echo $error;
-									        echo $success; ?>
+                                <?php echo $error;
+                                echo $success; ?>
                                 <div class="col-lg-12">
                                     <div class="card card-outline-primary">
 
@@ -249,9 +227,9 @@ if(isset($_POST['submit']))
                                         <div class="card-body">
                                             <form action='' method='post' enctype="multipart/form-data">
                                                 <div class="form-body">
-                                                    <?php $ssql ="select * from restaurant where rs_id='$_GET[res_upd]'";
-													$res=mysqli_query($db, $ssql); 
-													$row=mysqli_fetch_array($res);?>
+                                                    <?php $ssql = "select * from restaurant where rs_id='$_GET[res_upd]'";
+                                                    $res = mysqli_query($db, $ssql);
+                                                    $row = mysqli_fetch_array($res); ?>
                                                     <hr>
                                                     <div class="row p-t-20">
                                                         <div class="col-md-6">
@@ -286,7 +264,7 @@ if(isset($_POST['submit']))
                                                         </div>
 
                                                     </div>
-                                                    
+
 
                                                     <div class="row">
                                                         <div class="col-md-6">
@@ -321,7 +299,7 @@ if(isset($_POST['submit']))
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        
+
 
                                                         <div class="col-md-6">
                                                             <div class="form-group">
@@ -358,9 +336,8 @@ if(isset($_POST['submit']))
 
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                            <label class="control-label">Ngày mở cửa</label>
-                                                                <select name="o_days" class="form-control custom-select"
-                                                                      data-placeholder="Choose a Category" tabindex="1">
+                                                                <label class="control-label">Ngày mở cửa</label>
+                                                                <select name="o_days" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                                     <option>--Lựa chọn ngày mở cửa--</option>
                                                                     <option value="T2-T3">T2-T3</option>
                                                                     <option value="T2-T4">T2-T4</option>
@@ -372,7 +349,7 @@ if(isset($_POST['submit']))
                                                             </div>
                                                         </div>
 
-                                                        
+
 
                                                         <div class="col-md-6">
                                                             <div class="form-group has-danger">
@@ -387,14 +364,13 @@ if(isset($_POST['submit']))
                                                                 <label class="control-label">Lựa chọn thể loại</label>
                                                                 <select name="c_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                                     <option>--Lựa chọn thể loại--</option>
-                                                                    <?php $ssql ="select * from res_category";
-													$res=mysqli_query($db, $ssql); 
-													while($rows=mysqli_fetch_array($res))  
-													{
-                                                       echo' <option value="'.$rows['c_id'].'">'.$rows['c_name'].'</option>';;
-													}  
-                                                 
-													?>
+                                                                    <?php $ssql = "select * from res_category";
+                                                                    $res = mysqli_query($db, $ssql);
+                                                                    while ($rows = mysqli_fetch_array($res)) {
+                                                                        echo ' <option value="' . $rows['c_id'] . '">' . $rows['c_name'] . '</option>';;
+                                                                    }
+
+                                                                    ?>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -433,6 +409,6 @@ if(isset($_POST['submit']))
                     <script src="js/custom.min.js"></script>
 
                 </body>
-                
+
 
                 </html>

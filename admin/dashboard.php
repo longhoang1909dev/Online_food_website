@@ -8,7 +8,7 @@ session_start();
 if (empty($_SESSION["adm_id"])) {
     header('location:index.php');
 } else {
-    ?>
+?>
 
 
     <head>
@@ -37,8 +37,7 @@ if (empty($_SESSION["adm_id"])) {
 
                     <div class="navbar-header">
                         <a class="navbar-brand" href="dashboard.php" style="width: 100px; height: 50px;">
-                            <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage"
-                                    class="dark-logo" /></span>
+                            <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage" class="dark-logo" /></span>
                         </a>
                     </div>
 
@@ -46,9 +45,7 @@ if (empty($_SESSION["adm_id"])) {
                         <ul class="navbar-nav mr-auto mt-md-0">
                         </ul>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
-                                    alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn" style="left: -100px;">
                                 <ul class="dropdown-user" style="min-width: unset;">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
@@ -72,8 +69,7 @@ if (empty($_SESSION["adm_id"])) {
                             <li class="nav-label">Danh mục</li>
                             <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
                                         dùng</span></a></li>
-                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                        class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
                                         hàng</span></a>
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
@@ -81,8 +77,7 @@ if (empty($_SESSION["adm_id"])) {
                                     <li><a href="add_restaurant.php">Thêm nhà hàng</a></li>
                                 </ul>
                             </li>
-                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                        aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="all_menu.php">Tất cả Menues</a></li>
                                     <li><a href="add_menu.php">Thêm Menu</a></li>
@@ -333,7 +328,7 @@ if (empty($_SESSION["adm_id"])) {
                 <script src="js/custom.min.js"></script>
     </body>
 
-    </html>
-    <?php
+</html>
+<?php
 }
 ?>

@@ -9,7 +9,7 @@ if (empty($_SESSION['user_id'])) {
     header('location:login.php');
 } else {
 
-    ?>
+?>
 
     <head>
         <meta charset="utf-8">
@@ -49,7 +49,8 @@ if (empty($_SESSION['user_id'])) {
             th {
                 text-align: center;
             }
-            td{
+
+            td {
                 text-align: left;
             }
 
@@ -77,16 +78,12 @@ if (empty($_SESSION['user_id'])) {
         <header id="header" class="header-scroll top-header headrom">
             <nav class="navbar navbar-dark">
                 <div class="container">
-                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
-                        data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt=""
-                            width="18%"> </a>
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt="" width="18%"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
-                                        class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span
-                                        class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span class="sr-only">(current)</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span class="sr-only"></span></a> </li>
                             <?php
                             if (empty($_SESSION["user_id"])) {
                                 echo '<li class="nav-item"><a href="login.php" class="nav-link active">Đăng nhập</a> </li>
@@ -147,7 +144,7 @@ if (empty($_SESSION['user_id'])) {
                                             } else {
 
                                                 while ($row = mysqli_fetch_array($query_res)) {
-                                                    ?>
+                                            ?>
                                                     <tr>
                                                         <td data-column="Item">
                                                             <?php echo $row['title']; ?>
@@ -184,31 +181,27 @@ if (empty($_SESSION['user_id'])) {
                                                             <?php
                                                             $status = $row['status'];
                                                             if ($status == "" or $status == "NULL") {
-                                                                ?>
-                                                                <button type="button" class="btn btn-info"><span class="fa fa-bars"
-                                                                        aria-hidden="true"></span> Đang chế biến</button>
-                                                                <?php
+                                                            ?>
+                                                                <button type="button" class="btn btn-info"><span class="fa fa-bars" aria-hidden="true"></span> Đang chế biến</button>
+                                                            <?php
                                                             }
                                                             if ($status == "in process") { ?>
-                                                                <button type="button" class="btn btn-warning"><span
-                                                                        class="fa fa-cog fa-spin" aria-hidden="true"></span> Đang vận
+                                                                <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span> Đang vận
                                                                     chuyển</button>
-                                                                <?php
+                                                            <?php
                                                             }
                                                             if ($status == "closed") {
-                                                                ?>
-                                                                <button type="button" class="btn btn-success"><span
-                                                                        class="fa fa-check-circle" aria-hidden="true"></span> Đã giao
+                                                            ?>
+                                                                <button type="button" class="btn btn-success"><span class="fa fa-check-circle" aria-hidden="true"></span> Đã giao
                                                                     hàng</button>
-                                                                <?php
+                                                            <?php
                                                             }
                                                             ?>
                                                             <?php
                                                             if ($status == "rejected") {
-                                                                ?>
-                                                                <button type="button" class="btn btn-danger"> <i
-                                                                        class="fa fa-close"></i> Hủy bỏ</button>
-                                                                <?php
+                                                            ?>
+                                                                <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Hủy bỏ</button>
+                                                            <?php
                                                             }
                                                             ?>
                                                         </td>
@@ -228,20 +221,16 @@ if (empty($_SESSION['user_id'])) {
                                                         <?php
                                                         if ($status != 'closed') {
 
-                                                            ?>
-                                                            <td data-column="Action"> <a
-                                                                    href="delete_orders.php?order_del=<?php echo $row['o_id']; ?>"
-                                                                    onclick="return confirm('Bạn chắc chắn muốn hủy đơn hàng này chứ?');"
-                                                                    class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i
-                                                                        class="fa fa-trash-o" style="font-size:16px"></i></a>
-
-                                                                <?php
-                                                        }
                                                         ?>
+                                                            <td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id']; ?>" onclick="return confirm('Bạn chắc chắn muốn hủy đơn hàng này chứ?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
 
-                                                        </td>
+                                                            <?php
+                                                        }
+                                                            ?>
+
+                                                            </td>
                                                     </tr>
-                                                <?php }
+                                            <?php }
                                             } ?>
                                         </tbody>
                                     </table>
@@ -266,7 +255,7 @@ if (empty($_SESSION['user_id'])) {
         <script src="js/foodpicky.min.js"></script>
     </body>
 
-    </html>
-    <?php
+</html>
+<?php
 }
 ?>

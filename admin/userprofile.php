@@ -14,10 +14,9 @@ if (strlen($_SESSION['user_id']) == 0) {
         $sql = mysqli_query($db, "update users_orders set status='$status' where o_id='$form_id'");
 
         echo "<script>alert('form details updated successfully');</script>";
-
     }
 
-    ?>
+?>
     <script language="javascript" type="text/javascript">
         function f2() {
             window.close();
@@ -117,7 +116,7 @@ if (strlen($_SESSION['user_id']) == 0) {
                     $ret2 = mysqli_query($db, "select * FROM users where u_id='" . $ro['u_id'] . "'");
 
                     while ($row = mysqli_fetch_array($ret2)) {
-                        ?>
+                    ?>
 
                         <tr>
                             <td colspan="2"><b>
@@ -179,8 +178,7 @@ if (strlen($_SESSION['user_id']) == 0) {
                         <tr>
 
                             <td colspan="2">
-                                <input name="Submit2" type="submit" class="btn btn-danger" value="Close this window "
-                                    onClick="return f2();" style="cursor: pointer;" />
+                                <input name="Submit2" type="submit" class="btn btn-danger" value="Close this window " onClick="return f2();" style="cursor: pointer;" />
                             </td>
                         </tr>
                     <?php }
