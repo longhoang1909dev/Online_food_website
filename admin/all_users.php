@@ -21,6 +21,14 @@ session_start();
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
+    <style>
+        tr,
+        td,
+        th {
+            text-align: center !important;
+        }
+
+    </style>
 </head>
 
 
@@ -64,7 +72,8 @@ session_start();
                                     </li>
 
                                     <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Kiểm tra tất cả thông báo</strong> <i class="fa fa-angle-right"></i> </a>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Kiểm tra tất
+                                                cả thông báo</strong> <i class="fa fa-angle-right"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -100,11 +109,11 @@ session_start();
                         <li class="nav-label">Trang chủ</li>
                         <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Tổng quan</span></a></li>
                         <li class="nav-label">Danh mục</li>
-                        <li> <a href="all_users.php"> <span><i
-                                        class="fa fa-user f-s-20 "></i></span><span>Người dùng</span></a></li>
+                        <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
+                                    dùng</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Nhà hàng</span></a>
+                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                                    hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
                                 <li><a href="add_category.php">Thêm thể loại món ăn</a></li>
@@ -122,8 +131,8 @@ session_start();
 
                             </ul>
                         </li>
-                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Đơn đặt</span></a></li>
+                        <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Đơn
+                                    đặt</span></a></li>
 
                     </ul>
                 </nav>
@@ -134,7 +143,7 @@ session_start();
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
+                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="#">Longhoang food_online</a> là
                     một trong những trang web có thể giúp bạn tận hưởng những món ăn ngon mà không cần phải di chuyển.
                 </marquee>
             </div>

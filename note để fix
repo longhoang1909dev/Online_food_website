@@ -43,6 +43,6 @@ NHỮNG LỖI CẦN FIX
 -- Với cả là tìm kiếm bên ádmin
 ; --trang đơn đặt admin bỏ chức năng xóa đơn đặt
 
--- chỉnh lại css trong phần đơn đặt của bạn mấy cột ngày giờ trạng thái lời nhắn cho ra giữa
--- chỉnh lại css trong các đơn đặt ra giữa nút chỉnh sửa đơn đặt ra giữa
--- tất cả các tiêu đề của bảng chỉnh hết ra giữa 
+;-- chỉnh lại css trong phần đơn đặt của bạn mấy cột ngày giờ trạng thái lời nhắn cho ra giữa
+;-- chỉnh lại css trong các đơn đặt ra giữa nút chỉnh sửa đơn đặt ra giữa
+;-- tất cả các tiêu đề của bảng chỉnh hết ra giữa 

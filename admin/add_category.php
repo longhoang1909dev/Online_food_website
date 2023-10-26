@@ -54,6 +54,12 @@ if (isset($_POST['submit'])) {
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <style>
+        tr, th, td{
+            text-align: center !important;
+        }
+    </style>
+
 </head>
 
 

@@ -19,6 +19,12 @@ session_start();
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        tr, td, th{
+            text-align: center !important;
+        }
+    </style>
 </head>
 
 

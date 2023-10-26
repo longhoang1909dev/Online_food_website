@@ -234,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                         <?php echo number_format($product['price'], 0, ',', '.') . " VNĐ"; ?>
                                                     </span>
                                                     <input class="b-r-1px" type="text" name="quantity"
-                                                        style=" padding: 4px 11px;" value="1" size="2" />
+                                                        style=" padding: 4px 11px; outline: none;" value="1" size="2" />
                                                     <input type="submit" class="btn theme-btn" value="Thêm" />
                                                 </div>
                                             </form>

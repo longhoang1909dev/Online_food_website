@@ -19,6 +19,18 @@ session_start();
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
+
+    <style>
+        tr,
+        td,
+        th {
+            text-align: center !important;
+        }
+
+        th {
+            vertical-align: middle !important;
+        }
+    </style>
 </head>
 
 
@@ -145,7 +157,7 @@ session_start();
                                                 <th>Giờ đóng</th>
                                                 <th>Ngày mở</th>
                                                 <th>Địa chỉ</th>
-                                                <th>Hình ảnh</th>
+                                                <th style="width: 200px;">Hình ảnh</th>
                                                 <th>Ngày tạo</th>
                                                 <th>Hành động</th>
                                             </tr>

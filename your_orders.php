@@ -9,7 +9,7 @@ if (empty($_SESSION['user_id'])) {
     header('location:login.php');
 } else {
 
-?>
+    ?>
 
     <head>
         <meta charset="utf-8">
@@ -41,6 +41,15 @@ if (empty($_SESSION['user_id'])) {
                 z-index: 200 !important;
             }
 
+
+            tr {
+                text-align: center;
+            }
+
+            th {
+                text-align: center;
+            }
+
             .panel-body {
                 background: #e5e5e5;
                 background: -moz-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
@@ -65,12 +74,16 @@ if (empty($_SESSION['user_id'])) {
         <header id="header" class="header-scroll top-header headrom">
             <nav class="navbar navbar-dark">
                 <div class="container">
-                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt="" width="18%"> </a>
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
+                        data-target="#mainNavbarCollapse">&#9776;</button>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt=""
+                            width="18%"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
+                                        class="sr-only">(current)</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng <span
+                                        class="sr-only"></span></a> </li>
                             <?php
                             if (empty($_SESSION["user_id"])) {
                                 echo '<li class="nav-item"><a href="login.php" class="nav-link active">Đăng nhập</a> </li>
@@ -110,28 +123,28 @@ if (empty($_SESSION['user_id'])) {
                                     <table class="table table-bordered table-hover">
                                         <thead style="background: #404040; color:white;">
                                             <tr>
-                                                <th>Tên món ăn</th>
-                                                <th>Số lượng</th>
+                                                <th style="width: 120px;">Tên món ăn</th>
+                                                <th style="width: 100px;">Số lượng</th>
                                                 <th>Giá</th>
-                                                <th>Tên người nhận</th>
-                                                <th>SĐT người nhận</th>
-                                                <th>Địa chỉ</th>
+                                                <th style="width: 150px;">Tên người nhận</th>
+                                                <th style="width: 150px;">SĐT người nhận</th>
+                                                <th style="width: 110px;">Địa chỉ</th>
                                                 <th>Trạng thái</th>
                                                 <th>Lời nhắn</th>
                                                 <th>Ngày</th>
-                                                <th>Hành động</th>
+                                                <th style="width: 110px;">Hành động</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $query2  = mysqli_fetch_array(mysqli_query($db, "select * from users where u_id = '" . $_SESSION['user_id'] . "'"));
+                                            $query2 = mysqli_fetch_array(mysqli_query($db, "select * from users where u_id = '" . $_SESSION['user_id'] . "'"));
                                             $query_res = mysqli_query($db, "select * from users_orders where u_id='" . $_SESSION['user_id'] . "' order by o_id DESC");
                                             if (!mysqli_num_rows($query_res) > 0) {
                                                 echo '<td colspan="6"><center>Bạn không có đơn đặt nào. </center></td>';
                                             } else {
 
                                                 while ($row = mysqli_fetch_array($query_res)) {
-                                            ?>
+                                                    ?>
                                                     <tr>
                                                         <td data-column="Item">
                                                             <?php echo $row['title']; ?>
@@ -168,27 +181,31 @@ if (empty($_SESSION['user_id'])) {
                                                             <?php
                                                             $status = $row['status'];
                                                             if ($status == "" or $status == "NULL") {
-                                                            ?>
-                                                                <button type="button" class="btn btn-info"><span class="fa fa-bars" aria-hidden="true"></span> Đang chế biến</button>
-                                                            <?php
+                                                                ?>
+                                                                <button type="button" class="btn btn-info"><span class="fa fa-bars"
+                                                                        aria-hidden="true"></span> Đang chế biến</button>
+                                                                <?php
                                                             }
                                                             if ($status == "in process") { ?>
-                                                                <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span> Đang vận
+                                                                <button type="button" class="btn btn-warning"><span
+                                                                        class="fa fa-cog fa-spin" aria-hidden="true"></span> Đang vận
                                                                     chuyển</button>
-                                                            <?php
+                                                                <?php
                                                             }
                                                             if ($status == "closed") {
-                                                            ?>
-                                                                <button type="button" class="btn btn-success"><span class="fa fa-check-circle" aria-hidden="true"></span> Đã giao
+                                                                ?>
+                                                                <button type="button" class="btn btn-success"><span
+                                                                        class="fa fa-check-circle" aria-hidden="true"></span> Đã giao
                                                                     hàng</button>
-                                                            <?php
+                                                                <?php
                                                             }
                                                             ?>
                                                             <?php
                                                             if ($status == "rejected") {
-                                                            ?>
-                                                                <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Hủy bỏ</button>
-                                                            <?php
+                                                                ?>
+                                                                <button type="button" class="btn btn-danger"> <i
+                                                                        class="fa fa-close"></i> Hủy bỏ</button>
+                                                                <?php
                                                             }
                                                             ?>
                                                         </td>
@@ -208,16 +225,20 @@ if (empty($_SESSION['user_id'])) {
                                                         <?php
                                                         if ($status != 'closed') {
 
-                                                        ?>
-                                                            <td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id']; ?>" onclick="return confirm('Bạn chắc chắn muốn hủy đơn hàng này chứ?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
-
-                                                            <?php
-                                                        }
                                                             ?>
+                                                            <td data-column="Action"> <a
+                                                                    href="delete_orders.php?order_del=<?php echo $row['o_id']; ?>"
+                                                                    onclick="return confirm('Bạn chắc chắn muốn hủy đơn hàng này chứ?');"
+                                                                    class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i
+                                                                        class="fa fa-trash-o" style="font-size:16px"></i></a>
 
-                                                            </td>
+                                                                <?php
+                                                        }
+                                                        ?>
+
+                                                        </td>
                                                     </tr>
-                                            <?php }
+                                                <?php }
                                             } ?>
                                         </tbody>
                                     </table>
@@ -242,7 +263,7 @@ if (empty($_SESSION['user_id'])) {
         <script src="js/foodpicky.min.js"></script>
     </body>
 
-</html>
-<?php
+    </html>
+    <?php
 }
 ?>

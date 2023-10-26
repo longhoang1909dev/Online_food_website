@@ -21,7 +21,15 @@ session_start();
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <style>
+        tr{
+            text-align: center;
+        }
 
+        td{
+            text-align: center !important;
+        }
+    </style>
 
 </head>
 
@@ -150,14 +158,14 @@ session_start();
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>Người dùng</th>
+                                                <th style="width: 110px;">Người dùng</th>
                                                 <th>Tên món ăn</th>
-                                                <th>Số lượng</th>
+                                                <th style="width: 110px;">Số lượng</th>
                                                 <th>Giá</th>
                                                 <th>Địa chỉ</th>
                                                 <th>Trạng thái</th>
                                                 <th>Ngày đặt</th>
-                                                <th>Hành động</th>
+                                                <th style="width: 110px;">Hành động</th>
 
                                             </tr>
                                         </thead>
