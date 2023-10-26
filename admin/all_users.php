@@ -27,11 +27,11 @@ session_start();
             text-align: center !important;
         }
 
-        td{
+        td {
             text-align: start;
         }
 
-        tr td:last-child{
+        tr td:last-child {
             text-align: center !important;
         }
 
@@ -57,19 +57,10 @@ session_start();
                     </a>
                 </div>
                 <div class="navbar-collapse">
-
                     <ul class="navbar-nav mr-auto mt-md-0">
-
-
-
-
-
                     </ul>
 
                     <ul class="navbar-nav my-lg-0">
-
-
-
                         <li class="nav-item dropdown">
 
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
@@ -163,7 +154,15 @@ session_start();
                                 <div class="card-header">
                                     <h4 class="m-b-0 text-white">Tất cả người dùng</h4>
                                 </div>
-
+                                <form method="get" action="index.php">
+                                    <div class="search">
+                                        <input type="text" name="search" class="search__input"
+                                            placeholder="Tìm kiếm người dùng">
+                                        <button class="search__button" type="submit">
+                                            <i class="fa fa-search search-submit search__icon" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </form>
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped table-hover">
                                         <thead class="thead-dark">

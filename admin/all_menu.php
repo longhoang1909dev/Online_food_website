@@ -155,8 +155,15 @@ session_start();
                                 <div class="card-header">
                                     <h4 class="m-b-0 text-white">Tất cả Menu </h4>
                                 </div>
-
-
+                                <form method="get" action="index.php">
+                                    <div class="search">
+                                        <input type="text" name="search" class="search__input"
+                                            placeholder="Tìm kiếm món ăn">
+                                        <button class="search__button" type="submit">
+                                            <i class="fa fa-search search-submit search__icon" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </form>
                                 <div class="table-responsive m-t-40">
                                     <table id="example23"
                                         class="display nowrap table table-hover table-striped table-bordered"

@@ -1227,6 +1227,8 @@ h6.h1 {
   right: 20px;
   font-size: 14px;
 }
+
+
 .mini-sidebar .top-navbar .navbar-header {
   width: 60px;
   text-align: center;
@@ -2260,6 +2262,59 @@ textarea {
   border-radius: 5px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 18px;
+  margin-top: 40px;
+}
+
+.search .search__input {
+  font-family: inherit;
+  font-size: inherit;
+  box-shadow: 0 0 1em #00000013;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  width: 35em;
+  transition: all ease-in-out .5s;
+  margin-right: -2rem;
+}
+
+.search .search__input:hover,
+.search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.search .search__input:focus {
+  outline: none;
+  /* background-color: #f0eeee; */
+}
+
+.search .search__input:focus+.search__button {
+  outline: none;
+  /* background-color: #f0eeee; */
+}
+
+.search .search__button {
+  transition: all ease-in-out .5s;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+.search .search__button:hover {
+  cursor: pointer;
+}
+
+.search .search__button .search__icon {
+  font-size: 22px;
+}
+
 .card-subtitle {
   font-size: 12px;
   margin: 10px 0;

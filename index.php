@@ -32,6 +32,8 @@ session_start();
         .food-item-wrap:hover .figure-wrap {
             transform: scale(1.1);
         }
+
+        
     </style>
 </head>
 
@@ -122,7 +124,6 @@ session_start();
                         <i class="fa fa-search search-submit search__icon" aria-hidden="true"></i>
                     </button>
                 </div>
-            </form>
             </form>
 
             <div class="title text-xs-center m-b-30">
@@ -298,7 +299,8 @@ session_start();
                         </svg>Dịch vụ khách hàng xuất sắc</li>
                 </ul>
                 <a class="btn btn-primary px-5 mt-2" href="#list_restaurant"
-                    style="background: #F94C10; border-color:#F94C10; padding: 16px 40px; box-shadow: 0.1rem 0.1rem 0.2rem royalblue;">Tham khảo các nhà hàng</a>
+                    style="background: #F94C10; border-color:#F94C10; padding: 16px 40px; box-shadow: 0.1rem 0.1rem 0.2rem royalblue;">Tham
+                    khảo các nhà hàng</a>
             </div>
         </div>
     </section>
