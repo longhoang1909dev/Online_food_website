@@ -49,6 +49,9 @@ if (empty($_SESSION['user_id'])) {
             th {
                 text-align: center;
             }
+            td{
+                text-align: left;
+            }
 
             .panel-body {
                 background: #e5e5e5;
