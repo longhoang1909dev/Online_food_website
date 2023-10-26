@@ -176,7 +176,7 @@ hr {
 .btn {
   transition: all 0.4s;
   opacity: 1;
-  box-shadow: 0.1rem 0.2rem 0.5rem darkred;
+  box-shadow: 0.1rem 0.1rem 0.2rem royalblue;
 }
 
 .btn-secondary {
@@ -210,7 +210,6 @@ hr {
   opacity: 1;
   background-color: #F94C10;
   color: #fff;
-  box-shadow: 0.1rem 0.2rem 0.5rem darkred;
 }
 
 .theme-btn-dash:hover,

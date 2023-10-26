@@ -145,7 +145,7 @@ session_start();
                                                 <div class="content">
                                                     <h5><a href="dishes.php?res_id=' . $r['rs_id'] . '">' . $r['title'] . '</a></h5>
                                                     <div class="product-name">' . $r['slogan'] . '</div>
-                                                    <div class="price-btn-block"> <span class="price">' . number_format($r['price'], 0, ',', '.') . ' VNĐ</span> <a href="dishes.php?res_id=' . $r['rs_id'] . '" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
+                                                    <div class="price-btn-block"> <span class="price">' . number_format($r['price'], 0, ',', '.') . ' VNĐ</span> <a style="box-shadow: 0.1rem 0.1rem 0.2rem royalblue;" href="dishes.php?res_id=' . $r['rs_id'] . '" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                                                 </div>
                                                 
                                             </div>
@@ -298,7 +298,7 @@ session_start();
                         </svg>Dịch vụ khách hàng xuất sắc</li>
                 </ul>
                 <a class="btn btn-primary px-5 mt-2" href="#list_restaurant"
-                    style="background: #F94C10; border-color:#F94C10; padding: 16px 40px;">Tham khảo các nhà hàng</a>
+                    style="background: #F94C10; border-color:#F94C10; padding: 16px 40px; box-shadow: 0.1rem 0.1rem 0.2rem royalblue;">Tham khảo các nhà hàng</a>
             </div>
         </div>
     </section>

@@ -22,13 +22,16 @@ session_start();
 
     <style>
         tr,
-        td,
         th {
             text-align: center !important;
         }
 
-        th {
-            vertical-align: middle !important;
+        td{
+            text-align: start;
+        }
+
+        tr td:last-child{
+            text-align: center !important;
         }
     </style>
 </head>

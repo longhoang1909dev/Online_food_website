@@ -116,7 +116,7 @@ session_start();
 																<div class="right-content bg-white">
 																	<div class="right-review">
 																		
-																		<a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn btn-purple">Xem Menu</a> </div>
+																		<a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn btn-purple" style="box-shadow: 0.1rem 0.1rem 0.2rem royalblue;">Xem Menu</a> </div>
 																</div>
 																<!-- end:right info -->
 															</div>';

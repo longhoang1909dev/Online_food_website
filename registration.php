@@ -117,7 +117,8 @@ include("connection/connect.php");
                                             ?>
                                         </div>
                                         <div class="form-group col-sm-12">
-                                            <h3 style="line-height: 1.2; text-transform: uppercase; color:white">Đăng ký</h3>
+                                            <h3 style="line-height: 1.2; text-transform: uppercase; color:white">Đăng ký
+                                            </h3>
                                         </div>
                                         <div class="form-group col-sm-12">
                                             <label for="exampleInputEmail1">Tài khoản</label>
@@ -162,8 +163,8 @@ include("connection/connect.php");
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <p style="margin-left:38px"> <input type="submit" value="Đăng kí" name="submit"
-                                                class="btn theme-btn"> </p>
+                                        <p style="margin-left:38px"> <input style="box-shadow: 0.1rem 0.1rem 0.2rem royalblue;
+" type="submit" value="Đăng kí" name="submit" class="btn theme-btn"> </p>
                                     </div>
                                     </form>
                                 </div>

@@ -23,8 +23,15 @@ session_start();
     <script src="https://kit.fontawesome.com/1170d4c5e8.js" crossorigin="anonymous"></script>
     <style>
         tr,
-        td,
         th {
+            text-align: center !important;
+        }
+
+        td{
+            text-align: start;
+        }
+
+        tr td:last-child{
             text-align: center !important;
         }
 

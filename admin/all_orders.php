@@ -22,11 +22,16 @@ session_start();
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        tr{
-            text-align: center;
+        tr,
+        th {
+            text-align: center !important;
         }
 
-        td{
+        td {
+            text-align: start;
+        }
+
+        tr td:last-child {
             text-align: center !important;
         }
     </style>
@@ -175,8 +180,8 @@ session_start();
                                             <?php
                                             $sql = "SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
                                             $query = mysqli_query($db, $sql);
-                                            $rs = mysqli_fetch_array( mysqli_query($db, "SELECT * FROM users_orders"));
-                                            
+                                            $rs = mysqli_fetch_array(mysqli_query($db, "SELECT * FROM users_orders"));
+
                                             if (!mysqli_num_rows($query) > 0) {
                                                 echo '<td colspan="8"><center>No Orders</center></td>';
                                             } else {
@@ -184,12 +189,12 @@ session_start();
 
                                                     ?>
                                                     <?php
-                                                  
+
                                                     echo ' <tr>
                                                     <td>' . $rows['username'] . '</td>
                                                     <td>' . $rows['title'] . '</td>
                                                     <td>' . $rows['quantity'] . '</td>
-													<td>' .  number_format($rows['price'], 0, ',', '.') . ' VNĐ</td>   
+													<td>' . number_format($rows['price'], 0, ',', '.') . ' VNĐ</td>   
 													<td>' . $rows['address'] . '</td>';
                                                     ?>
                                                     <?php
