@@ -34,6 +34,61 @@ session_start();
         tr td:last-child {
             text-align: center !important;
         }
+
+        /* input popular */
+        form .search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 18px;
+
+        }
+
+        form .search .search__input {
+            font-family: inherit;
+            font-size: inherit;
+            box-shadow: 0 0 1em #00000013;
+            border: none;
+            color: #646464;
+            padding: 0.7rem 1rem;
+            border-radius: 6px;
+            width: 35em;
+            transition: all ease-in-out .5s;
+            margin-right: -2rem;
+        }
+
+        form .search .search__input:hover,
+        .search__input:focus {
+            box-shadow: 0 0 1em #00000013;
+        }
+
+        form .search .search__input:focus {
+            outline: none;
+            /* background-color: #f0eeee; */
+        }
+
+        form .search .search__input:focus+.search__button {
+            outline: none;
+            /* background-color: #f0eeee; */
+        }
+
+        form .search .search__button {
+            transition: all ease-in-out .5s;
+            border: none;
+            outline: none;
+            background-color: white;
+        }
+
+        form .search .search__button:hover {
+            cursor: pointer;
+        }
+
+        form .search .search__button .search__icon {
+            font-size: 22px;
+        }
+
+        /*end input popular */
     </style>
 
 </head>
@@ -52,7 +107,8 @@ session_start();
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php" style="width: 100px; height: 50px;">
-                        <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage" class="dark-logo" /></span>
+                        <span><img style="height: 100%;width: 100%;" src="images/logo.png" alt="homepage"
+                                class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
@@ -83,7 +139,9 @@ session_start();
 
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png"
+                                    alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
@@ -108,7 +166,8 @@ session_start();
                         <li class="nav-label">Danh mục</li>
                         <li> <a href="all_users.php"> <span><i class="fa fa-user f-s-20 "></i></span><span>Người
                                     dùng</span></a></li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
+                                    class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Nhà
                                     hàng</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_restaurant.php">Tất cả nhà hàng</a></li>
@@ -117,7 +176,8 @@ session_start();
 
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
+                                    aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_menu.php">Tất cả Menues</a></li>
                                 <li><a href="add_menu.php">Thêm Menu</a></li>
@@ -155,7 +215,8 @@ session_start();
                                 </div>
                                 <form method="get" action="index.php">
                                     <div class="search">
-                                        <input type="text" name="search" class="search__input" placeholder="Tìm kiếm tên người nhận">
+                                        <input type="text" name="search" class="search__input"
+                                            placeholder="Tìm kiếm tên người nhận">
                                         <button class="search__button" type="submit">
                                             <i class="fa fa-search search-submit search__icon" aria-hidden="true"></i>
                                         </button>
@@ -189,7 +250,7 @@ session_start();
                                             } else {
                                                 while ($rows = mysqli_fetch_array($query)) {
 
-                                            ?>
+                                                    ?>
                                                     <?php
 
                                                     echo ' <tr>
@@ -202,27 +263,31 @@ session_start();
                                                     <?php
                                                     $status = $rows['status'];
                                                     if ($status == "" or $status == "NULL") {
-                                                    ?>
-                                                        <td> <button type="button" class="btn btn-info"><span class="fa fa-bars" aria-hidden="true"></span> Đang chế biến</button></td>
-                                                    <?php
+                                                        ?>
+                                                        <td> <button type="button" class="btn btn-info"><span class="fa fa-bars"
+                                                                    aria-hidden="true"></span> Đang chế biến</button></td>
+                                                        <?php
                                                     }
                                                     if ($status == "in process") { ?>
-                                                        <td> <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span> Đang vận
+                                                        <td> <button type="button" class="btn btn-warning"><span
+                                                                    class="fa fa-cog fa-spin" aria-hidden="true"></span> Đang vận
                                                                 chuyển</button></td>
-                                                    <?php
+                                                        <?php
                                                     }
                                                     if ($status == "closed") {
-                                                    ?>
-                                                        <td> <button type="button" class="btn btn-primary"><span class="fa fa-check-circle" aria-hidden="true"></span>
+                                                        ?>
+                                                        <td> <button type="button" class="btn btn-primary"><span
+                                                                    class="fa fa-check-circle" aria-hidden="true"></span>
                                                                 Đã giao hàng</button></td>
-                                                    <?php
+                                                        <?php
                                                     }
                                                     ?>
                                                     <?php
                                                     if ($status == "rejected") {
-                                                    ?>
-                                                        <td> <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Hủy bỏ</button></td>
-                                                    <?php
+                                                        ?>
+                                                        <td> <button type="button" class="btn btn-danger"> <i
+                                                                    class="fa fa-close"></i> Hủy bỏ</button></td>
+                                                        <?php
                                                     }
                                                     ?>
                                                     <?php
@@ -233,13 +298,13 @@ session_start();
                                                             onclick="return confirm('Bạn chắc chắn muốn xóa?');"
                                                             class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i
                                                                 class="fa fa-trash-o" style="font-size:16px"></i></a> -->
-                                                <?php
-                                                    echo '<a href="view_order.php?user_upd=' . $rows['o_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
+                                                        <?php
+                                                        echo '<a href="view_order.php?user_upd=' . $rows['o_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td>
 																									</tr>';
                                                 }
                                             }
-                                                ?>
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>

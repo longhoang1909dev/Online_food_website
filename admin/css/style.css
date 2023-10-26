@@ -4166,6 +4166,63 @@ table.dataTable thead .sorting::after {
 .hidden {
   display: none;
 }
+
+/* input popular */
+form .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 18px;
+
+}
+
+form .search .search__input {
+  font-family: inherit;
+  font-size: inherit;
+  box-shadow: 0 0 1em #00000013;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  width: 35em;
+  transition: all ease-in-out .5s;
+  margin-right: -2rem;
+}
+
+form .search .search__input:hover,
+.search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+form .search .search__input:focus {
+  outline: none;
+  /* background-color: #f0eeee; */
+}
+
+form .search .search__input:focus+.search__button {
+  outline: none;
+  /* background-color: #f0eeee; */
+}
+
+form .search .search__button {
+  transition: all ease-in-out .5s;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+form .search .search__button:hover {
+  cursor: pointer;
+}
+
+form .search .search__button .search__icon {
+  font-size: 22px;
+}
+
+/*end input popular */
+
+
 /*    Home Chat Widget
 ---------------------------------*/
 .chat-widget .chat_window {
