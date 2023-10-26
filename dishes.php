@@ -161,12 +161,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <?php
                                 if ($item_total == 0) {
                                     ?>
-                                    <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
+                                    <a  href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
                                         class="btn btn-danger btn-lg disabled">Xác nhận đơn</a>
                                     <?php
                                 } else {
                                     ?>
-                                    <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
+                                    <a  href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
                                         class="btn btn-success btn-lg active">Xác nhận đơn</a>
                                     <?php
                                 }
