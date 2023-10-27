@@ -33,6 +33,7 @@ session_start();
             border-bottom: 1px solid black;
             padding-bottom: 20px;
             height: 150px;
+            overflow: hidden;
         }
 
         .show-restaurant {
@@ -98,7 +99,7 @@ session_start();
 
                                     echo ' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left food">
 															<div class="entry-logo">
-																<a class="img-fluid" href="dishes.php?res_id=' . $rows['rs_id'] . '" > <img src="admin/Res_img/' . $rows['image'] . '" alt="Food logo"></a>
+																<a class="img-fluid" href="dishes.php?res_id=' . $rows['rs_id'] . '" > <img style="height: 120px; width: 100%;" src="admin/Res_img/' . $rows['image'] . '" alt="Food logo"></a>
 															</div>
 															<!-- end:Logo -->
 															<div class="entry-dscr">

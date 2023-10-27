@@ -29,11 +29,14 @@ include("connection/connect.php");
         <header id="header" class="header-scroll top-header headrom">
             <nav class="navbar navbar-dark">
                 <div class="container">
-                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt="" width="18%"> </a>
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
+                        data-target="#mainNavbarCollapse">&#9776;</button>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt=""
+                            width="18%"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span class="sr-only">(current)</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="index.php">Trang chủ <span
+                                        class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Danh sách nhà hàng
                                     <span class="sr-only"></span></a> </li>
 
@@ -102,7 +105,7 @@ include("connection/connect.php");
                                                         echo "Email đã tồn tại";
                                                     } else {
 
-                                                        $mql = "INSERT INTO users(username,f_name,l_name,email,phone,password,address) VALUES('" . $_POST['username'] . "','" . $_POST['firstname'] . "','" . $_POST['lastname'] . "','" . $_POST['email'] . "','" . $_POST['phone'] . "','" . $_POST['password'] . "','" . $_POST['address'] . "')";
+                                                        $mql = "INSERT INTO users(username,f_name,l_name,email,phone,password,address) VALUES('" . $_POST['username'] . "','" . $_POST['firstname'] . "','" . $_POST['lastname'] . "','" . $_POST['email'] . "','" . $_POST['phone'] . "','" . md5($_POST['password']) . "','" . $_POST['address'] . "')";
                                                         mysqli_query($db, $mql);
 
                                                         echo " <script>alert('Đăng kí thành công')</script>";
@@ -118,35 +121,43 @@ include("connection/connect.php");
                                         </div>
                                         <div class="form-group col-sm-12">
                                             <label for="exampleInputEmail1">Tài khoản</label>
-                                            <input class="form-control" type="text" name="username" id="example-text-input">
+                                            <input class="form-control" type="text" name="username"
+                                                id="example-text-input">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="exampleInputEmail1">Họ </label>
-                                            <input class="form-control" type="text" name="firstname" id="example-text-input">
+                                            <input class="form-control" type="text" name="firstname"
+                                                id="example-text-input">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="exampleInputEmail1">Tên</label>
-                                            <input class="form-control" type="text" name="lastname" id="example-text-input-2">
+                                            <input class="form-control" type="text" name="lastname"
+                                                id="example-text-input-2">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="exampleInputEmail1">Địa chỉ email</label>
-                                            <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <input type="text" class="form-control" name="email" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="exampleInputEmail1">Số điện thoại</label>
-                                            <input class="form-control" type="text" name="phone" id="example-tel-input-3">
+                                            <input class="form-control" type="text" name="phone"
+                                                id="example-tel-input-3">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="exampleInputPassword1">Mật khẩu</label>
-                                            <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                                            <input type="password" class="form-control" name="password"
+                                                id="exampleInputPassword1">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="exampleInputPassword1">Nhập lại mật khẩu</label>
-                                            <input type="password" class="form-control" name="cpassword" id="exampleInputPassword2">
+                                            <input type="password" class="form-control" name="cpassword"
+                                                id="exampleInputPassword2">
                                         </div>
                                         <div class="form-group col-sm-12">
                                             <label for="exampleTextarea">Địa chỉ</label>
-                                            <textarea class="form-control" id="exampleTextarea" name="address" rows="3"></textarea>
+                                            <textarea class="form-control" id="exampleTextarea" name="address"
+                                                rows="3"></textarea>
                                         </div>
                                 </div>
                                 <div class="row">
